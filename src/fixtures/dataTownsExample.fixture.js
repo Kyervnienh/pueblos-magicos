@@ -12,7 +12,7 @@ export const dataTows = [
                 cost: '$0',
                 distance: '',
                 type: '',   
-            }
+            },
             {
                 name: 'Atracción 2',
                 info: 'Lorem...',
@@ -36,7 +36,7 @@ export const dataTows = [
                 cost: '$0',
                 distance: '',
                 type: '',   
-            }
+            },
             {
                 name: 'Atracción 2',
                 info: 'Lorem...',
