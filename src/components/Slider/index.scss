@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.carousel {
+    height: 300px;
+    overflow: hidden;
+
+    @media (min-width: 768px){
+        height: 400px;
+    }
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-img {
+    height: 100%;
+    object-fit: cover;
+}
