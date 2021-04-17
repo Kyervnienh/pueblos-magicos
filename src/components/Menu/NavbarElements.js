@@ -53,7 +53,7 @@ cursor: pointer;
 export const Bars = styled(FaBars)`
 display: none;
 color: #808080;
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 865px) {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -73,7 +73,7 @@ margin-right: -24px;
 /* Third Nav */
 /* width: 100vw;
 white-space: nowrap; */
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 865px) {
 	display: none;
 }
 `;
@@ -89,7 +89,7 @@ align-items: center;
 /* Third Nav */
 /* justify-content: flex-end;
 width: 100vw; */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 865px) {
 	display: none;
 }
 `;
@@ -120,7 +120,7 @@ align-items: center;
 /* Third Nav */
 /* justify-content: flex-end;
 width: 100vw; */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 865px) {
 	display: none;
 }
 `;
