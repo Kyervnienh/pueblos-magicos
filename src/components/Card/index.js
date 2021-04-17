@@ -18,7 +18,9 @@ const CardComponent = (
             <div className="card-body">
                 <div>
                     <div className="puntuacion">
-                        <img src={star}     className="icon"/>
+                        <img src={star}     className="icon"
+                        alt={nombre}
+                        />
                          <p className="calificacion">{pts}</p>
                     </div>
                     <p className="nombre">{nombre}</p>

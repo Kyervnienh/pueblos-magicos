@@ -1,5 +1,6 @@
 export const dataTows = [
     {
+        id: 1,
         name: 'Valle de Bravo',
         state: 'Estado de México',
         infoState: 'Lorem...',
@@ -25,6 +26,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 2,
         name: 'Villa del Carbón',
         state: 'Estado de México',
         infoState: 'Lorem...',
@@ -50,6 +52,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 3,
         name: 'Mineral del Chico',
         state: 'Hidalgo',
         infoState: 'Lorem...',
@@ -75,6 +78,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 4,
         name: 'Ixtapan de la sal',
         state: 'Estado de México',
         infoState: 'Lorem...',
@@ -100,6 +104,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 5,
         name: 'Real del Monte',
         state: 'Hidalgo',
         infoState: 'Lorem...',
@@ -125,6 +130,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 6,
         name: 'Tepotzotlán',
         state: 'Estado de México',
         infoState: 'Lorem...',
@@ -150,6 +156,7 @@ export const dataTows = [
         ]
     },
     {
+        id: 7,
         name: 'Huasca de Ocampo',
         state: 'Hidalgo',
         infoState: 'Lorem...',
