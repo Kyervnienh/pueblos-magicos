@@ -1,0 +1,16 @@
+.title{
+    font-family: 'Roboto', sans-serif;
+    color: #7F7F7F;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
