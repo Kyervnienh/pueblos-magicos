@@ -7,24 +7,14 @@ Pueblos mágicos es una Página Web hecha en la cual los usuarios pueden publica
 
 ## ¿Cómo puedo comenzar a usar Pueblos Mágicos?
 
-Para la instalación de Pueblos Mágicos son necesarias las siguientes librerias:
-- Para los diseños se necesita
-```
-npm install node-sass
-npm install --save styled-components
-```
-- Para el cambio de rutas entre paginas
-```
-npm install --save react-router-dom
-```
-Ahora para iniciar el proyecto basta con
+Para la instalación de Pueblos Mágicos basta con ejecutar el siguiente comando:
 ```
 npm start
 ```
 
 ## Features
 
-[To do List](https://ecstatic-kalam-24f842.netlify.app/) es desarrollada usando tecnologías como:
+[Pueblos Magicos](https://ecstatic-kalam-24f842.netlify.app/) es desarrollada usando tecnologías como:
 
 - :bulb: **REACTJS**: Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.
 
