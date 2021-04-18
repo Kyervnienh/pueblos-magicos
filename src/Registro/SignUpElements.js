@@ -1,4 +1,7 @@
-.Container {
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const Container = styled.div`
   min-height: 692;
   position: fixed;
   bottom: 0;
@@ -12,9 +15,9 @@
     rgba(1, 147, 86, 1) 0%,
     rgba(10, 201, 122, 1) 100%
   );
-}
+`;
 
-.FormWrap {
+export const FormWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -22,9 +25,9 @@
   @media screen and (max-width: 400px) {
     height: 80%;
   }
-}
+`;
 
-.Icon {
+export const Icon = styled(Link)`
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
@@ -36,9 +39,9 @@
     margin-left: 16px;
     margin-top: 8px;
   }
-}
+`;
 
-.FormContent {
+export const FormContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -47,9 +50,9 @@
   @media screen and (max-width: 480px) {
     padding: 10px;
   }
-}
+`;
 
-.Form {
+export const Form = styled.form`
   background: #fff;
   max-width: 400px;
   height: auto;
@@ -64,29 +67,47 @@
   @media screen and (max-width: 400px) {
     padding: 32px 32px;
   }
-}
+`;
 
-.FormH1 {
-  font-family: 'Roboto', sans-serif;
+export const FormH1 = styled.h1`
   margin-bottom: 40px;
   color: #000;
   font-size: 20px;
   font-weight: 400;
   text-align: center;
-}
+`;
 
-.FormButton {
+export const FormLabel = styled.label`
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #7f7f7f;
+`;
+
+export const FormInput = styled.input`
+  padding: 16px 16px;
+  margin-bottom: 32px;
+  border: 1px solid #7f7f7f;
+  border-radius: 4px;
+`;
+
+export const FormButton = styled.button`
   background: #ffbf69;
   padding: 16px 0;
   border: none;
   border-radius: 4px;
   color: #fff;
   font-size: 20px;
-  width: 100%;
   cursor: pointer;
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #808080;
     color: #ffff;
   }
-}
+`;
+
+export const Text = styled.span`
+  text-align: center;
+  margin-top: 24px;
+  color: #fff;
+  font-size: 14px;
+`;
