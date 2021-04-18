@@ -1,0 +1,93 @@
+.card{
+    width: auto;
+    margin: 24px 16px;
+
+    @media (min-width: 768px) {
+        width: 100%;
+        margin: 0 40px;
+    }
+
+    .card-img-top{
+        width: auto;
+        height: 30vh;
+
+        @media (min-width: 768px) {
+            width: auto;
+            height: 35vh;
+        }
+    }
+
+    .card-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .nombre {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #7F7F7F;
+            font-weight: bold;
+            padding: 8px 0;
+            margin: 0;
+
+
+            @media (min-width: 768px) {
+                font-size: 24px;
+            }
+        }
+
+        .estado{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #7F7F7F;
+            font-weight: bold;
+            margin: 0;
+
+
+            @media (min-width: 768px) {
+                font-size: 18px;
+            }
+        }
+
+        .puntuacion {
+            display: flex;
+            flex-direction: row;
+
+            >.calificacion{
+                font-family: 'Roboto', sans-serif;
+                font-size: 15px;
+                color: #7F7F7F;
+                font-weight: bold;
+                margin: 0;
+                padding-left: 7px;
+            }
+
+            >.icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    .circule {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #FFBF69;
+
+        .fa-angle-right {
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .btn {
+            width: auto; 
+            height: auto;
+        }
+    }
+}
+
