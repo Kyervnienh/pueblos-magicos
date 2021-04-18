@@ -1,10 +1,12 @@
 import React from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
     <div className="Container">
       <div className="FormWrap">
+        <Link className="Icon" to ="/">TURI</Link>
         <div className="FormContent">
           <form className="Form">
             <h1 className="title">Inicia Sesión</h1>
