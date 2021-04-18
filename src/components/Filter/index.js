@@ -56,7 +56,7 @@ function Filter(props) {
               className='form-select'
             >
               {uniqueCouse.map(town => (
-                <option  value={town.state}>
+                <option  value={town.state} key={town.state}>
                   {town.state}
                 </option>
               ))}
@@ -66,7 +66,7 @@ function Filter(props) {
         </form>
         <div>
         {filterDropdown.map(town => (
-          <div style={{ margin: "10px" }}>
+          <div style={{ margin: "10px" }} key={town.name}>
             {town.name}
             <br />
           </div>

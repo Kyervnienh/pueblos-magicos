@@ -27,7 +27,7 @@ const CardComponent = (
                     <p className="estado">{estado}</p>
                 </div>
                 <div className="circule">
-                    <button type="button" class="btn" onClick={() => action()}><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <button type="button" className="btn" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>

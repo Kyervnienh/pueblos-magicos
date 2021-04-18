@@ -3,11 +3,11 @@ import './index.scss';
 
 const IntroduccionRecomendaciones = () => {
   return (
-    <div>
+    <div className="recomendaciones">
       <h1 className="title">Conoce todas nuestras recomendaciones</h1>
       <div className="container">
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <img
               src="https://cdn.pixabay.com/photo/2020/12/17/04/09/guanajuato-5838206_960_720.jpg"
               className="img-fluid rounded "

@@ -10,29 +10,29 @@ const Login = () => {
         <div className="FormContent">
           <form className="Form">
             <h1 className="title">Inicia Sesión</h1>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
                 Usuario
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputPassword1" className="form-label">
                 Constraseña
               </label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
               />
             </div>
             <div className="text-center">
-              <button type="submit" class="FormButton">
+              <button type="submit" className="FormButton">
                 Continuar
               </button>
             </div>
