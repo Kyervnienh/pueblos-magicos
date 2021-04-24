@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Menu';
-import Footer from '../Footer';
-import IntroduccionRecomendaciones from '../../Home/components/IntroduccionRecomendaciones';
-import UltimasRecomendaciones from '../../Home/components/UltimasRecomendaciones/index';
-import Slider from '../Slider';
-import Filter from '../Filter';
+import Footer from '../../components/Footer';
+import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
+import UltimasRecomendaciones from './components/UltimasRecomendaciones';
+import Slider from '../../components/Slider';
+import Filter from '../../components/Filter';
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)

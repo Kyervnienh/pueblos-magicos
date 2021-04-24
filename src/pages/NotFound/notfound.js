@@ -1,6 +1,6 @@
 import React from 'react';
-import NotFound from '../../NotFound';
-import Footer from '../Footer';
+import NotFound from '../../components/NotFound/index';
+import Footer from '../../components/Footer/index';
 
 const NotFoundPage = () => {
     return(

@@ -1,6 +1,6 @@
 import React from 'react';
-import CardComponent from '../../../components/Card/index';
-import { dataTows } from '../../../fixtures/dataTownsExample.fixture';
+import CardComponent from '../../../../components/Card/index';
+import { dataTows } from '../../../../fixtures/dataTownsExample.fixture';
 import './index.scss';
 
 

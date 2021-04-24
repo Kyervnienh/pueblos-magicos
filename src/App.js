@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SignUpPage from './components/pages/signup';
-import Home from '../src/components/pages/';
-import Login from '../src/components/pages/login';
-import NotFoundPage from './components/pages/notfound';
+import SignUpPage from './pages/SignUp/signup';
+import Home from './pages/Home/index';
+import Login from './pages/Login/login';
+import NotFoundPage from './pages/NotFound/notfound';
 
 function App() {
   return (
