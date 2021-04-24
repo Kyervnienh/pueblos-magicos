@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUp from '../../Registro';
+import SignUp from '../../SignUp';
 import ScrollToTop from '../ScrollToTop';
 
 const SignupPage = () => {
