@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.SidebarContainerOpened {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: #FFBF69;
+    display: grid;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    opacity: '100%';
+    top: '0';
+}
+
+.SidebarContainerClosed {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: #FFBF69;
+    display: grid;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    opacity: '0';
+    top: '-100%';
+}
+
+.CloseIcon {
+    color: #fff;
+}
+
+.Icon {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.SideBarWrapper {
+    color: #fff;
+}
+
+.SideBarMenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 80px);
+    text-align: center;
+    @media screen and (max-width: 480px) {
+        grid-template-rows: repeat(6, 60px);
+    }
+}
+
+.SidebarLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        color: #7F7F7F;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.SideBtnWrap {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+}
+
+.SidebarRouteLogIn {
+    border-radius: 50px;
+    background: #7F7F7F;
+    white-space: nowrap;
+    padding: 16px 64px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
+}
+
+.SidebarRouteSignUp {
+    border-radius: 50px;
+    background: #fff;
+    white-space: nowrap;
+    padding: 16px 64px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #7F7F7F;
+        color: #010606;
+    }
+}

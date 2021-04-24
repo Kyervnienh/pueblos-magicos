@@ -1,17 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {
-Nav,
-NavLink,
-Bars,
-NavMenu,
-NavBtnSignIn,
-NavBtnLinkSignIn,
-NavBtnSignUp,
-NavBtnLinkSignUp,
-NavBtns,
-NavbarContainer,
-NavLogo
-} from './NavbarElements';
+import { FaBars } from 'react-icons/fa';
+import { NavLink as Link } from 'react-router-dom';
+import './index.scss';
 
 const Navbar = ({toggle}) => {
 	const [scrollNav, setScrollNav] = useState(false);
@@ -29,34 +19,26 @@ const Navbar = ({toggle}) => {
 	}, []);
 return (
 	<>
-	<Nav scrollNav={scrollNav}>
-        <NavbarContainer >
-            <NavLogo to='/'>TURI</NavLogo>
-            <Bars onClick={toggle} />
-        </NavbarContainer>
-		<NavMenu>
-		<NavLink to='/pueblosmagicos' activeStyle>
-			Pueblos Mágicos
-		</NavLink>
-		<NavLink to='/precios' activeStyle>
-			Precios
-		</NavLink>
-		<NavLink to='/comunidad' activeStyle>
-			Comunidad
-		</NavLink>
-		<NavLink to='/soporte' activeStyle>
-			Soporte
-		</NavLink>
-		</NavMenu>
-        <NavBtns>
-		<NavBtnSignIn>
-		<NavBtnLinkSignIn to='/iniciarsesion'>Iniciar sesión</NavBtnLinkSignIn>
-		</NavBtnSignIn>
-        <NavBtnSignUp>
-		<NavBtnLinkSignUp to='/registrate'>Regístrate</NavBtnLinkSignUp>
-		</NavBtnSignUp>
-        </NavBtns>
-	</Nav>
+	<nav className="Nav">
+			<div className="NavbarContainer">
+				<Link className="NavLogo" to='/'>TURI</Link>
+				<FaBars className="Bars" onClick={toggle} ></FaBars>
+			</div>
+			<div className="NavMenu">
+				<Link className="NavLink" to='/pueblosmagicos'>Pueblos Mágicos</Link>
+				<Link className="NavLink" to='/precios'>Precios</Link>
+				<Link className="NavLink" to='/comunidad'>Comunidad</Link>
+				<Link className="NavLink" to='/soport'>Soporte</Link>
+			</div>
+		<nav className="NavBtns">
+			<nav className="NavBtnLogIn">
+				<Link className="NavBtnLinkLogIn" to='/iniciarsesion'>Iniciar Sesion</Link>
+			</nav>
+			<nav className="NavBtnSignUp">
+				<Link className="NavBtnLinkSignUp" to='/registrate'>Regístrate</Link>
+			</nav>
+		</nav>
+	</nav>
 	</>
 );
 };
