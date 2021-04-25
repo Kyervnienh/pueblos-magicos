@@ -5,7 +5,7 @@ import './index.scss';
 const Login = () => {
   return (
     <div className="Container">
-      <Link className="Icon" to ="/">TURI</Link>
+      <Link className="IconSignIn" to ="/">TURI</Link>
       <div className="FormWrap">
         <div className="FormContent">
           <form className="Form">
@@ -36,8 +36,8 @@ const Login = () => {
                 Continuar
               </button>
             </div>
+            <span className="Text">¿No tienes una cuenta? <Link to="/registrate">Regístrate</Link></span>
           </form>
-          <span className="Text">No te has registrado? Regístrate <Link to="/registrate">aqui</Link></span>
         </div>
       </div>
     </div>

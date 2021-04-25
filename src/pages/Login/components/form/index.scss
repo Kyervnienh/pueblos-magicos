@@ -15,7 +15,7 @@
 }
 
 .FormWrap {
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,13 +24,14 @@
   }
 }
 
-.Icon {
+.IconSignIn {
   margin-left: 32px;
   margin-top: 32px;
   text-decoration: none;
   color: #ffbf69;
   font-weight: 700;
   font-size: 32px;
+  display: inline;
 
   @media screen and (max-width: 480px) {
     margin-left: 16px;

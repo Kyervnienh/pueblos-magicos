@@ -4,7 +4,7 @@ import './index.scss'
 
 function Filter(props) {
 
-    const [state, setState] = React.useState('');
+    const [state, setState] = React.useState([]);
 
     const towns = dataTows.filter(t => {
         for (let k in Object.keys(t)){

@@ -52,7 +52,7 @@
 .Bars {
     display: none;
     color: #808080;
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 1080px) {
         display: block;
         position: absolute;
         top: 0;
@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     margin-right: 34px;
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 1080px) {
         display: none;
     }
 }
@@ -80,7 +80,7 @@
 .NavBtnLogIn {
     display: flex;
     align-items: center;
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 1080px) {
         display: none;
     }
 }
@@ -88,17 +88,18 @@
 .NavBtnLinkLogIn {
     border-radius: 30px;
     background: #ffff;
-    padding: 10px 22px;
+    padding: 12px 22px;
     text-align: center;
     color: #000000;
+    white-space: pre;
     outline: none;
     border: 2px solid #808080;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     /* Second Nav */
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 0px;
+    margin-right: 10px;
     &:hover {
         transition: all 0.2s ease-in-out;
         background: #808080;
@@ -109,7 +110,7 @@
 .NavBtnSignUp {
     display: flex;
     align-items: center;
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 1080px) {
         display: none;
 }
 }
