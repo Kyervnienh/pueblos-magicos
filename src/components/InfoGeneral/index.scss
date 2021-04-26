@@ -1,0 +1,27 @@
+.ContainerInfoGeneral {
+    padding: 0.2rem calc((100vw - 1000px) / 2);
+    display: flex;
+    align-items: center;
+}
+.titleGeneral {
+    font-family: 'Roboto', sans-serif;
+    color: #7f7f7f;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 2rem;
+}
+
+.infoSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.imgStyle {
+    height: 350px; 
+    width: 500px;
+    @media (max-width: 768px) {
+        height: 300px; 
+        width: 300px;
+    }
+}

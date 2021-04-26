@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
-import {Link as LinkS} from 'react-scroll';
-import { Link as LinkR } from 'react-router-dom';
+import { Link as Link } from 'react-router-dom';
 import './index.scss';
 
 const Sidebar = ({isOpen, toggle}) => {
@@ -14,24 +13,24 @@ const Sidebar = ({isOpen, toggle}) => {
                     </div>
                     <div className="SidebarWrapper">
                         <ul className="SidebarMenu">
-                            <LinkS className="SidebarLink" to="/pueblosmagicos">
+                            <Link className="SidebarLink" to="/pueblosmagicos">
                                 Pueblos Mágicos
-                            </LinkS>
-                            <LinkS className="SidebarLink" to="/pricing">
+                            </Link>
+                            <Link className="SidebarLink" to="/pricing">
                                 Pricing
-                            </LinkS>
-                            <LinkS className="SidebarLink" to="/comunidad">
+                            </Link>
+                            <Link className="SidebarLink" to="/comunidad">
                                 Comunidad
-                            </LinkS>
-                            <LinkS className="SidebarLink" to="/soporte">
+                            </Link>
+                            <Link className="SidebarLink" to="/soporte">
                                 Soporte
-                            </LinkS>
+                            </Link>
                         </ul>
                         <div className="SideBtnWrap">
-                            <LinkR className="SidebarRouteLogIn" to="/iniciarsesion">Iniciar Sesión</LinkR>
+                            <Link className="SidebarRouteLogIn" to="/iniciarsesion">Iniciar Sesión</Link>
                         </div>
                         <div className="SideBtnWrap">
-                        <LinkR className="SidebarRouteSignUp" to="registrate">Regístrate</LinkR>
+                        <Link className="SidebarRouteSignUp" to="registrate">Regístrate</Link>
                         </div>
                     </div>
     
