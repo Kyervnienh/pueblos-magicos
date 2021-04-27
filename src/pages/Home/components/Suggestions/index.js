@@ -7,9 +7,13 @@ import './index.scss';
 /**
  * Componente para mostrar las ultimas 3 recomendaciones realizadas
  */
-const UltimasRecomendaciones = () => {
+const SuggestionsComponent= () => {
 
     let temp = dataTows.slice(-3,dataTows.length);
+
+    const exampleAction = (name) => {
+            console.log(`Se seleccionó ${name}`);
+    }
 
     return ( 
         <div>
@@ -17,11 +21,12 @@ const UltimasRecomendaciones = () => {
             <div className="cardContainer">
                 {temp.map(town => (
                     <CardComponent 
-                        nombre={town.name}
-                        estado={town.state}
+                        name={town.name}
+                        state={town.state}
                         pts={town.pts}
                         img={town.img}
                         key={town.id}
+                        action={() => exampleAction(town.name)}
                     />
                 ))}
             </div>
@@ -29,4 +34,4 @@ const UltimasRecomendaciones = () => {
      );
 }
  
-export default UltimasRecomendaciones;
+export default SuggestionsComponent;

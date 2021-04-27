@@ -1,37 +1,58 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './index.scss';
 import star from '../../assets/icons/star.svg';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
+import PropTypes from 'prop-types';
 
 const CardComponent = (
     {
         img = 'https://imparcialoaxaca.mx/wp-content/uploads/2018/07/mas-de-100-pueblos-magicos-opcion-para-visitar-estas-vacaciones.jpg', 
         pts = '4.5', 
-        nombre = 'Villa del carbón', 
-        estado = 'Estado de México', 
+        name = 'Villa del carbón', 
+        state = 'Estado de México', 
         action = function(){
             console.log('click')
         }
     }) => {
     return ( 
-        <div className="card">
-            <img src={img} className="card-img-top" alt="..." />
-            <div className="card-body">
+        <Fragment>
+        <Card className="card">
+            <Card.Img variant="top" className="card-img-top" src={img} alt="..."  />
+            <Card.Body>
                 <div>
-                    <div className="puntuacion">
+                    <div className="score">
                         <img src={star}     className="icon"
-                        alt={nombre}
-                        />
-                         <p className="calificacion">{pts}</p>
+                            alt={name}
+                            />
+                        <Card.Text className="cal">
+                           {pts}
+                        </Card.Text>
                     </div>
-                    <p className="nombre">{nombre}</p>
-                    <p className="estado">{estado}</p>
+                    <Card.Title className="name">
+                        {name}
+                    </Card.Title>
+                    <Card.Text className="state">
+                        {state}
+                    </Card.Text>
                 </div>
                 <div className="circule">
-                    <button type="button" className="btn" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <Button className="btn" type="button" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
                 </div>
-            </div>
-        </div>
+            </Card.Body>
+            </Card>
+
+        </Fragment>
      );
 }
  
+CardComponent.propTypes = {
+    img: PropTypes.string.isRequired,
+    pts: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    action: PropTypes.func.isRequired,
+}
+
+
 export default CardComponent;
