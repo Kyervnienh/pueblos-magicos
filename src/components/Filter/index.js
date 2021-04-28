@@ -1,28 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { dataTows } from '../../fixtures/dataTownsExample.fixture';
 import './index.scss';
 import { Button, Container, Form, Row } from 'react-bootstrap';
+import CardComponent from '../Card';
 
-const Filter = () => {
+const Filter = (props) => {
 
   const [state, setState] = React.useState('');
 
-  const towns = dataTows.filter(t => {
-    for (let k in Object.keys(t)) {
-      if (Object.keys(t)[k] === 'state') return t
-    }
-  })
-
-  const handleSubmitCourse = (e) => {
-    alert("Estado seleccionado: " + state);
-    e.preventDefault();
-  }
+  useEffect(() => {
+    setState(uniqueState[0].state)
+  },[]);
 
   const handleChangeTown = (e) => {
-    setState(e.target.value);
+    setState(e.target.parentNode.firstChild.value);
   };
 
-  const filterDropdown = towns.filter( result => {
+  const filterDropdown = dataTows.filter(result => {
     return result.state === state;
   });
 
@@ -42,34 +36,42 @@ const Filter = () => {
     return unique;
   }
 
-  const uniqueState = getUnique(towns, "state");
+  const uniqueState = getUnique(dataTows, "state");
 
+  const exampleAction = (name) => {
+    console.log(`Se seleccionó ${name}`);
+  }
 
   return (
     <>
       <Container className='cont'>
         <Form>
           <Row className='filter'>
-            <Form.Control as="select" custom className='filter-select' onChange={handleChangeTown}>
-              {uniqueState.map(town => (
+            <Form.Control as="select" custom className='filter-select'>
+              {uniqueState.map(town => 
                 <option value={town.state} key={town.state}>
                   {town.state}
                 </option>
-              ))}
+              )}
             </Form.Control>
                   |
-            <Button className="btn" type="button" onClick={handleSubmitCourse}>Buscar</Button>
+            {props.children ? props.children : <Button className="btn" type="button" onClick={handleChangeTown}>Buscar</Button>}
           </Row>
         </Form>
       </Container>
-      <div>
+      {props.children ? '' : <div className="cardContainer">
         {filterDropdown.map(town => (
-          <div style={{ margin: "10px" }} key={town.name}>
-            {town.name}
-            <br />
-          </div>
+          <CardComponent
+            name={town.name}
+            state={town.state}
+            pts={town.pts}
+            img={town.img}
+            key={town.id}
+            action={() => exampleAction(town.name)}
+          />
         ))}
-      </div> 
+      </div>}
+      
     </>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Menu';
 import Footer from '../../components/Footer';
@@ -38,7 +39,9 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Slider />
-      <Filter />
+      <Filter>
+      <Link to="./search"><Button className="btn" type="button">Buscar</Button></Link>
+      </Filter>
       <SuggestionsComponent />
       <IntroduccionRecomendaciones />
       <Container className="p-3">
