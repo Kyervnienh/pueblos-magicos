@@ -3,7 +3,7 @@ import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Menu';
 import Footer from '../../components/Footer';
 import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
-import UltimasRecomendaciones from './components/UltimasRecomendaciones';
+import SuggestionsComponent from './components/Suggestions/index';
 import Slider from '../../components/Slider';
 import Filter from '../../components/Filter';
 
@@ -39,7 +39,7 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Slider />
       <Filter />
-      <UltimasRecomendaciones />
+      <SuggestionsComponent />
       <IntroduccionRecomendaciones />
       <Container className="p-3">
         <Jumbotron>
