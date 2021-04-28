@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
 const SignUp = () => {
+    const [type, setType] = useState('input');
+
+    const showHide = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setType(type === 'input' ? 'password' : 'input');
+     };
     return (
         <>
         <div className="Container">
@@ -15,10 +22,11 @@ const SignUp = () => {
                         <input className="form-control"/>
                         <label className="FormLabel" htmlFor="exampleInputEmail1">Correo Electrónico</label>
                         <input className="form-control"/>
-                        <label className="FormLabel" type="password" required>Nombre Completo</label>
+                        <label className="FormLabel"required>Nombre Completo</label>
                         <input className="form-control"/>
                         <label className="FormLabel">Contraseña</label>
-                        <input className="form-control" type="password" required/>
+                        <input className="form-control" type={type} required/>
+                        <span className="password_show" onClick={showHide}>{type === 'input' ? 'Hide' : 'Show'}</span>
                         <button className="FormButton">Regístrate</button>
                         <span className="TextSignUp">¿Tienes cuenta? <Link to="iniciarsesion">Inicia sesión</Link></span>
                     </form>

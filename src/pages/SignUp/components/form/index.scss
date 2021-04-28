@@ -5,6 +5,8 @@
     list-style-type: none;
 }
 
+$secondary: #727272;
+
 .Container {
     min-height: 692;
     position: fixed;
@@ -112,4 +114,14 @@
     color: #808080;
     font-size: 14px;
     background: #fff;
+}
+.password_show {
+    background: #808080;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: .8em;
+    position: relative;
+    text-align: center;
 }
