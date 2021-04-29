@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import img from '../../assets/pueblos.jpg';
 import Image from 'react-bootstrap/Image';
 import PropTypes from 'prop-types';
@@ -10,14 +10,12 @@ const BannerComponent = (
     }
 ) => {
     return (
-        <Fragment>
         <div className="baneer">
             <Image src={img} className="imgBack"/>
             <div className="centrado">
                 <h1 data-text={label} className="label">{label}</h1>
             </div>
         </div>
-        </Fragment>
     )
 }
 
