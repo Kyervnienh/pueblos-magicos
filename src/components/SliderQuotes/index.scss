@@ -1,0 +1,30 @@
+.title{
+    font-family: 'Roboto', sans-serif;
+    color: #7F7F7F;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.hSiCVM {
+    display: none;
+}
+
+.bSWeAW {
+    display: none;
+}
+.cetQhm .sc-gKckTs {
+    background-color: rgba(236, 188, 98, 0.5);
+    box-shadow: 0 0 1px 3px rgb(255, 191, 96);
+   
+}
+
+.cetQhm{
+
+    &:active {
+              background-color: rgba(236, 188, 98, 0.5);
+    box-shadow: 0 0 1px 3px rgb(255, 191, 96);
+    }   
+}
+
+
