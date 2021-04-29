@@ -1,6 +1,9 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import './index.scss';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const InfoAttraction = (
     {
@@ -14,28 +17,24 @@ const InfoAttraction = (
     }
     ) => {
     return (
-        <div className="table">
-            <Table responsive>
-                <tbody>
-                   <tr>
-                       <td>
-                           <h2 className="titleAtraction">{attractionName}</h2>
-                           <p className="textDescription">{info}</p>
-                       </td>
-                       <td>
-                           <img src={img} alt={attractionName} className="imgStyle"></img>
-                       </td>
-                   </tr>
-                   <tr>
-                       <td>
-                           <h5 className="textDescription">Costo: {cost}</h5>
-                           <h5 className="textDescription">Distancia desde el centro del pueblo: {distance}</h5>
-                           <h5 className="textDescription">Tipo de atracción: {type}</h5>
-                       </td>
-                   </tr>
-                </tbody>
-            </Table>
-        </div>
+        <Container className="table">
+            <Row>
+                <Col>
+                    <h2 className="titleAtraction">{attractionName}</h2>
+                    <p className="textDescription">{info}</p>
+                </Col>
+                <Col>
+                    <img src={img} alt={attractionName} className="imgStyle"></img>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h5 className="textDescription">Costo: {cost}</h5>
+                    <h5 className="textDescription">Distancia desde el centro del pueblo: {distance}</h5>
+                    <h5 className="textDescription">Tipo de atracción: {type}</h5>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 export default InfoAttraction;

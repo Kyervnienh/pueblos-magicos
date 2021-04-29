@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import './index.scss';
 
 const SignUp = () => {
@@ -12,27 +16,37 @@ const SignUp = () => {
      };
     return (
         <>
-        <div className="Container">
             <Link className="IconSignUp" to="/">TURI</Link>
-            <div className="FormWrapSignUp">
-                <div className="FormContent">
-                    <form action="#" className="FormSignUp">
+            <div className="FormSignUp">
+                    <Form>
                         <h1 className="titleSignUp">Regístrate</h1>
-                        <label className="FormLabel" htmlFor="exampleInputEmail1">Nombre de usuario</label>
-                        <input className="form-control"/>
-                        <label className="FormLabel" htmlFor="exampleInputEmail1">Correo Electrónico</label>
-                        <input className="form-control"/>
-                        <label className="FormLabel"required>Nombre Completo</label>
-                        <input className="form-control"/>
-                        <label className="FormLabel">Contraseña</label>
-                        <input className="form-control" type={type} required/>
-                        <span className="password_show" onClick={showHide}>{type === 'input' ? 'Hide' : 'Show'}</span>
-                        <button className="FormButton">Regístrate</button>
-                        <span className="TextSignUp">¿Tienes cuenta? <Link to="iniciarsesion">Inicia sesión</Link></span>
-                    </form>
-                </div>
+                        <Form.Group controlId="formBasicUserName">
+                            <Form.Label>Nombre de usuario</Form.Label>
+                            <Form.Control type="email" placeholder="Ingresa tu nombre de usuario" />
+                        </Form.Group>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Correo Electrónico</Form.Label>
+                            <Form.Control type="email" placeholder="Ingresa tu correo electrónico" />
+                        </Form.Group>
+                        <Form.Group controlId="formBasicFullName">
+                            <Form.Label>Nombre</Form.Label>
+                            <Form.Control type="email" placeholder="Ingresa tu nombre completo" />
+                        </Form.Group>
+                        <Form.Row>
+                            <Form.Group as={Col} controlId="formBasicPassword">
+                                <Form.Label>Contraseña</Form.Label>
+                                <Form.Control type={type} placeholder="Contraseña" />
+                            </Form.Group>
+                            <Form.Group className="showHide" as={Col} controlId="formBasicShowPassword">
+                                <span className="password_show" onClick={showHide}>{type === 'input' ? 'Hide' : 'Show'}</span>
+                            </Form.Group>
+                        </Form.Row>
+                        <button className="FormButtonSignUp" type="submit">Regístrate</button>
+                            <Form.Group controlId="formBasicSignInOption">
+                                <span className="TextSignUp">¿Tienes cuenta? <Link to="iniciarsesion"> Inicia sesión</Link></span>
+                            </Form.Group>
+                    </Form>
             </div>
-        </div>
         </>
     )
 }

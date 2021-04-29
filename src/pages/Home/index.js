@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar';
-import Navbar from '../../components/Menu';
+import NavbarMenu from '../../components/Menu';
 import Footer from '../../components/Footer';
 import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
 import SuggestionsComponent from './components/Suggestions/index';
@@ -35,7 +35,7 @@ const Home = () => {
   };
   return (
     <>
-      <Navbar toggle={toggle} />
+      <NavbarMenu toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Slider />
       <Filter />
