@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Menu';
 import Footer from '../../components/Footer';
 import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
 import SuggestionsComponent from './components/Suggestions/index';
 import Slider from '../../components/Slider';
-import Filter from '../../components/Filter';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
@@ -39,9 +37,6 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Slider />
-      <Filter>
-      <Link to="./search"><Button className="btn" type="button">Buscar</Button></Link>
-      </Filter>
       <SuggestionsComponent />
       <IntroduccionRecomendaciones />
       <Container className="p-3">

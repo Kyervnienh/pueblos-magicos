@@ -4,19 +4,21 @@ import './index.scss';
 import { Button, Container, Form, Row } from 'react-bootstrap';
 import CardComponent from '../Card';
 
-const Filter = (props) => {
+const Filter = () => {
 
   const [state, setState] = React.useState('');
 
   useEffect(() => {
-    setState(uniqueState[0].state)
+    setState('Todos los pueblos');
   },[]);
 
-  const handleChangeTown = (e) => {
+  const handleChangeState = (e) => {
     setState(e.target.parentNode.firstChild.value);
   };
 
   const filterDropdown = dataTows.filter(result => {
+    if (state === 'Todos los pueblos') return true;
+
     return result.state === state;
   });
 
@@ -48,6 +50,9 @@ const Filter = (props) => {
         <Form>
           <Row className='filter'>
             <Form.Control as="select" custom className='filter-select'>
+              <option>
+                Todos los pueblos
+              </option>
               {uniqueState.map(town => 
                 <option value={town.state} key={town.state}>
                   {town.state}
@@ -55,11 +60,11 @@ const Filter = (props) => {
               )}
             </Form.Control>
                   |
-            {props.children ? props.children : <Button className="btn" type="button" onClick={handleChangeTown}>Buscar</Button>}
+            <Button className="btn" type="button" onClick={handleChangeState}>Buscar</Button>
           </Row>
         </Form>
       </Container>
-      {props.children ? '' : <div className="cardContainer">
+      <div className="cardContainer">
         {filterDropdown.map(town => (
           <CardComponent
             name={town.name}
@@ -70,8 +75,7 @@ const Filter = (props) => {
             action={() => exampleAction(town.name)}
           />
         ))}
-      </div>}
-      
+      </div>
     </>
   )
 }
