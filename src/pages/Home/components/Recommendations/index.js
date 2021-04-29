@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
-const IntroduccionRecomendaciones = () => {
+const Recommendations = () => {
   return (
     <div>
       <h1 className="title">Conoce todas nuestras recomendaciones</h1>
@@ -43,4 +43,4 @@ const IntroduccionRecomendaciones = () => {
   );
 };
 
-export default IntroduccionRecomendaciones;
+export default Recommendations;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Menu';
 import Footer from '../../components/Footer';
-import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
+import Recommendations from './components/Recommendations';
 import SuggestionsComponent from './components/Suggestions/index';
 import Slider from '../../components/Slider';
 import Filter from '../../components/Filter';
@@ -19,7 +19,7 @@ const Home = () => {
       <Slider />
       <Filter />
       <SuggestionsComponent />
-      <IntroduccionRecomendaciones />
+      <Recommendations />
       <Footer />
     </>
   );
