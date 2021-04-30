@@ -40,7 +40,7 @@ const CardComponent = (
                 </div>
                 <div className="circule">
                     <Link to={`/pueblosmagicos/${id}`} >
-                        <Button className="btn" type="button" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
+                        <Button className="btn" type="button" onClick={() => action(console.log(id))}><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
                     </Link>
                 </div>
             </Card.Body>

@@ -3,7 +3,6 @@ import Footer from '../../components/Footer';
 import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
 import SuggestionsComponent from './components/Suggestions/index';
 import Slider from '../../components/Slider';
-import Filter from '../../components/Filter';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
@@ -32,7 +31,6 @@ const Home = () => {
     <>
     <NavSidebar/>
       <Slider />
-      <Filter />
       <SuggestionsComponent />
       <IntroduccionRecomendaciones />
       <Container className="p-3">
