@@ -4,6 +4,7 @@ import star from '../../assets/icons/star.svg';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import PropTypes from 'prop-types';
+import { NavLink as Link } from "react-router-dom";
 
 const CardComponent = (
     {
@@ -11,6 +12,7 @@ const CardComponent = (
         pts = '4.5', 
         name = 'Villa del carbón', 
         state = 'Estado de México', 
+        id = 1,
         action = function(){
             console.log('click')
         }
@@ -37,7 +39,9 @@ const CardComponent = (
                     </Card.Text>
                 </div>
                 <div className="circule">
-                    <Button className="btn" type="button" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
+                    <Link to={`/pueblosmagicos/${id}`} >
+                        <Button className="btn" type="button" onClick={() => action()}><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
+                    </Link>
                 </div>
             </Card.Body>
             </Card>
@@ -51,6 +55,7 @@ CardComponent.propTypes = {
     pts: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     action: PropTypes.func.isRequired,
 }
 

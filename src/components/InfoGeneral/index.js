@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -32,6 +33,12 @@ const InfoGeneral = (
                 </Row>
         </Container>
     )
+}
+
+InfoGeneral.propTypes = {
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    infoState: PropTypes.string.isRequired,
 }
 
 export default InfoGeneral;

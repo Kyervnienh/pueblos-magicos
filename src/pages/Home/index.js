@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Sidebar from '../../components/Sidebar';
-import NavbarMenu from '../../components/Menu';
 import Footer from '../../components/Footer';
 import IntroduccionRecomendaciones from './components/IntroduccionRecomendaciones';
 import SuggestionsComponent from './components/Suggestions/index';
@@ -11,6 +9,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import NavSidebar from '../../components/NavSidebar';
 
 const ExampleToast = ({ children }) => {
   const [show, toggleShow] = useState(true);
@@ -29,14 +28,9 @@ const ExampleToast = ({ children }) => {
 };
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
-      <NavbarMenu toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+    <NavSidebar/>
       <Slider />
       <Filter />
       <SuggestionsComponent />

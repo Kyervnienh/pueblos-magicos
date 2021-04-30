@@ -1,15 +1,15 @@
 import React from 'react';
-import OverviewGeneral from './components/OverviewGeneral';
-import NavbarMenu from '../../components/Menu';
 import InfoAttractions from './components/InfoAttractions';
+import NavSidebar from '../../components/NavSidebar';
+import SliderQuotes from '../../components/SliderQuotes';
 
-const DescriptionPage = () => {
-    let query = 'Valle de Bravo';
+const DescriptionPage = ({ match }) => {
+    let query = match.params.id;
     return (
         <div>
-            <NavbarMenu/>
-            <OverviewGeneral/>
+            <NavSidebar/>
             <InfoAttractions town={query} />
+            <SliderQuotes/>
         </div>
     )
 }

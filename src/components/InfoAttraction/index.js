@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table';
+import PropTypes from 'prop-types';
 import './index.scss';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -37,4 +37,14 @@ const InfoAttraction = (
         </Container>
     )
 }
+
+InfoAttraction.propTypes = {
+    attractionName: PropTypes.string.isRequired,
+    info: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    cost: PropTypes.string.isRequired,
+    distance: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+}
+
 export default InfoAttraction;

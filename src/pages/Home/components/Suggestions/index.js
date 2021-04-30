@@ -26,6 +26,7 @@ const SuggestionsComponent= () => {
                         pts={town.pts}
                         img={town.img}
                         key={town.id}
+                        id={town.id}
                         action={() => exampleAction(town.name)}
                     />
                 ))}

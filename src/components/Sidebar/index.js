@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 import { Link as Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -42,5 +43,9 @@ const Sidebar = ({isOpen, toggle}) => {
     }
     return null;
 }
+
+Sidebar.propTypes = {
+	toggle: PropTypes.func.isRequired,
+  }
 
 export default Sidebar

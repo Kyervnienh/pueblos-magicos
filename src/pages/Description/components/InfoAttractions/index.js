@@ -1,22 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { dataTows } from '../../../../fixtures/dataTownsExample.fixture';
-import InfoAttraction from '../../../../components/InfoAttraction'
+import InfoAttraction from '../../../../components/InfoAttraction';
+import InfoGeneral from '../../../../components/InfoGeneral';
+import BannerComponent from '../../../../components/Banner';
 
 const InfoAttractions = (props) => {
+  let townId = parseInt(props.town)
     const filterTown = query => {
         return dataTows.filter((town) =>
-          town.name === query
+          town.id === query
         );
       }
 
-      let filteredTown = filterTown(props.town)[0];
+      let filteredTown = filterTown(townId)[0];
 
       let attr = filteredTown.attractions;
+      let name = filterTown(townId)[0].name;
+      let img = filterTown(townId)[0].img;
+      let infoState = filterTown(townId)[0].infoState;
 
     return (
         <>
-            <div>
+            <>
+            <BannerComponent label = {name}/>
+            <InfoGeneral
+              name = {name}
+              img = {img}
+              infoState = {infoState}
+            />
                 {attr.map(attraction => (
                     <InfoAttraction
                     attractionName = {attraction.name}
@@ -27,17 +39,13 @@ const InfoAttractions = (props) => {
                     type = {attraction.type}
                     key = {attraction.name} />
                 ))}
-            </div>
+            </>
         </>
     )
-}
-
-InfoAttractions.propTypes = {
-    town: PropTypes.string,
-  }
+} 
   
-InfoAttractions.defaultProps = {
-    town: 'Valle de Bravo'
-  }
+  InfoAttractions.propTypes = {
+    town: PropTypes.string.isRequired,
+}
 
 export default InfoAttractions;
