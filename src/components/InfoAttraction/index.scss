@@ -14,12 +14,12 @@
     font-family: 'Roboto', sans-serif;
     color: #7f7f7f;
     font-weight: bold;
-    margin-top: 20px;
 }
 
-.imgStyle {
-    height: 300px; 
-    width: 400px;
+.imgStyleSpecific {
+    height: 400px; 
+    width: 500px;
+    float: right;
     @media (max-width: 768px) {
         height: 300px; 
         width: 300px;

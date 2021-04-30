@@ -36,7 +36,7 @@ const SignUp = () => {
                                 <Form.Control type={type} placeholder="Contraseña" />
                             </Form.Group>
                             <Form.Group className="showHide" as={Col} controlId="formBasicShowPassword">
-                                <span className="password_show" onClick={showHide}>{type === 'input' ? 'Hide' : 'Show'}</span>
+                                <span className="password_show" onClick={showHide}>{type === 'input' ? 'Ocultar' : 'Mostrar'}</span>
                             </Form.Group>
                         </Form.Row>
                         <button className="FormButtonSignUp" type="submit">Regístrate</button>

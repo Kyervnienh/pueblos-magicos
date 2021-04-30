@@ -20,6 +20,7 @@
 .imgStyle {
     height: 350px; 
     width: 500px;
+    float: right;
     @media (max-width: 768px) {
         height: 300px; 
         width: 300px;

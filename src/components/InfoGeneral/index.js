@@ -21,8 +21,6 @@ const InfoGeneral = (
                 <Row>
                     <Col>
                         <img className="imgStyle" src={img} alt={name}></img>
-                    </Col>
-                    <Col>
                         <p className="textDescription">{infoState}</p>
                     </Col>
                 </Row>
