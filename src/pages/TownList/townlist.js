@@ -6,6 +6,7 @@ import Filter from '../../components/Filter';
 import CardComponent from '../../components/Card'
 import Pagination from './components/Pagination';
 import Footer from '../../components/Footer';
+import './index.scss';
 
 const TownList = () => {
     const [state, setState] = React.useState('Todos los pueblos');
