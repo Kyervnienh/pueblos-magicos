@@ -8,7 +8,7 @@ const CommentHeader = () => {
              <p class="text">Dejanos un comentario </p>
                 <section className="section-header">
                     <div className="circule">
-                     <Button className="btn" type="button"><i className="fa fa-angle-right" aria-hidden="true"></i></Button>
+                     <Button className="btn" type="button"><i className="fa fa-comments" aria-hidden="true"></i></Button>
                     </div>
                     <div>
                     <p className="questions">¿Te gusto nuestra  reseña?</p>
