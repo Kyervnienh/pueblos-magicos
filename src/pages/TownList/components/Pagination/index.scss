@@ -1,0 +1,33 @@
+.paginationContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+    color: #7F7F7F;
+
+    @media (min-width: 768px) {
+        margin: 40px;
+    }
+
+    > p {
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    .paginationItem {
+        margin: 1px;
+        background: #fff;
+        color: #7F7F7F;
+        border:0;
+
+        &:hover {
+            background: #FFBF69;
+            color: #fff;
+        }
+
+        &.currentPage {
+            background: #FFBF69;
+            color: #fff;
+        }
+    }
+}
