@@ -1,64 +1,33 @@
-import React, {useState, useEffect} from 'react';
-import {
-Nav,
-NavLink,
-Bars,
-NavMenu,
-NavBtnSignIn,
-NavBtnLinkSignIn,
-NavBtnSignUp,
-NavBtnLinkSignUp,
-NavBtns,
-NavbarContainer,
-NavLogo
-} from './NavbarElements';
+import React from 'react';
+import { FaBars } from 'react-icons/fa';
+import { NavLink as Link } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import './index.scss';
 
-const Navbar = ({toggle}) => {
-	const [scrollNav, setScrollNav] = useState(false);
-
-	const changeNav = () => {
-		if(window.scrollY >= 80) {
-			setScrollNav(true);
-		} else {
-			setScrollNav(false);
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', changeNav);
-	}, []);
+const NavbarMenu = ({toggle}) => {
 return (
 	<>
-	<Nav scrollNav={scrollNav}>
-        <NavbarContainer >
-            <NavLogo to='/'>TURI</NavLogo>
-            <Bars onClick={toggle} />
-        </NavbarContainer>
-		<NavMenu>
-		<NavLink to='/pueblosmagicos' activeStyle>
-			Pueblos Mágicos
-		</NavLink>
-		<NavLink to='/precios' activeStyle>
-			Precios
-		</NavLink>
-		<NavLink to='/comunidad' activeStyle>
-			Comunidad
-		</NavLink>
-		<NavLink to='/soporte' activeStyle>
-			Soporte
-		</NavLink>
-		</NavMenu>
-        <NavBtns>
-		<NavBtnSignIn>
-		<NavBtnLinkSignIn to='/iniciarsesion'>Iniciar sesión</NavBtnLinkSignIn>
-		</NavBtnSignIn>
-        <NavBtnSignUp>
-		<NavBtnLinkSignUp to='/registrate'>Regístrate</NavBtnLinkSignUp>
-		</NavBtnSignUp>
-        </NavBtns>
-	</Nav>
+	<Navbar>
+		<Link className="NavLogoSignUp" to='/'>TURI</Link>
+		<FaBars className="Bars" onClick={toggle} ></FaBars>
+		<div className="NavMenu">
+			<Nav.Link className="NavLink" href="/pueblosmagicos">Pueblos Mágicos</Nav.Link>
+			<Nav.Link className="NavLink" href="/precios">Precios</Nav.Link>
+			<Nav.Link className="NavLink" href="/comunidad">Comunidad</Nav.Link>
+			<Nav.Link className="NavLink" href="/soporte">Soporte</Nav.Link>
+		</div>
+		<nav className="NavBtns">
+			<nav className="NavBtnLogIn">
+				<Link className="NavBtnLinkLogIn" to='/iniciarsesion'>Iniciar Sesion</Link>
+			</nav>
+			<nav className="NavBtnSignUp">
+				<Link className="NavBtnLinkSignUp" to='/registrate'>Regístrate</Link>
+			</nav>
+		</nav>
+		</Navbar>
 	</>
 );
 };
 
-export default Navbar;
+export default NavbarMenu;

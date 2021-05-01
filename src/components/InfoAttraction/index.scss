@@ -1,0 +1,27 @@
+.titleAtraction {
+    font-family: 'Roboto', sans-serif;
+    color: #7f7f7f;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.table {
+    margin-top: 100px;
+}
+
+
+.textDescription {
+    font-family: 'Roboto', sans-serif;
+    color: #7f7f7f;
+    font-weight: bold;
+}
+
+.imgStyleSpecific {
+    height: 400px; 
+    width: 500px;
+    float: right;
+    @media (max-width: 768px) {
+        height: 300px; 
+        width: 300px;
+    }
+}

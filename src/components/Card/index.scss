@@ -22,7 +22,7 @@
         justify-content: space-between;
         align-items: center;
     
-        .nombre {
+        .name {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             color: #7F7F7F;
@@ -36,7 +36,7 @@
             }
         }
 
-        .estado{
+        .state{
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             color: #7F7F7F;
@@ -49,11 +49,11 @@
             }
         }
 
-        .puntuacion {
+        .score {
             display: flex;
             flex-direction: row;
 
-            >.calificacion{
+            >.cal{
                 font-family: 'Roboto', sans-serif;
                 font-size: 15px;
                 color: #7F7F7F;
@@ -87,6 +87,12 @@
         .btn {
             width: auto; 
             height: auto;
+            border-color: #FFBF69;
+            background-color: #FFBF69;
+
+            &:hover {
+                background-color: #FFBF69;
+            }
         }
     }
 }

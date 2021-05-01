@@ -5,13 +5,11 @@
     list-style-type: none;
 }
 
-$txt-gray: #7F7F7F;
-
 .cont {
-    height: 50px;
     border-radius: 28.5px;
-    color: $txt-gray;
+    color: #7F7F7F;
     font-size: 20px;
+    text-align: center;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transform: translateY(-25px);
@@ -21,25 +19,41 @@ $txt-gray: #7F7F7F;
     }
 }
 
-.form-select {
-    border: none;
-    width: 180px;
-    color: $txt-gray;
-    font-size: 16px;
-    font-weight: bold;
+.filter {
+    height: 50px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 
-    &:focus {
-        outline: none;
+    @media (min-width: 768px){
+        margin: auto;
     }
-}
 
-.btn {
-    background: #FFBF69;
-    width: 180px;
-    height: 35px;
-    border-radius: 20px;
-    line-height: 1;
-    color: $txt-gray;
-    font-size: 16px;
-    font-weight: bold;
+    .filter-select {
+        border: none;
+        max-width: 50%;
+
+        @media (min-width: 768px){
+            max-width: 270px;
+        }
+    }
+    
+    .btn {
+        background: #FFBF69;
+        width: 120px;
+        height: 35px;
+        border-radius: 20px;
+        border: none;
+        color: #7F7F7F;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #FFBF69;
+        }
+
+        @media (min-width: 768px){
+            width: 180px;
+        }
+    }
 }

@@ -1,37 +1,51 @@
-import React from 'react'
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRouteSignIn, SidebarRouteSignUp } from './SidebarElements';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { FaTimes } from 'react-icons/fa';
+import { Link as Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import './index.scss';
 
 const Sidebar = ({isOpen, toggle}) => {
-
-    return (
-        <SidebarContainer isOpen={isOpen} onClick={toggle}>
-            <Icon onClick={toggle}>
-                <CloseIcon />
-            </Icon>
-            <SidebarWrapper>
-                <SidebarMenu>
-                    <SidebarLink to="pueblosmagicos" onClick={toggle}>
-                        Pueblos Magicos
-                    </SidebarLink>
-                    <SidebarLink to="pricing" onClick={toggle}>
-                        Pricing
-                    </SidebarLink>
-                    <SidebarLink to="comunidad" onClick={toggle}>
-                        Comunidad
-                    </SidebarLink>
-                    <SidebarLink to="soporte" onClick={toggle}>
-                        Soporte
-                    </SidebarLink>
-                </SidebarMenu>
-                <SideBtnWrap>
-                    <SidebarRouteSignIn to="iniciarsesion">Iniciar sesión</SidebarRouteSignIn>
-                </SideBtnWrap>
-                <SideBtnWrap>
-                    <SidebarRouteSignUp to="registrate">Regístrate</SidebarRouteSignUp>
-                </SideBtnWrap>
-            </SidebarWrapper>
-        </SidebarContainer>
-    )
+    if(isOpen){
+        return (
+            <>
+                <aside className={isOpen ? "SidebarContainerClosed": null}>
+                    <Container>
+                        <div className="Icon" onClick={toggle}>
+                            <FaTimes className="CloseIcon"></FaTimes>
+                        </div>
+                        <div className="SidebarWrapper">
+                            <ul className="SidebarMenu">
+                                <Link className="SidebarLink" to="/pueblosmagicos">
+                                    Pueblos Mágicos
+                                </Link>
+                                <Link className="SidebarLink" to="/pricing">
+                                    Pricing
+                                </Link>
+                                <Link className="SidebarLink" to="/comunidad">
+                                    Comunidad
+                                </Link>
+                                <Link className="SidebarLink" to="/soporte">
+                                    Soporte
+                                </Link>
+                            </ul>
+                            <div className="SideBtnWrap">
+                                <Link className="SidebarRouteLogIn" to="/iniciarsesion">Iniciar Sesión</Link>
+                            </div>
+                            <div className="SideBtnWrap">
+                            <Link className="SidebarRouteSignUp" to="registrate">Regístrate</Link>
+                            </div>
+                        </div>
+                    </Container>
+                </aside>
+            </>
+        )
+    }
+    return null;
 }
+
+Sidebar.propTypes = {
+	toggle: PropTypes.func.isRequired,
+  }
 
 export default Sidebar
