@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const CommentHeader = () => {
     return ( 
         <div className="container comment-header">
-             <p class="text">Dejanos un comentario </p>
+             <p className="text">Dejanos un comentario </p>
                 <section className="section-header">
                     <div className="circule">
                      <Button className="btn" type="button"><i className="fa fa-comments" aria-hidden="true"></i></Button>

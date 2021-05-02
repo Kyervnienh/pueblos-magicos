@@ -4,6 +4,7 @@ import './index.scss';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import InfoAttractions from '../../pages/Description/components/InfoAttractions';
 
 const InfoAttraction = (
     {
@@ -46,5 +47,14 @@ InfoAttraction.propTypes = {
     distance: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
 }
+
+InfoAttraction.defaultProps = {
+    attractionName: "Atraccion",
+    info: "Informacion",
+    img: "imagen.jpg",
+    cost: "$0",
+    distance: "0 km",
+    type: "tipo de atrccion",
+  }
 
 export default InfoAttraction;

@@ -1,39 +1,98 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import './index.scss';
 
+const baseURL = "http://localhost:4000/users";
+
 const SignUp = () => {
     const [type, setType] = useState('input');
+    const [users, setUsers] = useState([]);
+    const [data, setData] = useState({ id: 0, name: '', username: '', email: '', password: '', isLogged: true, idComment: 0 });
+
+    useEffect(() => {
+        const getData = async () => {
+          try {
+            const response = await fetch(`${baseURL}`);
+            const data = await response.json();
+            setUsers(data);
+          } catch(error) {
+            console.error(error);
+          }
+        };
+    
+        getData();
+      }, []);
+    
 
     const showHide = (e) => {
         e.preventDefault();
         e.stopPropagation();
         setType(type === 'input' ? 'password' : 'input');
      };
+
+
+     const sendData = (event) => {
+        event.preventDefault()
+        console.log('enviando datos...' + data.name)
+    }
+
+     const handleInputChange = (event) => {
+        setData({
+            ...data,
+            [event.target.name] : event.target.value
+        })
+
+    }
+
+    const addUser = async () => {
+
+        const lastUser = users[users.length - 1];
+        const newId = lastUser.id + 1;
+        setData({...data, id : newId});
+        try {
+          const response = await fetch(baseURL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          if (!response.ok) throw new Error("Response not ok");
+    
+          const newUser = await response.json();
+
+          setUsers(users.concat([newUser]));
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      console.log(data);
+
     return (
         <>
             <Link className="IconSignUp" to="/">TURI</Link>
             <div className="FormSignUp">
-                    <Form>
+                    <Form onSubmit={addUser}>
                         <h1 className="titleSignUp">Regístrate</h1>
                         <Form.Group controlId="formBasicUserName">
                             <Form.Label>Nombre de usuario</Form.Label>
-                            <Form.Control type="email" placeholder="Ingresa tu nombre de usuario" />
+                            <Form.Control onChange={handleInputChange} type="text" placeholder="Ingresa tu nombre de usuario" name="username" />
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Correo Electrónico</Form.Label>
-                            <Form.Control type="email" placeholder="Ingresa tu correo electrónico" />
+                            <Form.Control onChange={handleInputChange} type="email" placeholder="Ingresa tu correo electrónico" name="email" />
                         </Form.Group>
                         <Form.Group controlId="formBasicFullName">
                             <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="email" placeholder="Ingresa tu nombre completo" />
+                            <Form.Control onChange={handleInputChange} type="text" placeholder="Ingresa tu nombre completo" name="name" />
                         </Form.Group>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formBasicPassword">
                                 <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type={type} placeholder="Contraseña" />
+                                <Form.Control onChange={handleInputChange} type={type} placeholder="Contraseña" name="password" />
                             </Form.Group>
                             <Form.Group className="showHide" as={Col} controlId="formBasicShowPassword">
                                 <span className="password_show" onClick={showHide}>{type === 'input' ? 'Ocultar' : 'Mostrar'}</span>

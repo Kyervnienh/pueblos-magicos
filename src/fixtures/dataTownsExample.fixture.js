@@ -148,7 +148,7 @@ export const dataTows = [
             {
                 name: 'Arcos del Sitio',
                 info: 'El acueducto de Tepotzotlán, conocido también como arcos de Xalpa o arcos del sitio, es una monumental obra levantada en la época virreinal a principios del siglo XVIII, por la comunidad jesuita que se ubicaba en el cercano Colegio de San Francisco Xavier (hoy Museo Nacional del Virreinato), en el poblado de Tepotzotlán, Estado de México. La obra llevaba el agua desde la sierra de Tepotzotlán hasta la hacienda de Xalpa. Debido a la expulsión de la orden a finales del mismo siglo, la obra quedó inconclusa, pero se retomaron los trabajos a mediados del siglo XIX. Durante su trayecto, atraviesa una cañada, en donde alcanza una profundidad de 62 metros de altura y levantan la obra cuatro niveles de arcos. La longitud total de esta obra es de 430 metros. Actualmente en la zona se estableció un parque eco turístico, que ofrece algunas actividades recreativas. Su estilo arquitectónico es Barroco.',
-                img: 'https://lh3.googleusercontent.com/proxy/sHyMdZszAoj90i7O8-0CWP6S_8RUTZyspqzWTWgAHWh3klduRYriiXSxjQKviAbh3PPwLnMhZ5Lil01qNdjcIP-4zYWQJOQFMfljyHV4uKFOhdswcHWiC5DEaVUfjQTBO8M',
+                img: 'https://viajares.es/wp-content/uploads/2019/06/mexico-museo-nacional-virreinato-teopotzolan.jpg',
                 cost: '$135',
                 distance: '32 km',
                 type: 'Parque Ecologico',   
