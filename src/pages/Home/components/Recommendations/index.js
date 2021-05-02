@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { Link as Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -34,9 +35,11 @@ const Recommendations = () => {
               arte, música, gastronomía, tradiciones y festividades.
             </p>
             <div className="text-center">
-              <Button type="button" className="btn">
-                Ir al listado
-              </Button>
+              <Link className="SidebarLink" to="/pueblosmagicos">
+                <button type="button" className="btn">
+                  Ir al listado
+                </button>
+              </Link>
             </div>
           </Col>
         </Row>
