@@ -8,13 +8,13 @@ import Footer from '../../components/Footer';
 const DescriptionPage = ({ match }) => {
     let query = match.params.id;
     return (
-        <div>
+        <>
             <NavSidebar/>
             <InfoAttractions town={query} />
             <SliderQuotes/>
             <CommentHeader />
             <Footer />
-        </div>
+        </>
     )
 }
 
