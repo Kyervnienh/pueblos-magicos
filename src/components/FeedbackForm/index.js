@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-function FeedbackForm(props) {
+function FeedbackForm({ submit, close }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -14,12 +14,8 @@ function FeedbackForm(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={handleShow} onHide={handleClose}>
+        <Modal.Header closeButton onClick={() => close({})}>
           <Modal.Title>Añade un comentario</Modal.Title>
         </Modal.Header>
         <Modal.Body>
