@@ -1,20 +1,27 @@
 import React from 'react';
 import './index.scss';
 
-const IntroduccionRecomendaciones = () => {
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
+
+const Recommendations = () => {
   return (
-    <div className="recomendaciones">
+    <div>
       <h1 className="title">Conoce todas nuestras recomendaciones</h1>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <img
+      <Container>
+        <Row xs={1} sm={1} md={1} lg={2}>
+          <Col>
+            <Image
               src="https://cdn.pixabay.com/photo/2020/12/17/04/09/guanajuato-5838206_960_720.jpg"
-              className="img-fluid rounded "
               alt="Guanajuato"
+              rounded
+              fluid
             />
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <p className="my-5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               non volutpat nulla. Sed auctor, nunc non consequat congue, dui
@@ -25,15 +32,15 @@ const IntroduccionRecomendaciones = () => {
               varius, urna est luctus nisi, vel laoreet massa diam quis magna.
             </p>
             <div className="text-center">
-              <button type="button" className="btn">
+              <Button type="button" className="btn">
                 Ir al listado
-              </button>
+              </Button>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
 
-export default IntroduccionRecomendaciones;
+export default Recommendations;
