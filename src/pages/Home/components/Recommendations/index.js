@@ -22,14 +22,16 @@ const Recommendations = () => {
             />
           </Col>
           <Col>
-            <p className="my-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              non volutpat nulla. Sed auctor, nunc non consequat congue, dui
-              nisi rhoncus augue, vitae pharetra elit mauris et odio. Sed
-              scelerisque, leo et pellentesque facilisis, leo nisl pretium arcu,
-              vel eleifend turpis enim a libero. Nullam ac magna congue, aliquam
-              nisi eget, porttitor neque. Mauris dapibus, nisi eu sollicitudin
-              varius, urna est luctus nisi, vel laoreet massa diam quis magna.
+            <p className="my-5 text-justify">
+              México es un país afortunado al estar rodeado de ríos, lagos,
+              mares, islas, cenotes, montañas, volcanes, desiertos, selvas y
+              ciudades llenas de historia. México es más que el mariachi,
+              tequila y el chile, es un país multicultural y diverso. Su cultura
+              es mágica, llamativa y alegre; llena de colores y su gente es
+              amable, generosa y hospitalaria. En “Turi” podrás encontrar
+              información relevante de cada pueblo mágicos del país, para que tú
+              solo disfrutes de sus paisajes exuberantes, aventuras extremas,
+              arte, música, gastronomía, tradiciones y festividades.
             </p>
             <div className="text-center">
               <Button type="button" className="btn">
