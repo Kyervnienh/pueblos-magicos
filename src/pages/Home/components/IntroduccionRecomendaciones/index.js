@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { Link as Link } from 'react-router-dom';
 
 const IntroduccionRecomendaciones = () => {
   return (
@@ -25,9 +26,11 @@ const IntroduccionRecomendaciones = () => {
               varius, urna est luctus nisi, vel laoreet massa diam quis magna.
             </p>
             <div className="text-center">
+            <Link className="SidebarLink" to="/pueblosmagicos">
               <button type="button" className="btn">
                 Ir al listado
               </button>
+            </Link>
             </div>
           </div>
         </div>
