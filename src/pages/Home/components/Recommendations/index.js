@@ -36,9 +36,9 @@ const Recommendations = () => {
             </p>
             <div className="text-center">
               <Link className="SidebarLink" to="/pueblosmagicos">
-                <button type="button" className="btn">
+                <Button type="button" className="btn">
                   Ir al listado
-                </button>
+                </Button>
               </Link>
             </div>
           </Col>
