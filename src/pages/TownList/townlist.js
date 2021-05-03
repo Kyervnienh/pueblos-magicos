@@ -1,18 +1,48 @@
-import React from 'react';
-import { dataTows } from '../../fixtures/dataTownsExample.fixture';
+import React, { useEffect, useState } from 'react';
 import NavSidebar from '../../components/NavSidebar';
 import Slider from '../../components/Slider';
 import Filter from '../../components/Filter';
-import CardComponent from '../../components/Card'
+import CardComponent from '../../components/Card';
 import Pagination from './components/Pagination';
 import Footer from '../../components/Footer';
 import './index.scss';
+import noDataImg from '../../assets/icons/nodata.jpg';
 
 const TownList = () => {
-    const [state, setState] = React.useState('Todos los pueblos');
-    const [currentPage, setCurrentPage] = React.useState(1);
-    const [inferiorLimit, setInferiorLimit] = React.useState(0);
-    const [superiorLimit, setSuperiorLimit] = React.useState(3);
+    const [state, setState] = useState('Todos los pueblos');
+    const [allTowns, setAllTowns] = useState([])
+    const [currentPage, setCurrentPage] = useState(1);
+    const [inferiorLimit, setInferiorLimit] = useState(0);
+    const [superiorLimit, setSuperiorLimit] = useState(3);
+
+    useEffect(() => {
+        const getTownsFilteredAPI = async () => {
+            const url = 'http://localhost:4000/datatown';
+            const response = await fetch(url);
+            const result = await response.json();
+            setAllTowns(result);
+        }
+
+        getTownsFilteredAPI();
+    }, []);
+
+    const getUnique = () => {
+        const unique = allTowns
+            //store the comparison values in array
+            .map(e => e.state)
+
+            // store the keys of the unique objects
+            .map((e, i, final) => final.indexOf(e) === i && i)
+
+            // eliminate the dead keys & store unique objects
+            .filter(e => allTowns[e])
+
+            .map(e => allTowns[e]);
+
+        return unique;
+    }
+
+    const uniqueState = getUnique();
 
     const handleChangeState = (e) => {
         setState(e.target.parentNode.firstChild.value);
@@ -21,7 +51,7 @@ const TownList = () => {
         setSuperiorLimit(3);
     };
 
-    const townsFiltered = dataTows.filter(result => {
+    const townsFiltered = allTowns.filter(result => {
         if (state === 'Todos los pueblos') return true;
 
         return result.state === state;
@@ -33,24 +63,6 @@ const TownList = () => {
         for (let i = inferiorLimit; i < superiorLimit; i++) towns.push(townsFiltered[i]);
         return towns;
     }
-
-    const getUnique = (arr, comp) => {
-        const unique = arr
-            //store the comparison values in array
-            .map(e => e[comp])
-
-            // store the keys of the unique objects
-            .map((e, i, final) => final.indexOf(e) === i && i)
-
-            // eliminate the dead keys & store unique objects
-            .filter(e => arr[e])
-
-            .map(e => arr[e]);
-
-        return unique;
-    }
-
-    const uniqueState = getUnique(dataTows, "state");
 
     const exampleAction = (name) => {
         console.log(`Se seleccionó ${name}`);
@@ -66,25 +78,39 @@ const TownList = () => {
         }
     }
 
+    const NoData = () => (
+        <div className='noData'>
+            <img src={noDataImg} alt="https://www.freepik.com/vectors/data" className='imgNoData' />
+            <p className="title">No se encontraron datos</p>
+        </div>
+    );
+
     return (
         <>
             <NavSidebar />
             <Slider />
             <Filter uniqueState={uniqueState} handleChangeState={handleChangeState} />
-            <div className="cardContainer">
-                {filterDropdown().map(town => (
-                    <CardComponent
-                        name={town.name}
-                        state={town.state}
-                        pts={town.pts}
-                        img={town.img}
-                        key={town.id}
-                        id={town.id}
-                        action={() => exampleAction(town.name)}
-                    />
-                ))}
-            </div>
-            <Pagination numberOfCards={townsFiltered.length} currentPage={currentPage} changePage={changePage} />
+            {townsFiltered.length ? (
+                <>
+                    <div className="cardContainer">
+                        {
+                            filterDropdown().map(town => (
+                                <CardComponent
+                                    name={town.name}
+                                    state={town.state}
+                                    pts={town.pts}
+                                    img={town.img}
+                                    key={town.id}
+                                    id={town.id}
+                                    action={() => exampleAction(town.name)}
+                                />
+                            ))
+                        }
+                    </div>
+                    <Pagination numberOfCards={townsFiltered.length} currentPage={currentPage} changePage={changePage} />
+                </>
+            ) : (<NoData />)
+            }
             <Footer />
         </>
     )
