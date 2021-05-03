@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import Button from 'react-bootstrap/Button';
 import FeedbackForm from '../FeedbackForm';

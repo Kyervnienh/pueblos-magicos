@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar';
 import NavbarMenu from '../../components/Menu';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
 
-const NavSidebar = (props) => {
+const NavSidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);
