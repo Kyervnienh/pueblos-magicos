@@ -189,14 +189,16 @@
       "name": "Antonio Moreno",
       "body": "Asombroso Lugar",
       "pts": "4.4",
-      "dataTownId": 1
+      "dataTownId": 1,
+      "userId": 1
     },
     {
       "id": 2,
       "name": "Paulina Mendez",
       "body": "Excelente lugar para ir con la familia",
       "pts": "4.2",
-      "dataTownId": 2
+      "dataTownId": 2,
+      "userId": 2
     }
   ],
   "users": [
@@ -205,27 +207,104 @@
       "name": "Antonio Moreno",
       "username": "amoreno",
       "email": "amoreno@gmail.com",
-      "password": "amoreno123",
-      "isLogged": false,
-      "idComment": 1
+      "password": "912033a2c4747781b64c36a366218707",
+      "isLogged": false
     },
     {
       "id": 2,
       "name": "Paulina Mendez",
       "username": "pmendez",
       "email": "pmendez@gmail.com",
-      "dataTownId": "pmendez123",
-      "isLogged": false,
-      "idComment": 2
+      "password": "78838048c0a04badfec6f3f8f32a90b7",
+      "isLogged": false
     },
     {
       "id": 3,
       "name": "Joaquin",
       "username": "joaquin",
       "email": "joaquin@gmail.com",
-      "password": "joaquin123",
-      "isLogged": true,
-      "idComment": 0
+      "password": "2b80773074c7c7a48b3a9b0aaeac4837",
+      "isLogged": false
+    },
+    {
+      "id": 4,
+      "name": "Rodrigo Gomez",
+      "username": "rodrigo",
+      "email": "rodri@gmail.com",
+      "password": "bd3711d0dd00de22e9d2fb6c1bdd85d6",
+      "isLogged": false
+    },
+    {
+      "id": 5,
+      "name": "Juana Lopez",
+      "username": "juanita",
+      "email": "juanita@gmail.com",
+      "password": "d44c84f29768fdc6bc18fdb77e00849e",
+      "isLogged": false
+    },
+    {
+      "id": 6,
+      "name": "Liz Lucas",
+      "username": "lizlucas",
+      "email": "liz@gmail.com",
+      "password": "b1c349de61e5ba64a64cd71e22638b07",
+      "isLogged": false
+    },
+    {
+      "id": 7,
+      "name": "Paulina",
+      "username": "paumucito",
+      "email": "paulina.mucito@gmail.com",
+      "password": "78838048c0a04badfec6f3f8f32a90b7",
+      "isLogged": false
+    },
+    {
+      "id": 8,
+      "name": "And",
+      "username": "r",
+      "email": "contreras9996@gmail.com",
+      "password": "1dc90e80c77fe245a82ea7ed30d1f849",
+      "isLogged": false
+    },
+    {
+      "id": 9,
+      "name": "wdf",
+      "username": "fh",
+      "email": "fdff@d.com",
+      "password": "d8cb27dfc24bfc0cf3f18e43149b5d1a",
+      "isLogged": false
+    },
+    {
+      "id": 10,
+      "name": "antonio martinez",
+      "username": "antoniom",
+      "email": "antonio@yahoo.com",
+      "password": "912033a2c4747781b64c36a366218707",
+      "isLogged": false
+    },
+    {
+      "id": 11,
+      "name": "estefania najera",
+      "username": "estefania",
+      "email": "estefa@gmail.com",
+      "password": "e72780e104a21a2d1b331a311e87f329",
+      "isLogged": false
+    },
+    {
+      "id": 12,
+      "name": "roberto guerrero",
+      "username": "robertogh",
+      "email": "robert@yahoo.com",
+      "password": "eef1277974665419df56cb3aab4d894a",
+      "isLogged": false
+    },
+    {
+      "id": 13,
+      "name": "Raquel Vazquez",
+      "username": "raquel",
+      "email": "raquel@gmail.com",
+      "password": "7c324d6ebfcd6718de98c51b05620607",
+      "isLogged": false
     }
   ]
 }
