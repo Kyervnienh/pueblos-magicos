@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import star from '../../assets/icons/star.svg';
 import './index.scss';
+import PropTypes from 'prop-types';
 
 import avatar from '../../assets/icons/avatar.png';
 
@@ -40,4 +41,11 @@ const CardQuotes = (
      );
 }
  
+CardQuotes.propTypes = {
+    img: PropTypes.string.isRequired,
+    pts: PropTypes.string.isRequired,
+    quote: PropTypes.string.isRequired,
+    person: PropTypes.string.isRequired,
+}
+
 export default CardQuotes;

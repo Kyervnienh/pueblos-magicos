@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from '../../components/Footer';
 import Recommendations from './components/Recommendations';
 import SuggestionsComponent from './components/Suggestions/index';
