@@ -27,11 +27,18 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 </div>
 
 - Pueblos Mágicos: Listado de todos los pueblos mágicos disponiles actualmente.
-- Comunidad: Comunidad registrada en Turi.
 
 <div align="center">
     <br>
     <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/listado.PNG?raw=true" alt="slider" width="auto" height="auto" />
+    <br>
+</div>
+
+- Comunidad: Comunidad registrada en Turi.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/develop/src/assets/imgReadme/comunidad.PNG?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -61,7 +68,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 ### Home
 
-Dentro del Home de Turi podras encontrar las siguientes secciones: 
+Dentro del Home de Turi podrás encontrar las siguientes secciones: 
 
 - Slider de bienvenida con imagenes de los diferentes pueblos mágicos.
 
@@ -75,7 +82,7 @@ Dentro del Home de Turi podras encontrar las siguientes secciones:
 </div>
 
 - Conoce todas nuestras recomendaciones, en esta sección se comparte un poco de información sobre la belleza de nuestro país y de que se podra encontrar en TURI.
-Dando click al botón de "Ir al listado" este te redireccionara a la página donde encontraras el listado de los pueblos mágicos disponibles.
+Dando click al botón de "Ir al listado" este te redireccionará a la página donde encontraras el listado de los pueblos mágicos disponibles.
 
 <div align="center">
     <br>
@@ -138,7 +145,7 @@ Una vez demos click veremos las siguientes secciones:
 </div>
 
 * ¿Que hacer en Valle de Bravo?
-Aquí surge la magia de Turi, las recomendaciones de actividades que puedes hacer en Valle de bravo, sus lugares más conocidos que te recomendamos visitar, el costo de entrada, la vistancia de centro de pueblo a dicha atracción y el tipo de atracción al que pertenece.
+Aquí surge la magia de Turi, las recomendaciones de actividades que puedes hacer en Valle de bravo, sus lugares más conocidos que te recomendamos visitar, el costo de entrada, la distancia de centro de pueblo a dicha atracción y el tipo de atracción al que pertenece.
 
 <div align="center">
     <br>
@@ -158,7 +165,7 @@ En caso de no existir nigun comentario para la reseña esta sección no se mostr
 </div>
 
 * Dejanos un comentario
-Aquí el usuario podrá escribir su comentario y dar la puntuación para la reseña en cuatión.
+Aquí el usuario podrá escribir su comentario y dar la puntuación para la reseña en cuestión.
 
 <div align="center">
     <br>
@@ -177,7 +184,7 @@ Para poder hacer un comentario, da click en el botón naranja, luego de esto te 
 En el cual podrás agregar: 
 
 * El comentario 
-* Calificaciión, con base de 1 a 5 estrellas, eligue la que te parezca conveniente.
+* Calificaciión, con base de 1 a 5 estrellas, elige la que te parezca conveniente.
 * Da click en enviar y verás tu comentario en la sección de arriba.
 
 ## ¿Cómo puedo comenzar a usar  localmente Turi?
@@ -198,9 +205,9 @@ npm start
 
 ## IMPORTANTE
 
-Actualmente los datos mostrados por TURI son extraidos de una API local hecha con Json Server, por lo cual es necesario ejecutar la json server para visualizar los datos y/o actualizaciones hechas para esto:
+Actualmente los datos mostrados por TURI son extraidos de una API local hecha con Json Server, por lo cual es necesario ejecutar json server para visualizar los datos y/o actualizaciones hechas para esto:
 
-- Entra al proyecto previamente clonado y con las dependencias clonadas y  en la consola de comandos de tu preferencia ingresa al folder llamado "fake-backend".
+- Entra al proyecto previamente clonado y con las dependencias instaladas y  en la consola de comandos de tu preferencia ingresa al folder llamado "fake-backend".
 
 Una vez en el directorio mencionado instala las dependencias con el siguiente comando: 
 
