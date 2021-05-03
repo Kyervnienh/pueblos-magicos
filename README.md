@@ -13,22 +13,51 @@ En cada recomendación el usuario podrá conocer información como:
 
 Ademas de esto, los usuarios que se registren en la página pueden dejar comentarios, calificaciones y/o reseñas sobre las recomendaciones que ya se encuentran publicadas para de este modo los otros usuarios sepan si es información confiable o no.
 
-<div align="center">
-    <br>
-    <img src="" alt="home" width="auto" height="400px" />
-    <br>
-</div>
 
 ## ¿Cómo funciona Turi?
 
 Turi cuenta con las siguientes opciones de menú, los cuales se describiran a detalle más adelante:
 
 - Home: Página inicial del sitio.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/home.png?raw=true" alt="slider" width="auto" height="400px" />
+    <br>
+</div>
+
 - Pueblos Mágicos: Listado de todos los pueblos mágicos disponiles actualmente.
 - Comunidad: Comunidad registrada en Turi.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/listado.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <br>
+</div>
+
 - Soporte: Listado de desarrolladores que crearon Turi.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/soporte.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <br>
+</div>
+
 - Iniciar sesión: Permite el inicio de sesión para usuarios registrados.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/login.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <br>
+</div>
+
 - Registrate: Pemite registrarse a los nuevos usuarios.
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/registro.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <br>
+</div>
 
 ### Home
 
@@ -36,17 +65,12 @@ Dentro del Home de Turi podras encontrar las siguientes secciones:
 
 - Slider de bienvenida con imagenes de los diferentes pueblos mágicos.
 
-<div align="center">
-    <br>
-    <img src="" alt="slider" width="auto" height="400px" />
-    <br>
-</div>
 
 - Ultimas recomendaciones, en esta sección podrás encontrar las ultimás 3 recomendaciones hechas por TURI para los usuarios, al dar click en la recomendación de tu preferencia esta te llevara a la información detallada.
 
 <div align="center">
     <br>
-    <img src="" alt="ultimas" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/ultimas.PNG?raw=true" alt="ultimas" width="auto" height="400px" />
     <br>
 </div>
 
@@ -55,7 +79,7 @@ Dando click al botón de "Ir al listado" este te redireccionara a la página don
 
 <div align="center">
     <br>
-    <img src="" alt="conoce" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/conode.PNG?raw=true" alt="conoce" width="auto" height="400px" />
     <br>
 </div>
 
@@ -63,7 +87,7 @@ Dando click al botón de "Ir al listado" este te redireccionara a la página don
 
 <div align="center">
     <br>
-    <img src="" alt="conoce" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/footer.PNG?raw=true" alt="footer" width="auto" height="400px" />
     <br>
 </div>
 
@@ -79,7 +103,7 @@ Para poder filtar solo necesitas:
 
 <div align="center">
     <br>
-    <img src="" alt="filter" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/filter.PNG?raw=true" alt="filter" width="auto" height="400px" />
     <br>
 </div>
 
@@ -87,7 +111,7 @@ Por ultimó, podras encontrar un paginador que te permitira navegar dentro de to
 
 <div align="center">
     <br>
-    <img src="" alt="paginador" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/paginador.PNG?raw=true" alt="paginador" width="auto" height="400px" />
     <br>
 </div>
 
@@ -97,7 +121,7 @@ Ejemplo seleccionemos: " Valle de Bravo"
 
 <div align="center">
     <br>
-    <img src="" alt="ejemplo" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/card.PNG?raw=true" alt="ejemplo" width="auto" height="400px" />
     <br>
 </div>
 
@@ -105,17 +129,11 @@ Una vez demos click veremos las siguientes secciones:
 
 * Nombre del Pueblo mágico seleccionado.
 
-<div align="center">
-    <br>
-    <img src="" alt="nombre" width="auto" height="400px" />
-    <br>
-</div>
-
 * Información general del pueblo mágico, en este caso: Valle de bravo.
 
 <div align="center">
     <br>
-    <img src="" alt="info" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/general.PNG?raw=true" alt="info" width="auto" height="400px" />
     <br>
 </div>
 
@@ -124,7 +142,7 @@ Aquí surge la magia de Turi, las recomendaciones de actividades que puedes hace
 
 <div align="center">
     <br>
-    <img src="" alt="atracción" width="auto" height="400px" />
+    <img src="https://raw.githubusercontent.com/raquellvazquez/pueblos-magicos/fix/update-readme/src/assets/imgReadme/ataraccion.PNG" alt="atracción" width="auto" height="400px" />
     <br>
 </div>
 
@@ -135,7 +153,7 @@ En caso de no existir nigun comentario para la reseña esta sección no se mostr
 
 <div align="center">
     <br>
-    <img src="" alt="comentarion" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/coments.PNG?raw=true" alt="comentarios" width="auto" height="400px" />
     <br>
 </div>
 
@@ -144,7 +162,7 @@ Aquí el usuario podrá escribir su comentario y dar la puntuación para la rese
 
 <div align="center">
     <br>
-    <img src="" alt="header" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/dejar-comentario.PNG?raw=true" alt="header" width="auto" height="400px" />
     <br>
 </div>
 
@@ -152,7 +170,7 @@ Para poder hacer un comentario, da click en el botón naranja, luego de esto te 
 
 <div align="center">
     <br>
-    <img src="" alt="modal" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/a%C3%B1adir.PNG?raw=true" alt="modal" width="auto" height="400px" />
     <br>
 </div>
 
@@ -184,15 +202,7 @@ Actualmente los datos mostrados por TURI son extraidos de una API local hecha co
 
 - Entra al proyecto previamente clonado y con las dependencias clonadas y  en la consola de comandos de tu preferencia ingresa al folder llamado "fake-backend".
 
-Ejemplo: 
-
-<div align="center">
-    <br>
-    <img src="" alt="fake" width="auto" height="400px" />
-    <br>
-</div>
-
-una vez en el directorio mencionado instala las dependencias con el siguiente comando: 
+Una vez en el directorio mencionado instala las dependencias con el siguiente comando: 
 
 ```
 npm install
