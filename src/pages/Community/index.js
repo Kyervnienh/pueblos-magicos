@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import NavSidebar from '../../components/NavSidebar';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
@@ -46,9 +47,11 @@ const CommunityPage = () => {
             <h1 className="title">¡Forma parte de nuestra bella comunidad!</h1>
             {
             newUsers.map(item => (
-               <CardGroup>
+               <CardGroup 
+                  key = {newUsers.indexOf(item)}>
                    {item.map(newSet => (
-                       <CardUser name = {newSet.name} />
+                       <CardUser name = {newSet.name}
+                       key = {newSet.id} />
                    ))}
                </CardGroup> 
             ))
@@ -57,4 +60,7 @@ const CommunityPage = () => {
     )
 }
 
+CardUser.propTypes = {
+  name: PropTypes.string.isRequired,
+}
 export default CommunityPage;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './index.scss';
 import md5 from 'md5';
 import Cookies from 'universal-cookie';
@@ -102,5 +103,9 @@ useEffect(() => {
     </div>
   );
 };
+
+PasswordIncorrect.propTypes = {
+	isLoggedIn: PropTypes.bool.isRequired,
+  }
 
 export default withRouter(Login);

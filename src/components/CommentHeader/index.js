@@ -19,7 +19,7 @@ const CommentHeader = () => {
   };
   return (
     <div className="container comment-header">
-      <p class="text">Dejanos un comentario </p>
+      <p className="text">Dejanos un comentario </p>
       <section className="section-header">
         <div className="circule">
           <Button
