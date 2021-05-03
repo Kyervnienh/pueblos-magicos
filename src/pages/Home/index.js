@@ -4,6 +4,9 @@ import Recommendations from './components/Recommendations';
 import SuggestionsComponent from './components/Suggestions/index';
 import Slider from '../../components/Slider';
 import NavSidebar from '../../components/NavSidebar';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 const Home = () => {
   return (

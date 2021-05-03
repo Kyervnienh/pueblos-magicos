@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import md5 from 'md5';
 import './index.scss';
 
 const baseURL = "http://localhost:4000/users";
 
-const SignUp = () => {
+const SignUp = (props) => {
     const [type, setType] = useState('input');
     const [users, setUsers] = useState([]);
-    const [data, setData] = useState({ id: 0, name: '', username: '', email: '', password: '', isLogged: true, idComment: 0 });
+    const [data, setData] = useState({ id: 0, name: '', username: '', email: '', password: '', isLogged: false });
 
     useEffect(() => {
         const getData = async () => {
           try {
-            const response = await fetch(`${baseURL}`);
+            const response = await fetch(baseURL);
             const data = await response.json();
             setUsers(data);
           } catch(error) {
@@ -26,28 +27,28 @@ const SignUp = () => {
       }, []);
     
 
-    const showHide = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const showHide = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         setType(type === 'input' ? 'password' : 'input');
      };
-
-
-     const sendData = (event) => {
-        event.preventDefault()
-        console.log('enviando datos...' + data.name)
-    }
 
      const handleInputChange = (event) => {
         setData({
             ...data,
             [event.target.name] : event.target.value
         })
-
     }
 
-    const addUser = async () => {
+    const handleInputChangePassword = (event) => {
+      setData({
+          ...data,
+          [event.target.name] : md5(event.target.value)
+      })
+  }
 
+    const addUser = async (event) => {
+      event.preventDefault()
         const lastUser = users[users.length - 1];
         const newId = lastUser.id + 1;
         setData({...data, id : newId});
@@ -67,9 +68,8 @@ const SignUp = () => {
         } catch (error) {
           console.error(error);
         }
+        props.history.push('/');
       }
-
-      console.log(data);
 
     return (
         <>
@@ -92,7 +92,7 @@ const SignUp = () => {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formBasicPassword">
                                 <Form.Label>Contraseña</Form.Label>
-                                <Form.Control onChange={handleInputChange} type={type} placeholder="Contraseña" name="password" />
+                                <Form.Control onChange={handleInputChangePassword} type={type} placeholder="Contraseña" name="password" />
                             </Form.Group>
                             <Form.Group className="showHide" as={Col} controlId="formBasicShowPassword">
                                 <span className="password_show" onClick={showHide}>{type === 'input' ? 'Ocultar' : 'Mostrar'}</span>
@@ -108,4 +108,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default withRouter(SignUp);
