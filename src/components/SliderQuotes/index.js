@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Carousel from 'react-elastic-carousel';
 import './index.scss';
 import CardQuotes from '../CardQuotes';
-import avatar from '../../assets/icons/avatarboy.png';
+import PropTypes from 'prop-types';
 
 const SliderQuotes = ({town}) => {
 
@@ -57,5 +57,9 @@ const SliderQuotes = ({town}) => {
         </>
      );
 }
- 
+
+SliderQuotes.propTypes = {
+    town: PropTypes.string.isRequired,
+}
+
 export default SliderQuotes;
