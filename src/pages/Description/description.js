@@ -11,7 +11,7 @@ const DescriptionPage = ({ match }) => {
         <>
             <NavSidebar/>
             <InfoAttractions town={query} />
-            <SliderQuotes/>
+            <SliderQuotes town={query}/>
             <CommentHeader />
             <Footer />
         </>
