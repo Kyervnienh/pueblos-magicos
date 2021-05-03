@@ -22,7 +22,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/home.png?raw=true" alt="slider" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/home.png?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -31,7 +31,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/listado.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/listado.PNG?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -39,7 +39,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/soporte.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/soporte.PNG?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -47,7 +47,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/login.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/login.PNG?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -55,7 +55,7 @@ Turi cuenta con las siguientes opciones de menú, los cuales se describiran a de
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/registro.PNG?raw=true" alt="slider" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/registro.PNG?raw=true" alt="slider" width="auto" height="auto" />
     <br>
 </div>
 
@@ -70,7 +70,7 @@ Dentro del Home de Turi podras encontrar las siguientes secciones:
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/ultimas.PNG?raw=true" alt="ultimas" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/ultimas.PNG?raw=true" alt="ultimas" width="auto" height="auto" />
     <br>
 </div>
 
@@ -79,7 +79,7 @@ Dando click al botón de "Ir al listado" este te redireccionara a la página don
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/conode.PNG?raw=true" alt="conoce" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/conode.PNG?raw=true" alt="conoce" width="auto" height="auto" />
     <br>
 </div>
 
@@ -87,7 +87,7 @@ Dando click al botón de "Ir al listado" este te redireccionara a la página don
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/footer.PNG?raw=true" alt="footer" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/footer.PNG?raw=true" alt="footer" width="auto" height="auto" />
     <br>
 </div>
 
@@ -103,7 +103,7 @@ Para poder filtar solo necesitas:
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/filter.PNG?raw=true" alt="filter" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/filter.PNG?raw=true" alt="filter" width="auto" height="auto" />
     <br>
 </div>
 
@@ -111,7 +111,7 @@ Por ultimó, podras encontrar un paginador que te permitira navegar dentro de to
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/paginador.PNG?raw=true" alt="paginador" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/paginador.PNG?raw=true" alt="paginador" width="auto" height="auto" />
     <br>
 </div>
 
@@ -121,7 +121,7 @@ Ejemplo seleccionemos: " Valle de Bravo"
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/card.PNG?raw=true" alt="ejemplo" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/card.PNG?raw=true" alt="ejemplo" width="auto" height="auto" />
     <br>
 </div>
 
@@ -133,7 +133,7 @@ Una vez demos click veremos las siguientes secciones:
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/general.PNG?raw=true" alt="info" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/general.PNG?raw=true" alt="info" width="auto" height="auto" />
     <br>
 </div>
 
@@ -142,7 +142,7 @@ Aquí surge la magia de Turi, las recomendaciones de actividades que puedes hace
 
 <div align="center">
     <br>
-    <img src="https://raw.githubusercontent.com/raquellvazquez/pueblos-magicos/fix/update-readme/src/assets/imgReadme/ataraccion.PNG" alt="atracción" width="auto" height="400px" />
+    <img src="https://raw.githubusercontent.com/raquellvazquez/pueblos-magicos/fix/update-readme/src/assets/imgReadme/ataraccion.PNG" alt="atracción" width="auto" height="auto" />
     <br>
 </div>
 
@@ -153,7 +153,7 @@ En caso de no existir nigun comentario para la reseña esta sección no se mostr
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/coments.PNG?raw=true" alt="comentarios" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/coments.PNG?raw=true" alt="comentarios" width="auto" height="auto" />
     <br>
 </div>
 
@@ -162,7 +162,7 @@ Aquí el usuario podrá escribir su comentario y dar la puntuación para la rese
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/dejar-comentario.PNG?raw=true" alt="header" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/dejar-comentario.PNG?raw=true" alt="header" width="auto" height="auto" />
     <br>
 </div>
 
@@ -170,7 +170,7 @@ Para poder hacer un comentario, da click en el botón naranja, luego de esto te 
 
 <div align="center">
     <br>
-    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/a%C3%B1adir.PNG?raw=true" alt="modal" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/a%C3%B1adir.PNG?raw=true" alt="modal" width="auto" height="auto" />
     <br>
 </div>
 
@@ -217,7 +217,7 @@ Y listo, deberás de poder ver el siguiente mensaje y visualizar la información
 
 <div align="center">
     <br>
-    <img src="" alt="fakedata" width="auto" height="400px" />
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/json%20server.PNG?raw=true" alt="fakedata" width="auto" height="auto" />
     <br>
 </div> 
 
