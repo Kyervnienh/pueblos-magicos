@@ -1,135 +1,161 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
 }
 
 .Nav {
-    background: #ffff;
-    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
-    z-index: 12;
+  background: #ffff;
+  height: 85px;
+  display: flex;
+  justify-content: space-between !important;
+  padding: 0.2rem calc((100vw - 1000px) / 2);
+  z-index: 12;
 }
 
 .NavbarContainer {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    padding: 0 24px;
-    max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1100px;
 }
 
 .NavLogoSignUp {
-    color: #FFBF69;
-    justify-self: flex-start;
-    cursor: pointer;
-    font-size: 3.5rem;
-    display: flex;
-    align-items: center;
-    margin-left: 24px;
-    font-weight: bold;
-    text-decoration: none;
+  color: #ffbf69;
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .NavLink {
-    color: #808080;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 2rem;
-    height: 100%;
-    cursor: pointer;
-    &.active {
-        color: #000000;
-    }
+  color: #808080;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 2rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #000000;
+  }
 }
 
 .Bars {
-    display: none;
-    color: #808080;
-    @media screen and (max-width: 1080px) {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 75%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+  display: none;
+  color: #808080;
+  @media screen and (max-width: 1080px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 }
 
 .NavMenu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  margin-right: 94px;
+  margin-left: 234px;
+  @media screen and (max-width: 1300px) {
     margin-right: 34px;
-    @media screen and (max-width: 1080px) {
-        display: none;
-    }
+    margin-left: 64px; 
+  }
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 }
 
 .NavBtns {
-    display: flex;
-    flex-direction: row;    
+  display: flex;
+  flex-direction: row;
 }
 
 .NavBtnLogIn {
-    display: flex;
-    align-items: center;
-    @media screen and (max-width: 1080px) {
-        display: none;
-    }
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 }
 
 .NavBtnLinkLogIn {
-    border-radius: 30px;
-    background: #ffff;
-    padding: 12px 22px;
-    text-align: center;
-    color: #000000;
-    white-space: pre;
-    outline: none;
-    border: 2px solid #808080;
-    cursor: pointer;
+  border-radius: 30px;
+  background: #ffff;
+  padding: 12px 22px;
+  text-align: center;
+  color: #000000;
+  white-space: pre;
+  outline: none;
+  border: 2px solid #808080;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 0px;
+  margin-right: 10px;
+  &:hover {
     transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    /* Second Nav */
-    margin-left: 0px;
-    margin-right: 10px;
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #808080;
-        color: #ffff;
-    }
+    background: #808080;
+    color: #ffff;
+  }
 }
 
 .NavBtnSignUp {
-    display: flex;
-    align-items: center;
-    @media screen and (max-width: 1080px) {
-        display: none;
-}
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 }
 
 .NavBtnLinkSignUp {
-    border-radius: 30px;
-    background: #808080;
-    padding: 12px 22px;
-    color: #000000;
-    outline: none;
-    border: none;
-    cursor: pointer;
+  border-radius: 30px;
+  background: #808080;
+  padding: 12px 22px;
+  color: #000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 24px;
+  &:hover {
     transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    /* Second Nav */
-    margin-left: 24px;
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #808080;
-    }
+    background: #fff;
+    color: #808080;
+  }
+}
+
+.UserCircle {
+  margin-right: 50px;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.LogOutBtn {
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.WelcomeButton {
+  background: #ffbf69;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+  }
 }

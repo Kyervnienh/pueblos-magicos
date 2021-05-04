@@ -47,4 +47,13 @@ InfoAttraction.propTypes = {
     type: PropTypes.string.isRequired,
 }
 
+InfoAttraction.defaultProps = {
+    attractionName: "Atraccion",
+    info: "Informacion",
+    img: "imagen.jpg",
+    cost: "$0",
+    distance: "0 km",
+    type: "tipo de atrccion",
+  }
+
 export default InfoAttraction;

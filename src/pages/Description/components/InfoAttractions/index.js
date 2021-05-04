@@ -1,35 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { dataTows } from '../../../../fixtures/dataTownsExample.fixture';
 import InfoAttraction from '../../../../components/InfoAttraction';
 import InfoGeneral from '../../../../components/InfoGeneral';
 import BannerComponent from '../../../../components/Banner';
+import LoadingComponent from '../../../../components/Loading';
+
+const baseURL = "http://localhost:4000/dataTown";
 
 const InfoAttractions = (props) => {
-  let townId = parseInt(props.town)
-    const filterTown = query => {
-        return dataTows.filter((town) =>
-          town.id === query
-        );
+  const [isLoading, setIsLoading] = useState(true);
+  const [town, setTown] = useState({});
+  let townId = parseInt(props.town);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(`${baseURL}/${townId}`);
+        const data = await response.json();
+        setTown(data);
+        setIsLoading(false);
+      } catch(error) {
+        console.error(error);
       }
+    };
 
-      let filteredTown = filterTown(townId)[0];
-
-      let attr = filteredTown.attractions;
-      let name = filterTown(townId)[0].name;
-      let img = filterTown(townId)[0].img;
-      let infoState = filterTown(townId)[0].infoState;
+    getData();
+  }, []);
 
     return (
+      isLoading ? <LoadingComponent /> :
         <>
-            <>
-            <BannerComponent label = {name}/>
+          <BannerComponent label = {town.name}/>
             <InfoGeneral
-              name = {name}
-              img = {img}
-              infoState = {infoState}
+              name = {town.name}
+              img = {town.img}
+              infoState = {town.infoState}
             />
-                {attr.map(attraction => (
+                {town.attractions.map(attraction => (
                     <InfoAttraction
                     attractionName = {attraction.name}
                     info = {attraction.info}
@@ -39,7 +45,6 @@ const InfoAttractions = (props) => {
                     type = {attraction.type}
                     key = {attraction.name} />
                 ))}
-            </>
         </>
     )
 } 

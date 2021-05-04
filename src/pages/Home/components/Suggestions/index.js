@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CardComponent from '../../../../components/Card/index';
-import { dataTows } from '../../../../fixtures/dataTownsExample.fixture';
+import noDataImg from '../../../../assets/icons/nodata.jpg';
 import './index.scss';
 
 
@@ -9,17 +9,36 @@ import './index.scss';
  */
 const SuggestionsComponent= () => {
 
-    let temp = dataTows.slice(-3,dataTows.length);
+    const [suggestions, setSuggestions] = useState();
+
+    useEffect(() => {
+        const getTownsAPI = async () => {
+            const url = 'http://localhost:4000/datatown';
+            const response = await fetch(url);
+            const resultado = await response.json();
+            setSuggestions(resultado.slice(-3,resultado.length))
+        }
+        getTownsAPI();
+    }, []);
 
     const exampleAction = (name) => {
-            console.log(`Se seleccionó ${name}`);
+        console.log(`Se seleccionó ${name}`);
     }
 
+    const NoData = () => (
+        <div className='noData'> 
+            <img src={noDataImg} alt="https://www.freepik.com/vectors/data" className='imgNoData' />
+            <p className="title">No se encontraron datos</p>
+        </div>
+    );
+
     return ( 
-        <div>
+        <div className="main">
             <h1 className="title">Ultimas recomendaciones</h1>
-            <div className="cardContainer">
-                {temp.map(town => (
+            {
+               suggestions ? (
+                <div className="cardContainer">
+                {suggestions?.map(town => (
                     <CardComponent 
                         name={town.name}
                         state={town.state}
@@ -31,6 +50,11 @@ const SuggestionsComponent= () => {
                     />
                 ))}
             </div>
+               ) : 
+               (
+                 <NoData />
+               )
+            }
         </div>
      );
 }

@@ -1,4 +1,8 @@
 .cardContainer{
     margin-top: 4rem;
-    max-width: fit-content;
+    max-width: inherit;
+
+    @media (min-width: 768px) {
+        max-width: fit-content;
+    }
 }
