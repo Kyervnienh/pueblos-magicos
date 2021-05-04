@@ -1,38 +1,32 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import './index.scss';
 import Button from 'react-bootstrap/Button';
 import FeedbackForm from '../FeedbackForm';
 
-const CommentHeader = () => {
-  const [town, setTown] = useState({
-    reviews: [],
-  });
-  const [review, setReview] = useState({});
+const baseURL = 'http://localhost:4000/comments';
 
-  const addReview = (data) => {
-    const newReview = { ...data, review };
-    setTown({
-      ...town,
-      reviews: [newReview, ...town.reviews],
-    });
-    setReview({});
-  };
+const CommentHeader = ({ town }) => {
+  const [show, setShow] = useState(false);
+
+  let dataTownId = parseInt(town);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="container comment-header">
       <p className="text">Dejanos un comentario </p>
       <section className="section-header">
         <div className="circule">
-          <Button
-            className="btn"
-            type="button"
-            onClick={() => setReview({ time: new Date().getTime() })}
-          >
+          <Button className="btn" type="button" onClick={handleShow}>
             <i className="fa fa-comments" aria-hidden="true"></i>
           </Button>
         </div>
-        {Object.keys(review).length > 0 && (
-          <FeedbackForm submit={addReview} close={setReview} />
-        )}
+        <FeedbackForm
+          show={show}
+          handleClose={handleClose}
+          setShow={setShow}
+          town={dataTownId}
+        />
         <div>
           <p className="questions">¿Te gusto nuestra reseña?</p>
           <p className="questions"> Dejanos un comentario y una puntuación.</p>
