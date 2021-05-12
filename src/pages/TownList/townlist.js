@@ -6,7 +6,7 @@ import CardComponent from '../../components/Card';
 import Pagination from './components/Pagination';
 import Footer from '../../components/Footer';
 import './index.scss';
-import noDataImg from '../../assets/icons/nodata.jpg';
+import NotFound from '../../components/NotFound';
 
 const TownList = () => {
     const [state, setState] = useState('Todos los pueblos');
@@ -78,13 +78,6 @@ const TownList = () => {
         }
     }
 
-    const NoData = () => (
-        <div className='noData'>
-            <img src={noDataImg} alt="https://www.freepik.com/vectors/data" className='imgNoData' />
-            <p className="title">No se encontraron datos</p>
-        </div>
-    );
-
     return (
         <>
             <NavSidebar />
@@ -109,7 +102,7 @@ const TownList = () => {
                     </div>
                     <Pagination numberOfCards={townsFiltered.length} currentPage={currentPage} changePage={changePage} />
                 </>
-            ) : (<NoData />)
+            ) : (<NotFound>No se encontraron datos</NotFound>)
             }
             <Footer />
         </>

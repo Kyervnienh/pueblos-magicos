@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './index.scss';
 import StarRatings from 'react-star-ratings';
 import Cookies from 'universal-cookie';
