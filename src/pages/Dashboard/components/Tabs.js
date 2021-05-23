@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav'
 import './index.scss';
-
+import ReviewsList from '../../../components/ReviewsList';
 
 const TabsMenu = () => {
   return (
@@ -14,16 +14,16 @@ const TabsMenu = () => {
             <Col sm={2}>
             <Nav variant="pills" className="flex-column">
                 <Nav.Item>
-                <Nav.Link eventKey="dashboard"><i class="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
+                <Nav.Link eventKey="dashboard"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="review"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
+                <Nav.Link eventKey="review"><i className="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="users"><i class="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
+                <Nav.Link eventKey="users"><i className="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="coments"><i class="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
+                <Nav.Link eventKey="coments"><i className="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
                 </Nav.Item>
             </Nav>
             </Col>
@@ -33,7 +33,7 @@ const TabsMenu = () => {
                 Aqui va lo dash
                 </Tab.Pane>
                 <Tab.Pane eventKey="review">
-                Aqui va lo de las reseñas
+                <ReviewsList/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="users">
                 Aqui van los usuarios

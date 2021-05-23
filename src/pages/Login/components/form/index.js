@@ -27,7 +27,6 @@ const Login = (props) => {
         ...form,
         [event.target.name] : event.target.value
     })
-    console.log(form);
 }
 
 const logInSesion = async () => {
@@ -45,6 +44,7 @@ const logInSesion = async () => {
       cookies.set('isLogged', resp.isLogged, {path:"/"});
       cookies.set('name', resp.name, {path:"/"});
       cookies.set('username', resp.username, {path:"/"});
+      cookies.set('isAdmin', resp.isAdmin, {path:"/"});
       setisCorrect(true);
       props.history.push('/');
 
