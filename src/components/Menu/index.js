@@ -31,7 +31,7 @@ return ( isLogged ?
 		<FaBars className="Bars" onClick={toggle} ></FaBars>
 		<div className="NavMenu">
 			<Nav.Link className="NavLink" href="/pueblosmagicos">Pueblos Mágicos</Nav.Link>
-			<Nav.Link className="NavLink" href="/precios">Precios</Nav.Link>
+			<Nav.Link className="NavLink" href="/dashboard">Dashboard</Nav.Link>
 			<Nav.Link className="NavLink" href="/comunidad">Comunidad</Nav.Link>
 			<Nav.Link className="NavLink" href="/soporte">Soporte</Nav.Link>
 		</div>
@@ -58,7 +58,7 @@ return ( isLogged ?
 		<FaBars className="Bars" onClick={toggle} ></FaBars>
 		<div className="NavMenu">
 			<Nav.Link className="NavLink" href="/pueblosmagicos">Pueblos Mágicos</Nav.Link>
-			<Nav.Link className="NavLink" href="/precios">Precios</Nav.Link>
+			<Nav.Link className="NavLink" href="/dashboard">Dashboard</Nav.Link>
 			<Nav.Link className="NavLink" href="/comunidad">Comunidad</Nav.Link>
 			<Nav.Link className="NavLink" href="/soporte">Soporte</Nav.Link>
 		</div>

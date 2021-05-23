@@ -20,8 +20,8 @@ const Sidebar = ({isOpen, toggle, logOut}) => {
                                 <Link className="SidebarLink" to="/pueblosmagicos">
                                     Pueblos Mágicos
                                 </Link>
-                                <Link className="SidebarLink" to="/pricing">
-                                    Precios
+                                <Link className="SidebarLink" to="/dashboard">
+                                    Dashboard
                                 </Link>
                                 <Link className="SidebarLink" to="/comunidad">
                                     Comunidad
