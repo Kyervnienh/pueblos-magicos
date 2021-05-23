@@ -9,7 +9,7 @@ import DescriptionPage from './pages/Description/description'
 import TownList from './pages/TownList/townlist'
 import SupportPage from './pages/Support';
 import CommunityPage from './pages/Community';
-import ReviewsList from './components/ReviewsList';
+import Dashboard from './pages/Dashboard/dashboard';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Route path="/pueblosmagicos" component={TownList} exact></Route>
         <Route path="/soporte" component={SupportPage} exact></Route>
         <Route path="/comunidad" component={CommunityPage} exact></Route>
-        <Route path="/dashboard" component={ReviewsList} exact></Route>
+        <Route path="/dashboard" component={Dashboard} exact></Route>
         <Route component={NotFoundPage}></Route>
       </Switch>
     </Router>
