@@ -17,6 +17,7 @@ const NavSidebar = () => {
         cookies.remove('isLogged', {path:"/"});
         cookies.remove('name', {path:"/"});
         cookies.remove('username', {path:"/"});
+        cookies.remove('isAdmin', {path:"/"});
         window.location.href = "./";
     };
 

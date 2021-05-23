@@ -1,9 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import Button from 'react-bootstrap/Button';
 import FeedbackForm from '../FeedbackForm';
-
-const baseURL = 'http://localhost:4000/comments';
 
 const CommentHeader = ({ town }) => {
   const [show, setShow] = useState(false);

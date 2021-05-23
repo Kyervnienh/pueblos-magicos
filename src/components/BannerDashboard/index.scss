@@ -1,0 +1,70 @@
+.bannerDash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+
+    @media (min-width: 768px) {
+        justify-content: inherit;
+    }
+
+    .title {
+        color: #ffbf69;
+        cursor: pointer;
+        font-size: 3.5rem;
+        margin-left: 24px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .titleDash{
+        width: auto;
+        font-size: 1rem;
+
+        @media (min-width: 768px) {
+            width: 80%;
+            font-size: 2rem;
+        }
+
+        .dashboard {
+            color: #808080;
+            text-decoration: none;
+            padding: 0 2rem;
+            height: 100%;
+            cursor: pointer;
+            &.active {
+              color: #000000;
+            }
+        }
+      }
+
+      .account {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .icon {
+            padding-right: 16px;
+            color: #ffbf69;
+            font-size: 3rem;
+        }
+
+        .name {
+            margin:0;
+            color: #808080;
+            font-size: 11px;
+            font-weight: bold;
+
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+      }
+
+      
+
+}

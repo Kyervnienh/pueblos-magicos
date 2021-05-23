@@ -4,6 +4,7 @@ import NavSidebar from '../../components/NavSidebar';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { RiUserSmileLine } from "react-icons/ri";
+import NotFound from '../../components/NotFound';
 
 const baseURL = "http://localhost:4000/users";
 
@@ -45,6 +46,8 @@ const CommunityPage = () => {
         <>
             <NavSidebar/>
             <h1 className="title">¡Forma parte de nuestra bella comunidad!</h1>
+            {users.length ? (
+            <div>
             {
             newUsers.map(item => (
                <CardGroup 
@@ -56,8 +59,14 @@ const CommunityPage = () => {
                </CardGroup> 
             ))
             }
+            </div>
+            ) :
+            (
+              <NotFound>No se encontraron datos</NotFound>
+            )
+         }
         </>
-    )
+    );
 }
 
 CardUser.propTypes = {

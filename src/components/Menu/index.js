@@ -13,6 +13,8 @@ const cookies = new Cookies();
 const NavbarMenu = ({toggle, logOut}) => {
 
 	const name = cookies.get('name');
+	const isAdminString = cookies.get('isAdmin');
+	const isAdmin = isAdminString === "true" ? true : false;
 
 	const [isLogged, setisLogged] = useState(false);
 
@@ -31,13 +33,13 @@ return ( isLogged ?
 		<FaBars className="Bars" onClick={toggle} ></FaBars>
 		<div className="NavMenu">
 			<Nav.Link className="NavLink" href="/pueblosmagicos">Pueblos Mágicos</Nav.Link>
-			<Nav.Link className="NavLink" href="/precios">Precios</Nav.Link>
+			{isAdmin ? (<Nav.Link className="NavLink" href="/dashboard">Dashboard</Nav.Link>) : null}
 			<Nav.Link className="NavLink" href="/comunidad">Comunidad</Nav.Link>
 			<Nav.Link className="NavLink" href="/soporte">Soporte</Nav.Link>
 		</div>
 		<nav className="NavBtns">
 			<div className="UserCircle">
-				<FaUserCircle size={50}></FaUserCircle>
+				<FaUserCircle className="UserIcon" size={50}></FaUserCircle>
 			</div>
 			<div className="LogOutBtn">
 				<DropdownButton className="WelcomeButton"
@@ -58,7 +60,6 @@ return ( isLogged ?
 		<FaBars className="Bars" onClick={toggle} ></FaBars>
 		<div className="NavMenu">
 			<Nav.Link className="NavLink" href="/pueblosmagicos">Pueblos Mágicos</Nav.Link>
-			<Nav.Link className="NavLink" href="/precios">Precios</Nav.Link>
 			<Nav.Link className="NavLink" href="/comunidad">Comunidad</Nav.Link>
 			<Nav.Link className="NavLink" href="/soporte">Soporte</Nav.Link>
 		</div>

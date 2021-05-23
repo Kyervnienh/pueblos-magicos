@@ -1,25 +1,35 @@
-import { useState, useEffect } from 'react';
-import './index.scss';
-import StarRatings from 'react-star-ratings';
-import Cookies from 'universal-cookie';
+import { useState, useEffect } from "react";
+import "./index.scss";
+import StarRatings from "react-star-ratings";
+import Cookies from "universal-cookie";
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 
-const baseURL = 'http://localhost:4000/comments';
+const baseURL = "http://localhost:4000/comments";
 const cookies = new Cookies();
 
 function FeedbackForm({ show, setShow, handleClose, town }) {
+  const [isLogged, setisLogged] = useState(false);
   const profile_photo_url =
-    'https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2';
+    "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
   console.log(town);
-  let idUser = cookies.get('id');
-  let userName = cookies.get('name');
+  let idUser = cookies.get("id");
+  let userName = cookies.get("name");
+
+  useEffect(() => {
+    if (cookies.get("username")) {
+      setisLogged(true);
+    } else {
+      setisLogged(false);
+    }
+  }, []);
+
   const [data, setData] = useState({
     id: 0,
     name: userName,
-    body: '',
+    body: "",
     pts: 0,
     dataTownId: town,
     userId: idUser,
@@ -36,7 +46,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
 
   const validate = () => {
     const errors = {};
-    if (!data.body) errors.body = 'Por favor, agregue su comentario';
+    if (!data.body) errors.body = "Por favor, agregue su comentario";
 
     return errors;
   };
@@ -57,25 +67,25 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
     console.log(data);
     try {
       const response = await fetch(baseURL, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      if (!response.ok) throw new Error('Response not ok');
+      if (!response.ok) throw new Error("Response not ok");
 
       const newComment = await response.json();
 
       setComments(comments.concat([newComment]));
       setData({
         id: 0,
-        name: '',
-        body: '',
+        name: "",
+        body: "",
         pts: 0,
         dataTownId: 0,
         userId: 0,
-        img: '',
+        img: "",
       });
       setShow(false);
     } catch (error) {
@@ -114,10 +124,19 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
               numberOfStars={5}
               name="pts"
             />
+
+            {!isLogged ? (
+              <Form.Label>Inicia sesion para comentar por favor</Form.Label>
+            ) : null}
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit" onClick={addComment}>
+          <Button
+            disabled={!isLogged}
+            variant="primary"
+            type="submit"
+            onClick={addComment}
+          >
             Enviar
           </Button>
         </Modal.Footer>

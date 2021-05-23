@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CardComponent from '../../../../components/Card/index';
-import noDataImg from '../../../../assets/icons/nodata.jpg';
 import './index.scss';
+import NotFound from '../../../../components/NotFound';
 
 
 /**
@@ -25,13 +25,6 @@ const SuggestionsComponent= () => {
         console.log(`Se seleccionó ${name}`);
     }
 
-    const NoData = () => (
-        <div className='noData'> 
-            <img src={noDataImg} alt="https://www.freepik.com/vectors/data" className='imgNoData' />
-            <p className="title">No se encontraron datos</p>
-        </div>
-    );
-
     return ( 
         <div className="main">
             <h1 className="title">Ultimas recomendaciones</h1>
@@ -52,7 +45,7 @@ const SuggestionsComponent= () => {
             </div>
                ) : 
                (
-                 <NoData />
+                 <NotFound>No se encontraron datos</NotFound>
                )
             }
         </div>

@@ -1,0 +1,14 @@
+.notFound__h1 {
+    color: #FFBF69;
+    margin-top: 20px;
+}
+
+.notFound__link {
+    color: #FFBF69;
+    text-decoration: none;
+    font-size: 26px;
+
+    @media (min-width: 768px) {
+        font-size: 30px;
+    }
+}
