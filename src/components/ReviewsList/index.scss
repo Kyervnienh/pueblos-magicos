@@ -1,0 +1,27 @@
+.table {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-right: 50px;
+  }
+
+.EditIcon {
+    color: #ffbf69;
+    cursor: pointer;
+}
+
+.DeleteIcon {
+    color: #ffbf69;
+    cursor: pointer;
+}
+
+.AddReviewIcon {
+    color: #ffbf69;
+    cursor: pointer;
+}
+
+.AddReviewButton {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+}

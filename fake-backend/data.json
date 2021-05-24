@@ -210,7 +210,8 @@
       "username": "amoreno",
       "email": "amoreno@gmail.com",
       "password": "912033a2c4747781b64c36a366218707",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 2,
@@ -218,7 +219,8 @@
       "username": "pmendez",
       "email": "pmendez@gmail.com",
       "password": "78838048c0a04badfec6f3f8f32a90b7",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 3,
@@ -226,7 +228,8 @@
       "username": "joaquin",
       "email": "joaquin@gmail.com",
       "password": "2b80773074c7c7a48b3a9b0aaeac4837",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 4,
@@ -234,7 +237,8 @@
       "username": "rodrigo",
       "email": "rodri@gmail.com",
       "password": "bd3711d0dd00de22e9d2fb6c1bdd85d6",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 5,
@@ -242,7 +246,8 @@
       "username": "juanita",
       "email": "juanita@gmail.com",
       "password": "d44c84f29768fdc6bc18fdb77e00849e",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 6,
@@ -250,7 +255,8 @@
       "username": "lizlucas",
       "email": "liz@gmail.com",
       "password": "b1c349de61e5ba64a64cd71e22638b07",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 7,
@@ -258,7 +264,8 @@
       "username": "paumucito",
       "email": "paulina.mucito@gmail.com",
       "password": "78838048c0a04badfec6f3f8f32a90b7",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": true
     },
     {
       "id": 8,
@@ -266,7 +273,8 @@
       "username": "r",
       "email": "contreras9996@gmail.com",
       "password": "1dc90e80c77fe245a82ea7ed30d1f849",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 9,
@@ -274,7 +282,8 @@
       "username": "fh",
       "email": "fdff@d.com",
       "password": "d8cb27dfc24bfc0cf3f18e43149b5d1a",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 10,
@@ -282,7 +291,8 @@
       "username": "antoniom",
       "email": "antonio@yahoo.com",
       "password": "912033a2c4747781b64c36a366218707",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 11,
@@ -290,7 +300,8 @@
       "username": "estefania",
       "email": "estefa@gmail.com",
       "password": "e72780e104a21a2d1b331a311e87f329",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 12,
@@ -298,7 +309,8 @@
       "username": "robertogh",
       "email": "robert@yahoo.com",
       "password": "eef1277974665419df56cb3aab4d894a",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": false
     },
     {
       "id": 13,
@@ -306,7 +318,8 @@
       "username": "raquel",
       "email": "raquel@gmail.com",
       "password": "7c324d6ebfcd6718de98c51b05620607",
-      "isLogged": false
+      "isLogged": false,
+      "isAdmin": true
     }
   ]
 }

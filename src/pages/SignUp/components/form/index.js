@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import md5 from 'md5';
 import './index.scss';
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 const baseURL = "http://localhost:4000/users";
 
@@ -95,7 +96,7 @@ const SignUp = (props) => {
                                 <Form.Control onChange={handleInputChangePassword} type={type} placeholder="Contraseña" name="password" />
                             </Form.Group>
                             <Form.Group className="showHide" as={Col} controlId="formBasicShowPassword">
-                                <span className="password_show" onClick={showHide}>{type === 'input' ? 'Ocultar' : 'Mostrar'}</span>
+                                <span className="password_show" onClick={showHide}>{type === 'input' ? (<AiFillEye/>)  : (<AiFillEyeInvisible/>)}</span>
                             </Form.Group>
                         </Form.Row>
                         <button className="FormButtonSignUp" type="submit">Regístrate</button>
