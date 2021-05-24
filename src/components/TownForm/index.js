@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { Col, Row, Button } from 'react-bootstrap/';
+import { Col, Row, Button, Modal } from 'react-bootstrap/';
 import "./index.scss";
 
 const TownForm = (props) => {
@@ -15,9 +15,12 @@ const TownForm = (props) => {
     };
 
     return (
-        <div className="townForm">
+        <Modal size="lg" show={props.show} onHide={props.handleClose}>
+            <Modal.Header>
+                <Modal.Title>{props.children}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
             <Form >
-                <h1 className="titleTownForm mb-5">Agregar nueva reseña</h1>
                 <Form.Row>
                     <Form.Group as={Col} controlId="formStateName">
 
@@ -41,8 +44,8 @@ const TownForm = (props) => {
                     <Form.Control type="text" name="urlImage" />
                 </Form.Group>
                 <Form.Group as={Row} controlId="formAttractionsLabel" >
-                    <Form.Label column sm={8} md={6} lg={4}>Selecciona el número de atracciones:</Form.Label>
-                    <Col sm={2} md={2} lg={1}>
+                    <Form.Label column >Selecciona el número de atracciones:</Form.Label>
+                    <Col>
                         <Form.Control as="select" name="attractions" onChange={action} custom>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -59,7 +62,7 @@ const TownForm = (props) => {
                         </Form.Group>
                         <Form.Group controlId={`attractionDescription${n}`}>
                             <Form.Label>Descripción</Form.Label>
-                            <Form.Control type="text" name="descriptionAttraction" />
+                            <Form.Control as="textarea" type="text" name="descriptionAttraction" />
                         </Form.Group>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formAttractionCost">
@@ -83,7 +86,8 @@ const TownForm = (props) => {
                 </div>
             
             </Form>
-        </div>
+            </Modal.Body>
+        </Modal>
     );
 }
 
