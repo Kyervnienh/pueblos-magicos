@@ -38,8 +38,7 @@ const filterDropdown = () => {
 
   const handleShow = (name, id) => {
     setShow(true);
-    setTownInfo({ name: name });
-    setTownInfo({ id: id });
+    setTownInfo({ 'name': name, 'id': id });
   };
 
   useEffect(() => {
