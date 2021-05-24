@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav'
 import './index.scss';
 import ReviewsList from '../../../components/ReviewsList';
+import DashboardHome from './DashboardHome';
+
 
 const TabsMenu = () => {
   return (
@@ -30,7 +32,7 @@ const TabsMenu = () => {
             <Col sm={10}>
             <Tab.Content>
                 <Tab.Pane eventKey="dashboard">
-                Aqui va lo dash
+                  <DashboardHome />
                 </Tab.Pane>
                 <Tab.Pane eventKey="review">
                 <ReviewsList/>
