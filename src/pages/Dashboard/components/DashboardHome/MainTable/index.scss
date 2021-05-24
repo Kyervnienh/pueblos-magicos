@@ -1,0 +1,41 @@
+.descriptions{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #7F7F7F;
+    padding: 16px;
+}
+
+P {margin: 0;}
+
+.td {
+    font-weight: bold;
+}
+
+.th {
+    width: 33%;
+    padding: 5px 0;
+}
+
+.review {
+    margin: 0;
+}
+
+.showMore {
+    width: auto; 
+    height: 40px;
+    border-color: #FFBF69;
+    background-color: #FFBF69;
+
+    &:hover {
+        background-color: #FFBF69;
+    }
+}
+
+.headerReview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
