@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.scss';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
 const MainTable = ({listReview}) => {
 
     return ( 
-        <Card class="mainClass">
+        <Card className="mainClass">
                 <div className="headerReview">                    
                     <Card.Title className="mb-2 text-muted review">Reseñas Recientes</Card.Title>
                     <Button type="button" className="showMore">Ver más</Button>
@@ -27,6 +28,10 @@ const MainTable = ({listReview}) => {
                 ))}
         </Card>
     );
+}
+
+MainTable.propTypes = {
+    listReview: PropTypes.array,
 }
  
 export default MainTable;

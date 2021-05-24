@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import './index.scss';
 import Cookies from 'universal-cookie';
-import { logDOM } from '@testing-library/dom';
 
 const cookies = new Cookies();
 
@@ -26,7 +25,7 @@ const BannerDashboard = () => {
                 <Link className="dashboard" to='/dashboard'>Dashboard</Link>
             </div>
             <div className="account" >
-                <i className="fa fa-user-circle icon" aria-hidden="true"></i>
+                <i className="fa fa-user-circle iconAccount" aria-hidden="true"></i>
                 <div>
                     <p className="name">{name}</p>
                     <Link className="" to='/' onClick={logOut}>Cerrar sesión</Link>

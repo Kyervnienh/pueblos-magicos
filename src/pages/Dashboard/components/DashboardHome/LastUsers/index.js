@@ -1,7 +1,8 @@
 import React from 'react';
 import './index.scss';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroup from 'react-bootstrap/ListGroup';
+import PropTypes from 'prop-types';
 
 const LastUsers = ({lastUsers}) => {
     return ( 
@@ -12,13 +13,17 @@ const LastUsers = ({lastUsers}) => {
                 <ListGroup variant="flush">
                     {lastUsers?.map(user => (
                         <ListGroup.Item  variant="flush" key={user.name}>
-                            <i class="fa fa-user-circle iconUs" aria-hidden="true"></i>
+                            <i className="fa fa-user-circle iconUs" aria-hidden="true"></i>
                             {user.name}
                         </ListGroup.Item>
                     ))}
                 </ListGroup>
         </Card>
     );
+}
+
+LastUsers.propTypes = {
+    lastUsers: PropTypes.array,
 }
  
 export default LastUsers;
