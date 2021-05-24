@@ -15,7 +15,7 @@ const StatisticsCard = (
                 <p className="number">{number}</p>
                 <p className="staticsName">{label}</p>
             </div>
-            <i class={`fa ${iconString} iconCard`} aria-hidden="true"></i>
+            <i className={`fa ${iconString} iconCard`} aria-hidden="true"></i>
         </Card>
     );
 }

@@ -24,7 +24,7 @@ const SliderQuotes = ({town}) => {
             setShow(filt.length >= 1 ? true : false);
         }
         getTownsAPI();
-    }, []);
+    });
 
     const breakPoints = [
     { width: 1, itemsToShow: 1 },

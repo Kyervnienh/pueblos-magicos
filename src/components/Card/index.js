@@ -24,7 +24,7 @@ const CardComponent = (
             <Card.Body>
                 <div>
                     <div className="score">
-                        <img src={star}     className="icon"
+                        <img src={star}     className="iconStart"
                             alt={name}
                             />
                         <Card.Text className="cal">
