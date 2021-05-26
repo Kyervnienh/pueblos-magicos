@@ -10,6 +10,7 @@ import TownList from "./pages/TownList/townlist";
 import SupportPage from "./pages/Support";
 import CommunityPage from "./pages/Community";
 import Dashboard from "./pages/Dashboard/dashboard";
+import TownForm from "./components/TownForm"
 import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
@@ -40,6 +41,8 @@ function App() {
         <Route path="/soporte" component={SupportPage} exact></Route>
         <Route path="/comunidad" component={CommunityPage} exact></Route>
         <Route path="/dashboard" component={isLogged && isAdmin ? Dashboard : NotFoundPage} exact></Route>
+        <Route path="/dashboard/addTown" component={isLogged && isAdmin ? TownForm : NotFoundPage} exact></Route>
+        <Route path="/dashboard/editTown" component={isLogged && isAdmin ? TownForm : NotFoundPage} exact></Route>
         <Route component={NotFoundPage}></Route>
       </Switch>
     </Router>

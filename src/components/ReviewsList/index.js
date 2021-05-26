@@ -8,7 +8,7 @@ import Card from "react-bootstrap/Card";
 import ModalDelete from "../ModalDelete";
 import NotFound from "../../components/NotFound";
 import Pagination from '../../pages/TownList/components/Pagination';
-import TownForm from "../TownForm";
+import { Link } from "react-router-dom";
 
 const baseURL = "http://localhost:4000/dataTown";
 
@@ -16,8 +16,6 @@ const ReviewsList = () => {
   const [towns, setTowns] = useState([]);
   const [townInfo, setTownInfo] = useState({});
   const [show, setShow] = useState(false);
-  const [showAddTown, setShowAddTown] = useState(false);
-  const [showEditTown, setShowEditTown] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [inferiorLimit, setInferiorLimit] = useState(0);
   const [superiorLimit, setSuperiorLimit] = useState(3);
@@ -44,19 +42,6 @@ const filterDropdown = () => {
     setTownInfo({ 'name': name, 'id': id });
   };
 
-  const handleShowAddTown = () => {
-    setShowAddTown(true);
-  }
-
-  const handleShowEditTown = () => {
-    setShowEditTown(true);
-  }
-
-  const handleCloseTownForm = () => {
-    setShowAddTown(false);
-    setShowEditTown(false);
-  };
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -78,7 +63,7 @@ const filterDropdown = () => {
         <Card style={{ width: "18rem" }}>
           <Card.Body>
             <Card.Title>Agregar nueva Reseña</Card.Title>
-            <AiFillFileAdd className="AddReviewIcon" size={30} onClick={setShowAddTown}></AiFillFileAdd>
+            <Link to="/dashboard/addTown"><AiFillFileAdd className="AddReviewIcon" size={30}></AiFillFileAdd></Link>
           </Card.Body>
         </Card>
       </div>
@@ -103,7 +88,7 @@ const filterDropdown = () => {
                   <td>{item.pts}</td>
                   <td>{item.infoState}</td>
                   <td className="EditIcon">
-                    <TiEdit size={30} onClick={handleShowEditTown}></TiEdit>
+                    <Link to={{ pathname: "/dashboard/editTown", town: item }}><TiEdit size={30}></TiEdit></Link>
                   </td>
                   <td className="DeleteIcon">
                     <RiDeleteBinLine
@@ -125,8 +110,6 @@ const filterDropdown = () => {
         townName={townInfo.name}
         townId={townInfo.id}
       />
-      <TownForm show={showAddTown} handleClose={handleCloseTownForm}>Añade una reseña</TownForm>
-      <TownForm show={showEditTown} handleClose={handleCloseTownForm}>Modificar Reseña</TownForm>
       <Pagination numberOfCards={towns.length} currentPage={currentPage} changePage={changePage} />
     </>
   );
