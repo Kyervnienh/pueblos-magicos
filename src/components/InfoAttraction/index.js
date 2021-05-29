@@ -15,28 +15,32 @@ const InfoAttraction = ({
 }) => {
   return (
     <>
-      <Container className="table">
-        <Row>
-          <Col>
+      <Container>
+        <Row className="align-items-center">
+          <Col sm={12} md={6}  className="px-4">
             <h2 className="titleAtraction">{attractionName}</h2>
             <p className="textDescription">{info}</p>
           </Col>
-          <Col>
+          <Col sm={12} md={6} className="text-center px-4">
             <img src={img} alt={attractionName} className="imgStyle"></img>
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="my-3">
         <Row>
-          <h5 className="textDescription">Costo: {cost}</h5>
+          <Col>
+            <h5 className="textDescription">Costo: {cost}</h5>
+          </Col>
         </Row>
         <Row>
-          <h5 className="textDescription">
-            Distancia desde el centro del pueblo: {distance}
-          </h5>
+          <Col>
+            <h5 className="textDescription text-left">Distancia desde el centro del pueblo: {distance}</h5>
+          </Col>
         </Row>
         <Row>
-          <h5 className="textDescription">Tipo de atracción: {type}</h5>
+          <Col>
+            <h5 className="textDescription text-left">Tipo de atracción: {type}</h5>
+          </Col>
         </Row>
       </Container>
     </>

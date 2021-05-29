@@ -24,18 +24,18 @@ const ReviewsList = () => {
     setCurrentPage(parseInt(e.target.value));
     setInferiorLimit((parseInt(e.target.value) - 1) * 3);
     if (parseInt(e.target.value) * 3 >= towns.length) {
-        setSuperiorLimit(towns.length)
+      setSuperiorLimit(towns.length)
     } else {
-        setSuperiorLimit(parseInt(e.target.value) * 3);
+      setSuperiorLimit(parseInt(e.target.value) * 3);
     }
-}
+  }
 
-const filterDropdown = () => {
-  let newTowns = [];
+  const filterDropdown = () => {
+    let newTowns = [];
 
-  for (let i = inferiorLimit; i < superiorLimit; i++) newTowns.push(towns[i]);
-  return newTowns;
-}
+    for (let i = inferiorLimit; i < superiorLimit; i++) newTowns.push(towns[i]);
+    return newTowns;
+  }
 
   const handleShow = (name, id) => {
     setShow(true);
@@ -58,19 +58,19 @@ const filterDropdown = () => {
 
   return (
     <>
-    <h1>Administrar Reseñas</h1>
+      <h1>Administrar Reseñas</h1>
       <div className="AddReviewButton">
         <Card style={{ width: "18rem" }}>
           <Card.Body>
-            <Card.Title>Agregar nueva Reseña</Card.Title>
+            <Card.Title className="m-0">Agregar nueva Reseña</Card.Title>
             <Link to="/dashboard/addTown"><AiFillFileAdd className="AddReviewIcon" size={30}></AiFillFileAdd></Link>
           </Card.Body>
         </Card>
       </div>
       {towns.length ? (
         <div className="table">
-          <Table responsive bsPrefix>
-            <thead>
+          <Table responsive className="justify-content-start pr-0">
+            <tbody>
               <tr>
                 <th>Pueblo Mágico</th>
                 <th>Estado</th>
@@ -79,16 +79,15 @@ const filterDropdown = () => {
                 <th>Editar</th>
                 <th>Eliminar</th>
               </tr>
-            </thead>
-            <tbody>
+
               {filterDropdown().map((item) => (
                 <tr key={item.id}>
                   <td>{item.name}</td>
                   <td>{item.state}</td>
                   <td>{item.pts}</td>
-                  <td>{item.infoState}</td>
+                  <td>{item.infoState.slice(0, 100) + '...'}</td>
                   <td className="EditIcon">
-                    <Link to={{ pathname: "/dashboard/editTown", town: item }}><TiEdit size={30}></TiEdit></Link>
+                    <Link to={{ pathname: "/dashboard/editTown", town: item }} className="linkEditTown"><TiEdit size={30}></TiEdit></Link>
                   </td>
                   <td className="DeleteIcon">
                     <RiDeleteBinLine

@@ -2,6 +2,7 @@ import React from "react";
 import NavSidebar from "../../components/NavSidebar";
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
+import Footer from "../../components/Footer";
 
 const SupportPage = () => {
   return (
@@ -11,8 +12,8 @@ const SupportPage = () => {
         ¿Quiénes dan mantenimiento y soporte a Pueblos Mágicos?
       </h1>
       <div className="SupportTable">
-        <Table>
-          <tbody>
+        <Table responsive className="justify-content-start">
+          <tbody className="mx-auto">
             <tr>
               <th>Kevin Henry López Vázquez</th>
               <th>Paulina Valeria Quintero Mucito</th>
@@ -62,6 +63,7 @@ const SupportPage = () => {
           </tbody>
         </Table>
       </div>
+      <Footer />
     </>
   );
 };

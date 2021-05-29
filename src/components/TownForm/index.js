@@ -96,7 +96,7 @@ const TownForm = (props) => {
 
                         <Form.Label>Selecciona un Estado:</Form.Label>
                         <Form.Control as="select" name="state" custom onChange={handleInputChange}
-                        defaultValue={town ? town.state : "Estado de México"}>
+                            defaultValue={town ? town.state : "Estado de México"}>
                             <option value="Estado de México">Estado de México</option>
                             <option value="Hidalgo">Hidalgo</option>
                         </Form.Control>
@@ -104,13 +104,13 @@ const TownForm = (props) => {
                     <Form.Group as={Col} controlId="formTownName" className="townFormGroup">
                         <Form.Label>Nombre del Pueblo Mágico:</Form.Label>
                         <Form.Control type="text" name="name" onChange={handleInputChange}
-                        defaultValue={town ? town.name : ""}></Form.Control>
+                            defaultValue={town ? town.name : ""}></Form.Control>
                     </Form.Group>
                 </Form.Row>
                 <Form.Group controlId="formBasicEmail" className="townFormGroup">
                     <Form.Label>Descripción:</Form.Label>
                     <Form.Control as="textarea" type="text" name="infoState" onChange={handleInputChange}
-                    defaultValue={town ? town.infoState : ""} />
+                        defaultValue={town ? town.infoState : ""} />
                 </Form.Group>
                 <Form.Group controlId="formUrlImage" className="townFormGroup">
                     <Form.Label>URL de la imagen (imagen principal del pueblo):</Form.Label>
@@ -177,7 +177,7 @@ const TownForm = (props) => {
                     </div>
                 )}
                 <div className="formButton">
-                    <Button type="submit">Agregar</Button>
+                    <Button type="submit">{town ? "Modificar" : "Agregar"}</Button>
                 </div>
             </Form>
         </div>

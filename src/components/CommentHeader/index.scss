@@ -3,12 +3,14 @@
 
     .text {
         font-family: 'Roboto', sans-serif;
-        font-size: 18px;
+        font-size: 22px;
         color: #7F7F7F;
+        text-align: center;
         margin-top: 5rem;
 
         @media (min-width: 768px) {
             font-size: 35px;
+            text-align: left;
         }
     }
 

@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { RiUserSmileLine } from "react-icons/ri";
 import NotFound from '../../components/NotFound';
+import Footer from '../../components/Footer';
 
 const baseURL = "http://localhost:4000/users";
 
@@ -65,6 +66,7 @@ const CommunityPage = () => {
               <NotFound>No se encontraron datos</NotFound>
             )
          }
+         <Footer/>
         </>
     );
 }

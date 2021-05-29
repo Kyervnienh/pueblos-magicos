@@ -14,21 +14,23 @@ const InfoGeneral = (
     return (
         <Container>
             <Row>
-                <Col>
+                <Col className="px-4">
                     <h1 className="titleGeneral">Información general</h1>
                 </Col>
             </Row>
-                <Row>
-                    <Col>
-                        <img className="imgStyle" src={img} alt={name}></img>
-                        <p className="textDescription">{infoState}</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <h1 className="titleSection">¿Qué hacer en {name} ?</h1>
-                    </Col>
-                </Row>
+            <Row>
+                <Col sm={12} md={6} className="px-4">
+                    <p className="textDescription">{infoState}</p>
+                </Col>
+                <Col sm={12} md={6} className="text-center px-4">
+                    <img className="imgStyle" src={img} alt={name}></img>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h1 className="titleSection">¿Qué hacer en {name} ?</h1>
+                </Col>
+            </Row>
         </Container>
     )
 }

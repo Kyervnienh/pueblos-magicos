@@ -13,7 +13,7 @@ const TabsMenu = () => {
     <div className='tabsMenu'>
       <Tab.Container id="left-tabs-example" defaultActiveKey="dashboard" tabClassName='tabsMenu'>
         <Row>
-            <Col sm={2}>
+            <Col sm={3}>
             <Nav variant="pills" className="flex-column">
                 <Nav.Item>
                 <Nav.Link eventKey="dashboard"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
@@ -29,7 +29,7 @@ const TabsMenu = () => {
                 </Nav.Item>
             </Nav>
             </Col>
-            <Col sm={10}>
+            <Col sm={9} className="p-0">
             <Tab.Content>
                 <Tab.Pane eventKey="dashboard">
                   <DashboardHome />

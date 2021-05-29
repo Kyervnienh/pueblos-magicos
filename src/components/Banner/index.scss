@@ -1,11 +1,12 @@
 .baneer {
 
-    margin: 50px 0;
+    margin-bottom: 50px;
     position: relative;
 
     .imgBack {
         width: 100%;
         height:40vh;
+        object-fit: cover;
         filter: opacity(.7);
     }
 
