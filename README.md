@@ -187,6 +187,44 @@ En el cual podrás agregar:
 * Calificaciión, con base de 1 a 5 estrellas, elige la que te parezca conveniente.
 * Da click en enviar y verás tu comentario en la sección de arriba.
 
+### Dashboard
+Esta opcion solo esta disponible para usuarios admin y que esten logedados a la pagina
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/DashboardMenu?raw=true" alt="modal" width="auto" height="auto" />
+    <br>
+</div>
+Una vez dentro se podrá visualizar el menu del dashboard que se ve algo así
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/DashboardOpciones?raw=true" alt="modal" width="auto" height="auto" />
+    <br>
+</div>
+
+En el se encuentras tres opciones principales, donde se encuentra toda la informacion de nuestra pagina y en ellos se puede visualizar, editar, eliminar y/o agregar mas informacion depende el caso.
+El menu de reseñas se muestra de la siguiente manera, en el se pueden agregar reseñas completas de pueblos con hasta 3 atracciones, modificarlas o eliminarlas:
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/resenasDashboard?raw=true" alt="modal" width="auto" height="auto" />
+    <br>
+</div>
+
+El menu usuarios tiene la opcion de visualizar la informacion de los usuarios registradis a la pagina, eliminarlos e inclusive revocar/agregar permisos de usuario
+
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/usuariosDashboard?raw=true" alt="modal" width="auto" height="auto" />
+    <br>
+</div>
+
+
+El menu comentarios te permite visualizar los comentarios de las personas que han dejado su opinion y de eliminarlos segun sea el caso
+<div align="center">
+    <br>
+    <img src="https://github.com/raquellvazquez/pueblos-magicos/blob/fix/update-readme/src/assets/imgReadme/comentariosDashboard?raw=true" alt="modal" width="auto" height="auto" />
+    <br>
+</div>
+
 ## ¿Cómo puedo comenzar a usar  localmente Turi?
 
 Para comenzar a usar Turi localmente: 
