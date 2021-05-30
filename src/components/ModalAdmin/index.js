@@ -6,16 +6,17 @@ import "./index.scss";
 
 const baseURL = "http://localhost:4000";
 
-const ModalDelete = (props) => {
+const ModalAdmin = (props) => {
 
-  const deleteTown = async (event) => {
+  const changeStateAdmin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`${baseURL}/${props.model}/${props.elementId}`, {
-        method: "DELETE",
+      const response = await fetch(`${baseURL}/${props.model}/${props.userId}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-        }
+        },
+        body: JSON.stringify({["isAdmin"]: props.userIsAdmin})
       });
       if (!response.ok) throw new Error("Response not ok");
     } catch (error) {
@@ -23,17 +24,17 @@ const ModalDelete = (props) => {
     }
     window.location.href = "./dashboard";
   };
-  const handleClose = () => props.setShow(false);
+  const handleClose = () => props.setShowAdmin(false);
   return (
     <>
-      <Modal show={props.show} onHide={handleClose}>
+      <Modal show={props.showAdmin} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{`¿Eliminar ${props.elementName}?`}</Modal.Title>
+          <Modal.Title>{`¿Estas seguro de ${props.action} los permisos de administrador de ${props.userName}?`}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{`Si eliminas ${props.typeInfo} no se podrá recuperar`}</Modal.Body>
+        <Modal.Body>{`Los permisos de administrador incluyen acciones como visualizar, eliminar o editar información sensible de TURI`}</Modal.Body>
         <Modal.Footer>
           <div className="DeleteBtn">
-            <Button onClick={deleteTown} type="submit">Eliminar</Button>
+            <Button onClick={changeStateAdmin} type="submit">Continuar</Button>
           </div>
           <div className="CancelBtn">
             <Button variant="secondary" onClick={handleClose}>
@@ -46,10 +47,11 @@ const ModalDelete = (props) => {
   );
 };
 
-ModalDelete.propTypes = {
-  show: PropTypes.bool.isRequired,
-  typeInfo: PropTypes.string.isRequired,
+ModalAdmin.propTypes = {
+  showAdmin: PropTypes.bool.isRequired,
+  userIsAdmin: PropTypes.bool.isRequired,
+  action: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
 }
 
-export default ModalDelete;
+export default ModalAdmin;
