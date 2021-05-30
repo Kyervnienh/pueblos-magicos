@@ -106,8 +106,10 @@ const ReviewsList = () => {
       <ModalDelete
         show={show}
         setShow={setShow}
-        townName={townInfo.name}
-        townId={townInfo.id}
+        elementName={townInfo.name}
+        elementId={townInfo.id}
+        typeInfo={"esta reseña"}
+        model={"dataTown"}
       />
       <Pagination numberOfCards={towns.length} currentPage={currentPage} changePage={changePage} />
     </>

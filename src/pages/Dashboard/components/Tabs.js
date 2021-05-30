@@ -6,6 +6,8 @@ import Nav from 'react-bootstrap/Nav'
 import './index.scss';
 import ReviewsList from '../../../components/ReviewsList';
 import DashboardHome from './DashboardHome';
+import UsersList from '../../../components/UsersList';
+import CommentsList from '../../../components/CommentsList';
 
 
 const TabsMenu = () => {
@@ -38,10 +40,10 @@ const TabsMenu = () => {
                 <ReviewsList/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="users">
-                Aqui van los usuarios
+                <UsersList/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="coments">
-                Aqui van los comentarios
+                  <CommentsList/>
                 </Tab.Pane>
             </Tab.Content>
             </Col>
