@@ -110,6 +110,7 @@ const ReviewsList = () => {
         elementId={townInfo.id}
         typeInfo={"esta reseña"}
         model={"dataTown"}
+        locations={"dashboard"}
       />
       <Pagination numberOfCards={towns.length} currentPage={currentPage} changePage={changePage} />
     </>

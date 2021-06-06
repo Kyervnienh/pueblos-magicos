@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form";
 const baseURL = "http://localhost:4000/comments";
 const cookies = new Cookies();
 
-function FeedbackForm({ show, setShow, handleClose, town }) {
+function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment }) {
   const [isLogged, setisLogged] = useState(false);
   const profile_photo_url =
     "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
@@ -24,6 +24,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
     } else {
       setisLogged(false);
     }
+    if (idComment) setData({ ...data, body: quote, pts, id: idComment })
   }, []);
 
   const [data, setData] = useState({
@@ -91,7 +92,26 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
     } catch (error) {
       console.error(error);
     }
+    window.location = `/pueblosmagicos/${town}`
   };
+
+  const editComment = async () => {
+    try {
+      const response = await fetch(`${baseURL}/${idComment}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Response not ok");
+
+      setShow(false);
+    } catch (error) {
+      console.error(error);
+    }
+    window.location = `/pueblosmagicos/${town}`
+  }
 
   return (
     <>
@@ -108,7 +128,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
                 as="textarea"
                 rows={3}
                 name="body"
-                value={data.body}
+                defaultValue={quote ? quote : data.body}
                 onChange={handleChange}
               />
               <Form.Control.Feedback type="invalid">
@@ -135,7 +155,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
             disabled={!isLogged}
             variant="primary"
             type="submit"
-            onClick={addComment}
+            onClick={idComment ? editComment : addComment}
           >
             Enviar
           </Button>

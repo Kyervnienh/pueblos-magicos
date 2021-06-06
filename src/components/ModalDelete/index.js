@@ -21,7 +21,7 @@ const ModalDelete = (props) => {
     } catch (error) {
       console.error(error);
     }
-    window.location.href = "./dashboard";
+    window.location.href = `./${props.location}`;
   };
   const handleClose = () => props.setShow(false);
   return (

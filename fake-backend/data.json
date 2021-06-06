@@ -188,7 +188,7 @@
       "id": 1,
       "name": "Antonio Moreno",
       "body": "Asombroso Lugar",
-      "pts": "4.4",
+      "pts": 4,
       "dataTownId": 1,
       "userId": 1,
       "img": "http://media.syracuse.com/business-impact/photo/Eric%20Persons.JPG"
@@ -197,7 +197,7 @@
       "id": 2,
       "name": "Paulina Mendez",
       "body": "Excelente lugar para ir con la familia",
-      "pts": "4.2",
+      "pts": 4,
       "dataTownId": 2,
       "userId": 2,
       "img": "https://www.floridadaily.com/wp-content/uploads/2019/02/jenna-persons-525x420.jpg"

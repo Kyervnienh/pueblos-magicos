@@ -126,6 +126,7 @@ const UsersList = () => {
         elementId={userInfo.id}
         typeInfo={"este usuario"}
         model={"users"}
+        location={"dashboard"}
       />
       <Pagination
         numberOfCards={users.length}

@@ -126,6 +126,7 @@ const CommentsList = () => {
         elementId={commentInfo.id}
         typeInfo={"este comentario"}
         model={"comments"}
+        location={"dashboard"}
       />
       <Pagination
         numberOfCards={comments.length}
