@@ -4,12 +4,11 @@ import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import "./index.scss";
-import md5 from "md5";
 import Cookies from "universal-cookie";
 import Alert from "react-bootstrap/Alert";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-const baseURL = "http://localhost:4000/users/?";
+const baseURL = "http://localhost:8080/users";
 
 const cookies = new Cookies();
 
@@ -31,7 +30,6 @@ const Login = (props) => {
   const [form, setForm] = useState({
     username: "",
     password: "",
-    isLogged: false,
   });
   const [isCorrect, setisCorrect] = useState(true);
   const [type, setType] = useState("password");
@@ -45,28 +43,25 @@ const Login = (props) => {
 
   const logInSesion = async () => {
     try {
-      const response = await fetch(
-        baseURL +
-          new URLSearchParams({
-            username: form.username,
-            password: md5(form.password),
-          })
-      );
-      const data = await response.json();
-      if (data.length > 0) {
-        let resp = data[0];
-        console.log(resp);
-        cookies.set("id", resp.id, { path: "/" });
-        cookies.set("email", resp.email, { path: "/" });
-        cookies.set("isLogged", resp.isLogged, { path: "/" });
-        cookies.set("name", resp.name, { path: "/" });
-        cookies.set("username", resp.username, { path: "/" });
-        cookies.set("isAdmin", resp.isAdmin, { path: "/" });
-        setisCorrect(true);
-        props.history.push("/");
-      } else {
+      const response = await fetch(`${baseURL}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      if (!response.ok) {
         setisCorrect(false);
+        throw new Error("Response not ok");
       }
+      const data = await response.json();
+      setisCorrect(true);
+      cookies.set("name", data.name, { path: "/" });
+      cookies.set("username", data.username, { path: "/" });
+      cookies.set("isAdmin", data.isAdmin, { path: "/" });
+      cookies.set("token", data.token, { path: "/" });
+      cookies.set("email", data.email, { path: "/" });
+      props.history.push("/");
     } catch (error) {
       console.error(error);
     }
