@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import md5 from 'md5';
 import './index.scss';
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-const baseURL = "http://localhost:4000/users";
+const baseURL = "http://localhost:8080/users";
 
 const SignUp = (props) => {
-    const [type, setType] = useState('input');
+    const [type, setType] = useState('password');
     const [users, setUsers] = useState([]);
-    const [data, setData] = useState({ id: 0, name: '', username: '', email: '', password: '', isLogged: false });
+    const [data, setData] = useState({ name: '', username: '', email: '', password: '', isAdmin: false });
 
     useEffect(() => {
         const getData = async () => {
@@ -44,15 +43,13 @@ const SignUp = (props) => {
     const handleInputChangePassword = (event) => {
       setData({
           ...data,
-          [event.target.name] : md5(event.target.value)
+          [event.target.name] : event.target.value
       })
   }
 
     const addUser = async (event) => {
       event.preventDefault()
-        const lastUser = users[users.length - 1];
-        const newId = lastUser.id + 1;
-        setData({...data, id : newId});
+        setData({...data});
         try {
           const response = await fetch(baseURL, {
             method: 'POST',
