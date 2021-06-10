@@ -13,7 +13,7 @@ const SuggestionsComponent= () => {
 
     useEffect(() => {
         const getTownsAPI = async () => {
-            const url = 'http://localhost:4000/datatown';
+            const url = 'http://localhost:8080/towns';
             const response = await fetch(url);
             const resultado = await response.json();
             setSuggestions(resultado.slice(-3,resultado.length))
@@ -37,8 +37,8 @@ const SuggestionsComponent= () => {
                         state={town.state}
                         pts={town.pts}
                         img={town.img}
-                        key={town.id}
-                        id={town.id}
+                        key={town._id}
+                        id={town._id}
                         action={() => exampleAction(town.name)}
                     />
                 ))}

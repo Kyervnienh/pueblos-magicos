@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const SliderQuotes = ({ town }) => {
 
-    let townSelected = parseInt(town);
+    let townSelected = town;
 
     const [comments, setComments] = useState();
 
@@ -14,11 +14,11 @@ const SliderQuotes = ({ town }) => {
 
     useEffect(() => {
         const getTownsAPI = async () => {
-            const url = 'http://localhost:4000/comments';
+            const url = 'http://localhost:8080/comments';
             const response = await fetch(url);
             const resultado = await response.json();
             const filt = resultado.filter(comment => {
-                return comment.dataTownId === townSelected;
+                return comment.dataTownId._id === townSelected;
             });
             setComments(filt);
             setShow(filt.length >= 1 ? true : false);
@@ -42,13 +42,14 @@ const SliderQuotes = ({ town }) => {
                         <Carousel breakPoints={breakPoints}>
                             {comments?.map(item =>
                                 <div key={item.id}>
+                                    {console.log(item)}
                                     <CardQuotes
                                         img={item.img}
                                         quote={item.body}
-                                        person={item.name}
+                                        person={item.userId.name}
                                         pts={item.pts}
                                         town={town}
-                                        idComment={item.id}
+                                        idComment={item._id}
                                     />
                                 </div>
                             )}

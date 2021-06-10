@@ -7,16 +7,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const baseURL = "http://localhost:4000/comments";
+const baseURL = "http://localhost:8080/comments";
 const cookies = new Cookies();
 
 function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment }) {
   const [isLogged, setisLogged] = useState(false);
   const profile_photo_url =
     "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
-  console.log(town);
   let idUser = cookies.get("id");
-  let userName = cookies.get("name");
 
   useEffect(() => {
     if (cookies.get("username")) {
@@ -28,8 +26,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
   }, []);
 
   const [data, setData] = useState({
-    id: 0,
-    name: userName,
     body: "",
     pts: 0,
     dataTownId: town,
@@ -52,20 +48,13 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     return errors;
   };
 
-  const [comments, setComments] = useState([]);
-
   const addComment = async () => {
-    const lastComment = comments[comments.length - 1];
-    const newId = lastComment?.id + 1;
     setData({
       ...data,
-      id: newId,
       dataTownId: town,
       userId: idUser,
-      name: userName,
       img: profile_photo_url,
     });
-    console.log(data);
     try {
       const response = await fetch(baseURL, {
         method: "POST",
@@ -76,19 +65,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
       });
       if (!response.ok) throw new Error("Response not ok");
 
-      const newComment = await response.json();
-
-      setComments(comments.concat([newComment]));
-      setData({
-        id: 0,
-        name: "",
-        body: "",
-        pts: 0,
-        dataTownId: 0,
-        userId: 0,
-        img: "",
-      });
-      setShow(false);
     } catch (error) {
       console.error(error);
     }

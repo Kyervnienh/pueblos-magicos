@@ -17,7 +17,7 @@ const TownList = () => {
 
     useEffect(() => {
         const getTownsFilteredAPI = async () => {
-            const url = 'http://localhost:4000/datatown';
+            const url = 'http://localhost:8080/towns';
             const response = await fetch(url);
             const result = await response.json();
             setAllTowns(result);
@@ -60,7 +60,9 @@ const TownList = () => {
     const filterDropdown = () => {
         let towns = [];
 
-        for (let i = inferiorLimit; i < superiorLimit; i++) towns.push(townsFiltered[i]);
+        for (let i = inferiorLimit; i < superiorLimit; i++){
+            if (townsFiltered[i]) towns.push(townsFiltered[i]);
+        }
         return towns;
     }
 
@@ -93,8 +95,8 @@ const TownList = () => {
                                     state={town.state}
                                     pts={town.pts}
                                     img={town.img}
-                                    key={town.id}
-                                    id={town.id}
+                                    key={town._id}
+                                    id={town._id}
                                     action={() => exampleAction(town.name)}
                                 />
                             ))

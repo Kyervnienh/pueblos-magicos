@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import InfoAttraction from '../../../../components/InfoAttraction';
 import InfoGeneral from '../../../../components/InfoGeneral';
 import BannerComponent from '../../../../components/Banner';
 import LoadingComponent from '../../../../components/Loading';
 
-const baseURL = "http://localhost:4000/dataTown";
-
-const InfoAttractions = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [town, setTown] = useState({});
-  let townId = parseInt(props.town);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(`${baseURL}/${townId}`);
-        const data = await response.json();
-        setTown(data);
-        setIsLoading(false);
-      } catch(error) {
-        console.error(error);
-      }
-    };
-
-    getData();
-  }, []);
+const InfoAttractions = ({town, isLoading}) => {
 
     return (
       isLoading ? <LoadingComponent /> :
@@ -50,7 +31,8 @@ const InfoAttractions = (props) => {
 } 
   
   InfoAttractions.propTypes = {
-    town: PropTypes.string.isRequired,
+    town: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool.isRequired
 }
 
 export default InfoAttractions;

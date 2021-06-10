@@ -87,12 +87,8 @@
         .btn {
             width: auto; 
             height: auto;
-            border-color: #FFBF69;
-            background-color: #FFBF69;
-
-            &:hover {
-                background-color: #FFBF69;
-            }
+            border: none;
+            background-color: transparent;
         }
     }
 }

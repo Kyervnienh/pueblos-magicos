@@ -1,33 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import Table from "react-bootstrap/Table";
-import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import ModalDelete from "../ModalDelete";
-import ModalAdmin from "../ModalAdmin";
 import NotFound from "../../components/NotFound";
 import Pagination from "../../pages/TownList/components/Pagination";
 
-const baseURL = "http://localhost:4000";
+const baseURL = "http://localhost:8080";
 
 const CommentsList = () => {
-  const [towns, setTowns] = useState([]);
   const [comments, setComments] = useState([]);
   const [commentInfo, setCommentInfo] = useState({});
   const [show, setShow] = useState(false)
   const [currentPage, setCurrentPage] = useState(1);
   const [inferiorLimit, setInferiorLimit] = useState(0);
   const [superiorLimit, setSuperiorLimit] = useState(3);
-
-  const commentTown = (townId) => {
-      let name = '';
-    towns.forEach(function(town) {
-        if(Number(townId) === Number(town.id)) {
-            name = town.name;
-        }
-    })
-    return name;
-};
 
   const handleShow = (name, id) => {
     setShow(true);
@@ -54,11 +41,8 @@ const CommentsList = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(`${baseURL}/dataTown`);
         const responseComment = await fetch(`${baseURL}/comments`);
-        const data = await response.json();
         const dataComment = await responseComment.json();
-        setTowns(data);
         setComments(dataComment);
       } catch (error) {
         console.error(error);
@@ -85,13 +69,13 @@ const CommentsList = () => {
                   comments.length >= 3 ? 
                   filterDropdown().map((item) => (
                     <tr key={item.id}>
-                      <td>{item.name}</td>
+                      <td>{item.userId.name}</td>
                       <td>{item.body}</td>
-                      <td>{commentTown(item.dataTownId)}</td>
+                      <td>{item.dataTownId.name}</td>
                       <td>{item.pts}</td>
                       <td className="DeleteIcon">
                         <RiDeleteBinLine
-                          onClick={() => handleShow(item.name, item.id)}
+                          onClick={() => handleShow(item.userId.name, item.id)}
                           size={25}
                         ></RiDeleteBinLine>
                       </td>
@@ -100,13 +84,13 @@ const CommentsList = () => {
                   :
                   comments.map((item) => (
                     <tr key={item.id}>
-                      <td>{item.name}</td>
+                      <td>{item.userId.name}</td>
                       <td>{item.body}</td>
-                      <td>{commentTown(item.dataTownId)}</td>
+                      <td>{item.dataTownId.name}</td>
                       <td>{item.pts}</td>
                       <td className="DeleteIcon">
                         <RiDeleteBinLine
-                          onClick={() => handleShow(item.name, item.id)}
+                          onClick={() => handleShow(item.userId.name, item.id)}
                           size={25}
                         ></RiDeleteBinLine>
                       </td>

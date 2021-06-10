@@ -12,7 +12,7 @@ const CardComponent = (
         pts = '4.5', 
         name = 'Villa del carbón', 
         state = 'Estado de México', 
-        id = 1,
+        id,
         action = function(){
             console.log('click')
         }
@@ -55,7 +55,7 @@ CardComponent.propTypes = {
     pts: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     action: PropTypes.func.isRequired,
 }
 
