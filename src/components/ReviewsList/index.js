@@ -10,7 +10,7 @@ import NotFound from "../../components/NotFound";
 import Pagination from '../../pages/TownList/components/Pagination';
 import { Link } from "react-router-dom";
 
-const baseURL = "http://localhost:4000/dataTown";
+const baseURL = "http://localhost:8080/towns";
 
 const ReviewsList = () => {
   const [towns, setTowns] = useState([]);
@@ -81,7 +81,7 @@ const ReviewsList = () => {
               </tr>
 
               {filterDropdown().map((item) => (
-                <tr key={item.id}>
+                <tr key={item._id}>
                   <td>{item.name}</td>
                   <td>{item.state}</td>
                   <td>{item.pts}</td>
@@ -91,7 +91,7 @@ const ReviewsList = () => {
                   </td>
                   <td className="DeleteIcon">
                     <RiDeleteBinLine
-                      onClick={() => handleShow(item.name, item.id)}
+                      onClick={() => handleShow(item.name, item._id)}
                       size={25}
                     ></RiDeleteBinLine>
                   </td>
@@ -109,8 +109,8 @@ const ReviewsList = () => {
         elementName={townInfo.name}
         elementId={townInfo.id}
         typeInfo={"esta reseña"}
-        model={"dataTown"}
-        locations={"dashboard"}
+        model={"towns"}
+        location={"dashboard"}
       />
       <Pagination numberOfCards={towns.length} currentPage={currentPage} changePage={changePage} />
     </>

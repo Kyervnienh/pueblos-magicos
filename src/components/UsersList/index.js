@@ -8,7 +8,7 @@ import ModalAdmin from "../ModalAdmin";
 import NotFound from "../../components/NotFound";
 import Pagination from "../../pages/TownList/components/Pagination";
 
-const baseURL = "http://localhost:4000";
+const baseURL = "http://localhost:8080";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -24,7 +24,7 @@ const UsersList = () => {
   const commentsCont = (userName) => {
       let cont = 0;
       comments.forEach(function(comment) {
-          if(userName === comment.name) {
+          if(userName === comment.userId.name) {
               cont++;
           }
       })

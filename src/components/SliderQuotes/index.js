@@ -41,8 +41,7 @@ const SliderQuotes = ({ town }) => {
                         <h1 className="title">Comentarios sobre la reseña </h1>
                         <Carousel breakPoints={breakPoints}>
                             {comments?.map(item =>
-                                <div key={item.id}>
-                                    {console.log(item)}
+                                <div key={item._id}>
                                     <CardQuotes
                                         img={item.img}
                                         quote={item.body}

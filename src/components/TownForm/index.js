@@ -4,12 +4,11 @@ import { Col, Row, Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import "./index.scss";
 
-const baseURL = "http://localhost:4000/dataTown";
+const baseURL = "http://localhost:8080/towns";
 
 const TownForm = (props) => {
     const [attractions, setAttractions] = useState([0]);
-    const [data, setData] = useState({ id: 0, name: '', state: 'Estado de México', infoState: '', img: '', pts: '', attractions: [] });
-    const [towns, setTowns] = useState([]);
+    const [data, setData] = useState({ name: '', state: 'Estado de México', infoState: '', img: '', pts: '', attractions: [] });
 
     const selectAttractions = (e) => {
         let attractionsNumber = [];
@@ -42,12 +41,8 @@ const TownForm = (props) => {
         event.preventDefault();
 
         let met = town ? 'PUT' : 'POST';
-        let url = town ? `${baseURL}/${data.id}` : baseURL;
-        if (!town) {
-            const lastTown = towns[towns.length - 1];
-            const newId = lastTown.id + 1;
-            setData({ ...data, id: newId });
-        }
+        let url = town ? `${baseURL}/${town._id}` : baseURL;
+        console.log(data)
 
         try {
             const response = await fetch(url, {
@@ -68,20 +63,15 @@ const TownForm = (props) => {
     useEffect(() => {
         if (town) {
             setAttractions(Object.keys(town.attractions));
-            setData(town);
-        } else {
-            const getData = async () => {
-                try {
-                    const response = await fetch(baseURL);
-                    const data = await response.json();
-                    setTowns(data);
-                } catch (error) {
-                    console.error(error);
-                }
-            };
-
-            getData();
-        }
+            setData({
+                name: town.name, 
+                state: town.state, 
+                infoState: town.infoState, 
+                img: town.img, 
+                pts: town.pts, 
+                attractions: town.attractions
+            });
+        } 
     }, [])
 
     return (

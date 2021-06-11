@@ -14,7 +14,7 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
   const [isLogged, setisLogged] = useState(false);
   const profile_photo_url =
     "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
-  let idUser = cookies.get("id");
+  let idUser = cookies.get("userId");
 
   useEffect(() => {
     if (cookies.get("username")) {
@@ -22,7 +22,7 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     } else {
       setisLogged(false);
     }
-    if (idComment) setData({ ...data, body: quote, pts, id: idComment })
+    if (idComment) setData({ ...data, body: quote, pts })
   }, []);
 
   const [data, setData] = useState({
@@ -68,10 +68,12 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     } catch (error) {
       console.error(error);
     }
+    console.log(town, data)
     window.location = `/pueblosmagicos/${town}`
   };
 
   const editComment = async () => {
+    console.log(`town:${town}`, `url: ${baseURL}/${idComment}`, data)
     try {
       const response = await fetch(`${baseURL}/${idComment}`, {
         method: "PUT",
@@ -84,7 +86,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
 
       setShow(false);
     } catch (error) {
-      console.error(error);
     }
     window.location = `/pueblosmagicos/${town}`
   }

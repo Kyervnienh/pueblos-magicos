@@ -29,7 +29,6 @@ const CardQuotes = (
 
     const handleClose = () => setShowModal(false);
     const handleShowEdit = () => setShowModal(true);
-    let dataTownId = parseInt(town);
     let userName = cookies.get("name");
 
     return (
@@ -67,7 +66,7 @@ const CardQuotes = (
                 show={showModal}
                 handleClose={handleClose}
                 setShow={setShowModal}
-                town={dataTownId}
+                town={town}
                 quote={quote}
                 pts={pts}
                 idComment={idComment}

@@ -61,6 +61,7 @@ const Login = (props) => {
       cookies.set("isAdmin", data.isAdmin, { path: "/" });
       cookies.set("token", data.token, { path: "/" });
       cookies.set("email", data.email, { path: "/" });
+      cookies.set("userId", data.id, { path: "/" });
       props.history.push("/");
     } catch (error) {
       console.error(error);

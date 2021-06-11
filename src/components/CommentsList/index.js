@@ -68,14 +68,14 @@ const CommentsList = () => {
               {
                   comments.length >= 3 ? 
                   filterDropdown().map((item) => (
-                    <tr key={item.id}>
+                    <tr key={item._id}>
                       <td>{item.userId.name}</td>
                       <td>{item.body}</td>
                       <td>{item.dataTownId.name}</td>
                       <td>{item.pts}</td>
                       <td className="DeleteIcon">
                         <RiDeleteBinLine
-                          onClick={() => handleShow(item.userId.name, item.id)}
+                          onClick={() => handleShow(item.userId.name, item._id)}
                           size={25}
                         ></RiDeleteBinLine>
                       </td>
@@ -83,14 +83,14 @@ const CommentsList = () => {
                   ))
                   :
                   comments.map((item) => (
-                    <tr key={item.id}>
+                    <tr key={item._id}>
                       <td>{item.userId.name}</td>
                       <td>{item.body}</td>
                       <td>{item.dataTownId.name}</td>
                       <td>{item.pts}</td>
                       <td className="DeleteIcon">
                         <RiDeleteBinLine
-                          onClick={() => handleShow(item.userId.name, item.id)}
+                          onClick={() => handleShow(item.userId.name, item._id)}
                           size={25}
                         ></RiDeleteBinLine>
                       </td>
