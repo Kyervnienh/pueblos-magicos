@@ -8,7 +8,7 @@ const baseURL = "http://localhost:8080/towns";
 
 const TownForm = (props) => {
     const [attractions, setAttractions] = useState([0]);
-    const [data, setData] = useState({ name: '', state: 'Estado de México', infoState: '', img: '', pts: '', attractions: [] });
+    const [data, setData] = useState({ name: '', state: 'Estado de México', infoState: '', img: '', attractions: [] });
 
     const selectAttractions = (e) => {
         let attractionsNumber = [];
@@ -68,7 +68,6 @@ const TownForm = (props) => {
                 state: town.state, 
                 infoState: town.infoState, 
                 img: town.img, 
-                pts: town.pts, 
                 attractions: town.attractions
             });
         } 
@@ -99,7 +98,7 @@ const TownForm = (props) => {
                 </Form.Row>
                 <Form.Group controlId="formBasicEmail" className="townFormGroup">
                     <Form.Label>Descripción:</Form.Label>
-                    <Form.Control as="textarea" type="text" name="infoState" onChange={handleInputChange}
+                    <Form.Control as="textarea" rows={5} type="text" name="infoState" onChange={handleInputChange}
                         defaultValue={town ? town.infoState : ""} />
                 </Form.Group>
                 <Form.Group controlId="formUrlImage" className="townFormGroup">
@@ -109,12 +108,6 @@ const TownForm = (props) => {
                 <Form.Group controlId="formPts" className="townFormGroup">
 
 
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPts" className="townFormGroup">
-                    <Form.Label column>Calificación:</Form.Label>
-                    <Col>
-                        <Form.Control type="text" name="pts" onChange={handleInputChange} defaultValue={town ? town.pts : ""} />
-                    </Col>
                 </Form.Group>
                 <Form.Group as={Row} controlId="formAttractionsLabel" className="townFormGroup">
                     <Form.Label column >Selecciona el número de atracciones:</Form.Label>
@@ -137,7 +130,7 @@ const TownForm = (props) => {
                         </Form.Group>
                         <Form.Group controlId={`attractionDescription${parseInt(n)}`} className="townFormGroup">
                             <Form.Label>Descripción:</Form.Label>
-                            <Form.Control as="textarea" onChange={handleInputAttractionchange} type="text" name="info"
+                            <Form.Control as="textarea" rows={5} onChange={handleInputAttractionchange} type="text" name="info"
                                 defaultValue={town ? town.attractions[n] ? town.attractions[n].info : "" : ""} />
                         </Form.Group>
                         <Form.Row>
