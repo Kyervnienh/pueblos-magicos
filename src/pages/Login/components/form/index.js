@@ -62,6 +62,7 @@ const Login = (props) => {
       cookies.set("token", data.token, { path: "/" });
       cookies.set("email", data.email, { path: "/" });
       cookies.set("userId", data.id, { path: "/" });
+      cookies.set("image", data.image, { path: "/" });
       props.history.push("/");
     } catch (error) {
       console.error(error);

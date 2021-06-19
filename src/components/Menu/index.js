@@ -9,11 +9,13 @@ import './index.scss';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
+const baseURL = "http://localhost:8080/uploads";
 
 const NavbarMenu = ({toggle, logOut}) => {
 
 	const name = cookies.get('name');
 	const isAdminString = cookies.get('isAdmin');
+	const imgPath = cookies.get('image');
 	const isAdmin = isAdminString === "true" ? true : false;
 
 	const [isLogged, setisLogged] = useState(false);
@@ -39,7 +41,7 @@ return ( isLogged ?
 		</div>
 		<nav className="NavBtns">
 			<div className="UserCircle">
-				<FaUserCircle className="UserIcon" size={50}></FaUserCircle>
+				<img src={`${baseURL}/${imgPath.substring(15, imgPath.length)}`} width="50%"/>
 			</div>
 			<div className="LogOutBtn">
 				<DropdownButton className="WelcomeButton"

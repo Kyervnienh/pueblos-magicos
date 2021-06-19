@@ -13,6 +13,8 @@ const BannerDashboard = () => {
         cookies.remove('name', {path:"/"});
         cookies.remove('username', {path:"/"});
         cookies.remove('isAdmin', {path:"/"});
+        cookies.remove('image', {path:"/"});
+        
         window.location.href = "./";
     };
     const name = cookies.get('name');
