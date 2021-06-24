@@ -14,7 +14,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
   const [isLogged, setisLogged] = useState(false);
   const profile_photo_url =
     "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
-  let idUser = cookies.get("userId");
 
   useEffect(() => {
     if (cookies.get("username")) {
@@ -29,7 +28,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     body: "",
     pts: 0,
     dataTownId: town,
-    userId: idUser,
     img: profile_photo_url,
   });
 
@@ -52,7 +50,6 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     setData({
       ...data,
       dataTownId: town,
-      userId: idUser,
       img: profile_photo_url,
     });
     try {
@@ -60,6 +57,7 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authentication": cookies.get('token')
         },
         body: JSON.stringify(data),
       });
@@ -79,6 +77,7 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          "Authentication": cookies.get('token')
         },
         body: JSON.stringify(data),
       });
