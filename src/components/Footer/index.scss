@@ -27,14 +27,23 @@
 
     .fa-facebook {
         background: #3b5998;
+        &:hover {
+            filter: opacity(50%)
+        }
     }
 
     .fa-twitter {
-        background: #3bbef5;;
+        background: #3bbef5;
+        &:hover {
+            filter: opacity(50%)
+        }
     }
 
     .fa-instagram {
         background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        &:hover {
+            filter: opacity(50%)
+        }
     }
 
     &:before{
