@@ -6,7 +6,7 @@ import CommentHeader from '../../components/CommentHeader';
 import Footer from '../../components/Footer';
 import NotFoundPage from '../NotFound/notfound';
 
-const baseURL = 'http://localhost:4000/dataTown';
+const baseURL = 'http://localhost:8080/towns';
 
 const DescriptionPage = ({ match }) => {
   let query = match.params.id;

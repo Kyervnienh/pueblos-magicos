@@ -8,7 +8,7 @@ import NotFound from '../../components/NotFound';
 import Footer from '../../components/Footer';
 import Image from '../../assets/communidad.png';
 
-const baseURL = 'http://localhost:4000/users';
+const baseURL = 'http://localhost:8080/users';
 
 function CardUser({ name = 'Nombre' }) {
   return (
