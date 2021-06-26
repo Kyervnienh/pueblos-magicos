@@ -52,7 +52,7 @@ const CardComponent = (
  
 CardComponent.propTypes = {
     img: PropTypes.string.isRequired,
-    pts: PropTypes.string.isRequired,
+    pts: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,

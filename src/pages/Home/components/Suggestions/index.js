@@ -11,7 +11,7 @@ const SuggestionsComponent = () => {
 
   useEffect(() => {
     const getTownsAPI = async () => {
-      const url = 'http://localhost:4000/dataTown';
+      const url = 'http://localhost:8080/towns';
       const response = await fetch(url);
       const resultado = await response.json();
       setSuggestions(resultado.slice(-3, resultado.length));
@@ -25,7 +25,7 @@ const SuggestionsComponent = () => {
 
   return (
     <div className="main">
-      <h1 className="title">Ultimas recomendaciones</h1>
+      <h1 className="title">Pueblos recomendados</h1>
       {suggestions ? (
         <div className="cardContainer">
           {suggestions?.map((town) => (
