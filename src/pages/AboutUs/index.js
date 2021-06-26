@@ -1,13 +1,21 @@
-import React from "react";
-import NavSidebar from "../../components/NavSidebar";
-import Table from "react-bootstrap/Table";
-import Image from "react-bootstrap/Image";
-import Footer from "../../components/Footer";
+import React from 'react';
+import NavSidebar from '../../components/NavSidebar';
+import Table from 'react-bootstrap/Table';
+import Image from 'react-bootstrap/Image';
+import Footer from '../../components/Footer';
+import background from '../../assets/aboutUs.png';
 
-const SupportPage = () => {
+const AboutUsPage = () => {
+  const hero = {
+    titleP1: 'CONOCE NUESTRO',
+    titleP2: 'EQUIPO',
+    subtitle: '',
+    img: [String(background)],
+  };
+
   return (
     <>
-      <NavSidebar />
+      <NavSidebar hero={hero} />
       <h1 className="title">
         ¿Quiénes dan mantenimiento y soporte a Pueblos Mágicos?
       </h1>
@@ -68,4 +76,4 @@ const SupportPage = () => {
   );
 };
 
-export default SupportPage;
+export default AboutUsPage;

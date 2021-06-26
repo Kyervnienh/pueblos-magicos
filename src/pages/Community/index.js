@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import NavSidebar from "../../components/NavSidebar";
-import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
-import { RiUserSmileLine } from "react-icons/ri";
-import NotFound from "../../components/NotFound";
-import Footer from "../../components/Footer";
-import "./index.scss";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import NavSidebar from '../../components/NavSidebar';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { RiUserSmileLine } from 'react-icons/ri';
+import NotFound from '../../components/NotFound';
+import Footer from '../../components/Footer';
+import Image from '../../assets/communidad.png';
 
-const baseURL = "http://localhost:4000/users";
+const baseURL = 'http://localhost:8080/users';
 
-function CardUser({ name = "Nombre" }) {
+function CardUser({ name = 'Nombre' }) {
   return (
     <Card>
       <RiUserSmileLine size={150} />
@@ -44,27 +41,31 @@ const CommunityPage = () => {
     let piece = users.slice(i, i + 3);
     newUsers.push(piece);
   }
+
+  const hero = {
+    titleP1: 'CONOCE NUESTRA',
+    titleP2: 'COMUNIDAD',
+    subtitle: '',
+    img: [String(Image)],
+  };
+
   return (
     <>
-      <NavSidebar />
-      <Container>
-        <Row>
-          <h1 className="titleCommunity">Últimos perfiles registrados</h1>
-        </Row>
-      </Container>
+      <NavSidebar hero={hero} />
+      <h1 className="title">¡Forma parte de nuestra bella comunidad!</h1>
       {users.length ? (
-            <div>
-              {newUsers.map((item) => (
-                <CardGroup key={newUsers.indexOf(item)}>
-                  {item.map((newSet) => (
-                    <CardUser name={newSet.name} key={newSet.id} />
-                  ))}
-                </CardGroup>
+        <div>
+          {newUsers.map((item) => (
+            <CardGroup key={newUsers.indexOf(item)}>
+              {item.map((newSet) => (
+                <CardUser name={newSet.name} key={newSet.id} />
               ))}
-            </div>
-          ) : (
-            <NotFound>No se encontraron datos</NotFound>
-          )}
+            </CardGroup>
+          ))}
+        </div>
+      ) : (
+        <NotFound>No se encontraron datos</NotFound>
+      )}
       <Footer />
     </>
   );
