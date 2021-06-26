@@ -6,19 +6,16 @@ import Footer from '../../components/Footer';
 import background from '../../assets/aboutUs.png';
 
 const AboutUsPage = () => {
-  const img = [String(background)];
-  let titleP1 = 'CONOCE NUESTRO';
-  let titleP2 = 'EQUIPO';
-  let subtitle = '';
+  const hero = {
+    titleP1: 'CONOCE NUESTRO',
+    titleP2: 'EQUIPO',
+    subtitle: '',
+    img: [String(background)],
+  };
 
   return (
     <>
-      <NavSidebar
-        bgImage={img}
-        titleP1={titleP1}
-        titleP2={titleP2}
-        subtitle={subtitle}
-      />
+      <NavSidebar hero={hero} />
       <h1 className="title">
         ¿Quiénes dan mantenimiento y soporte a Pueblos Mágicos?
       </h1>

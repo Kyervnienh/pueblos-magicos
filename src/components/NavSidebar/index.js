@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
 
-const NavSidebar = ({bgImage, titleP1, titleP2 , subtitle}) => {
+const NavSidebar = ({ hero }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -24,7 +24,7 @@ const NavSidebar = ({bgImage, titleP1, titleP2 , subtitle}) => {
 
   return (
     <>
-      <NavbarMenu toggle={toggle} logOut={logOut} bgImage={bgImage} titleP1={titleP1} titleP2={titleP2} subtitle={subtitle}/>
+      <NavbarMenu toggle={toggle} logOut={logOut} hero={hero} />
       <Sidebar isOpen={isOpen} toggle={toggle} logOut={logOut} />
     </>
   );

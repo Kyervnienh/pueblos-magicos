@@ -29,7 +29,7 @@ const DescriptionPage = ({ match }) => {
 
   return town ? (
     <>
-      <NavSidebar />
+      <NavSidebar hero={town} />
       <InfoAttractions town={town} isLoading={isLoading} />
       <SliderQuotes town={query} />
       <CommentHeader town={query} />

@@ -11,21 +11,12 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const baseURL = 'http://localhost:8080/uploads';
 
-const NavbarMenu = ({
-  toggle,
-  logOut,
-  bgImage,
-  titleP1,
-  titleP2,
-  subtitle,
-}) => {
+const NavbarMenu = ({ toggle, logOut, hero }) => {
   const name = cookies.get('name');
   const isAdminString = cookies.get('isAdmin');
   const imgPath = cookies.get('image');
   const isAdmin = isAdminString === 'true' ? true : false;
   const [isLogged, setisLogged] = useState(false);
-
-  let img = bgImage[0];
 
   useEffect(() => {
     if (cookies.get('username')) {
@@ -39,7 +30,7 @@ const NavbarMenu = ({
       <header
         className="header"
         style={{
-          backgroundImage: `url(${img})`,
+          backgroundImage: `url(${hero?.img})`,
         }}
       >
         <div className="background-overlay">
@@ -88,9 +79,12 @@ const NavbarMenu = ({
             <div className="text-center justify-content-center align-items-center d-flex h-75">
               <div>
                 <h1 className="font-hero-title">
-                  {titleP1} <span className="font-hero-title-y">{titleP2}</span>
+                  {hero?.titleP1 || hero?.name}{' '}
+                  <span className="font-hero-title-y">{hero?.titleP2}</span>
                 </h1>
-                <h3 className="font-hero-h3">{subtitle}</h3>
+                <h3 className="font-hero-h3">
+                  {hero?.subtitle || hero?.infoState}
+                </h3>
               </div>
             </div>
           </div>
@@ -102,7 +96,7 @@ const NavbarMenu = ({
       <header
         className="header"
         style={{
-          backgroundImage: `url(${img})`,
+          backgroundImage: `url(${hero?.img})`,
         }}
       >
         <div className="background-overlay">
@@ -140,9 +134,12 @@ const NavbarMenu = ({
             <div className="text-center justify-content-center align-items-center d-flex h-75">
               <div>
                 <h1 className="font-hero-title">
-                  {titleP1} <span className="font-hero-title-y">{titleP2}</span>
+                  {hero?.titleP1 || hero?.name}{' '}
+                  <span className="font-hero-title-y">{hero?.titleP2}</span>
                 </h1>
-                <h3 className="font-hero-h3">{subtitle}</h3>
+                <h3 className="font-hero-h3">
+                  {hero?.subtitle || hero?.infoState}
+                </h3>
               </div>
             </div>
           </div>

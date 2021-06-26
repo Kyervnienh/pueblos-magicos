@@ -16,10 +16,12 @@ const TownList = () => {
   const [inferiorLimit, setInferiorLimit] = useState(0);
   const [superiorLimit, setSuperiorLimit] = useState(3);
 
-  const img = [String(Image)];
-  let titleP1 = 'DESCUBRE';
-  let titleP2 = 'MÉXICO';
-  let subtitle = 'Enamórate de sus Pueblos Mágicos.';
+  let hero = {
+    titleP1: 'DESCUBRE',
+    titleP2: 'MÉXICO',
+    subtitle: 'Enamórate de sus Pueblos Mágicos.',
+    img: [String(Image)],
+  };
 
   useEffect(() => {
     const getTownsFilteredAPI = async () => {
@@ -88,12 +90,7 @@ const TownList = () => {
 
   return (
     <>
-      <NavSidebar
-        bgImage={img}
-        titleP1={titleP1}
-        titleP2={titleP2}
-        subtitle={subtitle}
-      />
+      <NavSidebar hero={hero} />
       <Filter uniqueState={uniqueState} handleChangeState={handleChangeState} />
       {townsFiltered.length ? (
         <>

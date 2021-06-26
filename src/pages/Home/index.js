@@ -9,14 +9,16 @@ import Image from '../../assets/background.png';
 const cookies = new Cookies();
 
 const Home = () => {
-  const img = [String(Image)];
-  let titleP1 = "DESCUBRE";
-  let titleP2 = "LA MAGIA";
-  let subtitle = "Descubre México y enamórate de sus Pueblos Mágicos.";
+  const hero = {
+    titleP1: 'DESCUBRE',
+    titleP2: 'LA MAGIA',
+    subtitle: 'Descubre México y enamórate de sus Pueblos Mágicos.',
+    img: [String(Image)],
+  };
 
   return (
     <>
-      <NavSidebar bgImage={img} titleP1={titleP1} titleP2={titleP2} subtitle={subtitle}/>
+      <NavSidebar hero={hero} />
       <SuggestionsComponent />
       <Recommendations />
       <Footer />

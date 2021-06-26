@@ -41,18 +41,17 @@ const CommunityPage = () => {
     let piece = users.slice(i, i + 3);
     newUsers.push(piece);
   }
-  const img = [String(Image)];
-  let titleP1 = 'CONOCE NUESTRA';
-  let titleP2 = 'COMUNIDAD';
-  let subtitle = '';
+
+  const hero = {
+    titleP1: 'CONOCE NUESTRA',
+    titleP2: 'COMUNIDAD',
+    subtitle: '',
+    img: [String(Image)],
+  };
+
   return (
     <>
-      <NavSidebar
-        bgImage={img}
-        titleP1={titleP1}
-        titleP2={titleP2}
-        subtitle={subtitle}
-      />
+      <NavSidebar hero={hero} />
       <h1 className="title">¡Forma parte de nuestra bella comunidad!</h1>
       {users.length ? (
         <div>
