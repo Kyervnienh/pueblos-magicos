@@ -6,13 +6,12 @@ import CommentHeader from '../../components/CommentHeader';
 import Footer from '../../components/Footer';
 import NotFoundPage from '../NotFound/notfound';
 
-const baseURL = "http://localhost:8080/towns";
+const baseURL = 'http://localhost:8080/towns';
 
 const DescriptionPage = ({ match }) => {
   let query = match.params.id;
   const [town, setTown] = useState({});
-  const [isLoading, setIsLoading] = useState(true)
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -20,7 +19,7 @@ const DescriptionPage = ({ match }) => {
         const data = await response.json();
         setTown(data);
         setIsLoading(false);
-      } catch(error) {
+      } catch (error) {
         console.error(error);
       }
     };
@@ -28,15 +27,16 @@ const DescriptionPage = ({ match }) => {
     getData();
   }, []);
 
-  return (
-    town ?
+  return town ? (
     <>
-      <NavSidebar />
-      <InfoAttractions town={town} isLoading={isLoading}/>
+      <NavSidebar hero={town} />
+      <InfoAttractions town={town} isLoading={isLoading} />
       <SliderQuotes town={query} />
       <CommentHeader town={query} />
       <Footer />
-    </> : <NotFoundPage/>
+    </>
+  ) : (
+    <NotFoundPage />
   );
 };
 
