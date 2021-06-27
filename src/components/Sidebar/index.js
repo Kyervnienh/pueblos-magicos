@@ -44,8 +44,8 @@ const Sidebar = ({ isOpen, toggle, logOut }) => {
                 <Link className="SidebarLink" to="/comunidad">
                   Comunidad
                 </Link>
-                <Link className="SidebarLink" to="/soporte">
-                  Soporte
+                <Link className="SidebarLink" to="/sobreNosotros">
+                  Sobre Nosotros
                 </Link>
               </ul>
               {!isLogged ?

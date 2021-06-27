@@ -4,6 +4,8 @@ import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
 import Footer from '../../components/Footer';
 import background from '../../assets/aboutUs.png';
+import BtnScrollToTop from '../../components/BtnScrollToTop';
+import './index.scss'
 
 const AboutUsPage = () => {
   const hero = {
@@ -16,12 +18,13 @@ const AboutUsPage = () => {
   return (
     <>
       <NavSidebar hero={hero} />
-      <h1 className="title">
+      <div className="aboutUsContainer">
+      <h1 className="titleAboutUs text-center">
         ¿Quiénes dan mantenimiento y soporte a Pueblos Mágicos?
       </h1>
-      <div className="SupportTable">
+      <div className="supportTable">
         <Table responsive className="justify-content-start">
-          <tbody className="mx-auto">
+          <tbody className="mx-auto text-center">
             <tr>
               <th>Kevin Henry López Vázquez</th>
               <th>Paulina Valeria Quintero Mucito</th>
@@ -71,7 +74,9 @@ const AboutUsPage = () => {
           </tbody>
         </Table>
       </div>
+      <BtnScrollToTop />
       <Footer />
+      </div>
     </>
   );
 };

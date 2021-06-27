@@ -5,6 +5,7 @@ import SliderQuotes from '../../components/SliderQuotes';
 import CommentHeader from '../../components/CommentHeader';
 import Footer from '../../components/Footer';
 import NotFoundPage from '../NotFound/notfound';
+import BtnScrollToTop from '../../components/BtnScrollToTop';
 
 const baseURL = 'http://localhost:8080/towns';
 
@@ -33,6 +34,7 @@ const DescriptionPage = ({ match }) => {
       <InfoAttractions town={town} isLoading={isLoading} />
       <SliderQuotes town={query} />
       <CommentHeader town={query} />
+      <BtnScrollToTop />
       <Footer />
     </>
   ) : (

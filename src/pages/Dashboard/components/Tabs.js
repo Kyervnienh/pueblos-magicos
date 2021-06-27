@@ -18,16 +18,16 @@ const TabsMenu = () => {
             <Col sm={3}>
             <Nav variant="pills" className="flex-column">
                 <Nav.Item>
-                <Nav.Link eventKey="dashboard"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
+                <Nav.Link eventKey="dashboard" className="dashboardLink"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="review"><i className="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
+                <Nav.Link eventKey="review" className="dashboardLink"><i className="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="users"><i className="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
+                <Nav.Link eventKey="users" className="dashboardLink"><i className="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="coments"><i className="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
+                <Nav.Link eventKey="coments" className="dashboardLink"><i className="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
                 </Nav.Item>
             </Nav>
             </Col>

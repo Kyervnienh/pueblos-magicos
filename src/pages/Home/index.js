@@ -5,6 +5,7 @@ import SuggestionsComponent from './components/Suggestions/index';
 import NavSidebar from '../../components/NavSidebar';
 import Cookies from 'universal-cookie';
 import Image from '../../assets/background.png';
+import BtnScrollToTop from '../../components/BtnScrollToTop';
 
 const cookies = new Cookies();
 
@@ -21,6 +22,7 @@ const Home = () => {
       <NavSidebar hero={hero} />
       <SuggestionsComponent />
       <Recommendations />
+      <BtnScrollToTop />
       <Footer />
     </>
   );
