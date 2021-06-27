@@ -63,8 +63,6 @@ const CommunityPage = () => {
     return newUsersPaginator;
   };
 
-  console.log("newUSers", newUsers.length)
-
   return (
     <>
       <NavSidebar hero={hero} />
@@ -98,7 +96,4 @@ const CommunityPage = () => {
   );
 };
 
-CardUser.propTypes = {
-  name: PropTypes.string.isRequired,
-};
 export default CommunityPage;
