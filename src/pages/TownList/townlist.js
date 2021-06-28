@@ -8,6 +8,7 @@ import Footer from '../../components/Footer';
 import './index.scss';
 import NotFound from '../../components/NotFound';
 import Image from '../../assets/pueblosMagicos.png';
+import BtnScrollToTop from '../../components/BtnScrollToTop';
 
 const TownList = () => {
   const [state, setState] = useState('Todos los pueblos');
@@ -116,6 +117,7 @@ const TownList = () => {
       ) : (
         <NotFound>No se encontraron datos</NotFound>
       )}
+      <BtnScrollToTop />
       <Footer />
     </>
   );

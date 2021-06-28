@@ -10,6 +10,7 @@ import Row from "react-bootstrap/Row";
 import CardUser from "../../components/CardUser";
 import Col from "react-bootstrap/Col";
 import Pagination from "../TownList/components/Pagination";
+import BtnScrollToTop from "../../components/BtnScrollToTop";
 
 const baseURL = "http://localhost:8080";
 
@@ -91,6 +92,7 @@ const CommunityPage = () => {
         currentPage={currentPage}
         changePage={changePage}
       />
+      <BtnScrollToTop />
       <Footer />
     </>
   );

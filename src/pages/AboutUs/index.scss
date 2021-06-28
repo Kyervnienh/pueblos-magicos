@@ -1,7 +1,32 @@
-.SupportTable {
-    margin-right: 100px;
-    margin-left: 100px;
+.aboutUsContainer {
     display: flex;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+.titleAboutUs {
+    position: relative;
+    font-family: "Montaga";
+    color: #7f7f7f;
+    margin-top: 50px;
+    font-size: 42px;
+    @media (max-width: 768px) {
+    font-size: 25px;
+    }
+
+    &:after {
+    content: "";
+    width: 90%;
+    position: absolute;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+}
+
+.supportTable {
+    margin-top: 80px;
 }
