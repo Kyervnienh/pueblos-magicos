@@ -33,10 +33,18 @@
       border-radius: 50%;
       align-self: center;
       margin-top: 20px;
+      display: block;
       @media (min-width: 768px) {
         width: 100px;
         height: 10vh;
       }
     }
+  }
+  .userDescription {
+    font-style: "Monserrat";
+    color: #7F7F7F;
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
   }
 }

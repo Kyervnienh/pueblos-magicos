@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaUserCircle } from 'react-icons/fa';
-import { NavLink as Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import './index.scss';
-import Cookies from 'universal-cookie';
+import React, { useState, useEffect } from "react";
+import { FaBars, FaUserCircle } from "react-icons/fa";
+import { NavLink as Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
+import "./index.scss";
+import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
-const baseURL = 'http://localhost:8080/uploads';
+const baseURL = "http://localhost:8080/uploads";
 
 const NavbarMenu = ({ toggle, logOut, hero }) => {
-  const name = cookies.get('name');
-  const isAdminString = cookies.get('isAdmin');
-  const imgPath = cookies.get('image');
-  const isAdmin = isAdminString === 'true' ? true : false;
+  const name = cookies.get("name");
+  const isAdminString = cookies.get("isAdmin");
+  const imgPath = cookies.get("image");
+  const isAdmin = isAdminString === "true" ? true : false;
   const [isLogged, setisLogged] = useState(false);
 
   useEffect(() => {
-    if (cookies.get('username')) {
+    if (cookies.get("username")) {
       setisLogged(true);
     } else {
       setisLogged(false);
@@ -70,6 +70,9 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
                   title={name}
                   id="input-group-dropdown-1"
                 >
+                  <Dropdown.Item href="/perfil">
+                      Mi perfil
+                  </Dropdown.Item>
                   <Dropdown.Item onClick={logOut}>Cerrar Sesión</Dropdown.Item>
                 </DropdownButton>
               </div>
@@ -79,8 +82,8 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
             <div className="text-center justify-content-center align-items-center d-flex h-75">
               <div>
                 <h1 className="font-hero-title">
-                  {hero?.titleP1 || hero?.name}{' '}
-                  <span className="font-hero-title-y">{hero?.titleP2}</span>
+                  {hero?.titleP1 || hero?.name}{" "}
+                  <span className="font-hero-title-y">{hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <img src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} /> : hero?.titleP2  }</span>
                 </h1>
                 <h3 className="font-hero-h3">
                   {hero?.subtitle || hero?.infoState}
@@ -134,7 +137,7 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
             <div className="text-center justify-content-center align-items-center d-flex h-75">
               <div>
                 <h1 className="font-hero-title">
-                  {hero?.titleP1 || hero?.name}{' '}
+                  {hero?.titleP1 || hero?.name}{" "}
                   <span className="font-hero-title-y">{hero?.titleP2}</span>
                 </h1>
                 <h3 className="font-hero-h3">

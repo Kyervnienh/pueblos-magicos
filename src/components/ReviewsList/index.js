@@ -111,6 +111,7 @@ const ReviewsList = () => {
         typeInfo={"esta reseña"}
         model={"towns"}
         location={"dashboard"}
+        cleanCookies={false}
       />
       <Pagination numberOfCards={towns.length} currentPage={currentPage} changePage={changePage} />
     </>
