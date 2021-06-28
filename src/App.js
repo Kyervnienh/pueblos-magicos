@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/dashboard';
 import EditTown from './pages/Dashboard/EditTown';
 import AddTown from './pages/Dashboard/AddTown';
 import Cookies from 'universal-cookie';
+import UserProfilePage from './pages/UserProfile';
 
 const cookies = new Cookies();
 
@@ -56,6 +57,7 @@ function App() {
           component={isLogged && isAdmin ? EditTown : NotFoundPage}
           exact
         ></Route>
+        <Route path="/perfil" component={UserProfilePage} exact></Route>
         <Route component={NotFoundPage}></Route>
       </Switch>
     </Router>

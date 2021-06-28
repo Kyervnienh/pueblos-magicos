@@ -60,6 +60,11 @@ const Sidebar = ({ isOpen, toggle, logOut }) => {
                 </Link>
                   </div></>) :
                 (<div className="SideBtnWrap">
+                  <Link to="/perfil">
+                  <Button className="LogOutButton">
+                    Mi perfil
+                </Button>
+                </Link>
                   <Button className="LogOutButton" onClick={logOut}>
                     Cerrar Sesión
                 </Button>

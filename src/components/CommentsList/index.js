@@ -111,6 +111,7 @@ const CommentsList = () => {
         typeInfo={"este comentario"}
         model={"comments"}
         location={"dashboard"}
+        cleanCookies={false}
       />
       <Pagination
         numberOfCards={comments.length}

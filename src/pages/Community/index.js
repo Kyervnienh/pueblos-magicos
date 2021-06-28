@@ -77,7 +77,7 @@ const CommunityPage = () => {
             <Row className="rowStyle" key={newUsers.indexOf(item)}>
               {item.map((newSet) => (
                 <Col key={newSet.id}>
-                <CardUser name={newSet.name} profilePhoto={newSet.image} key={newSet.id} />
+                <CardUser name={newSet.name} profilePhoto={newSet.image} description={newSet.description} key={newSet.id} />
                 </Col>
               ))}
             </Row>
@@ -88,7 +88,7 @@ const CommunityPage = () => {
       )}
       </Container>
       <Pagination
-        numberOfCards={newUsers.length}
+        numberOfCards={newUsers.length * 2}
         currentPage={currentPage}
         changePage={changePage}
       />

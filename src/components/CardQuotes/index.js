@@ -79,6 +79,7 @@ const CardQuotes = (
                 typeInfo={"este comentario"}
                 model={"comments"}
                 location={town}
+                cleanCookies={false}
             />
         </>
     );

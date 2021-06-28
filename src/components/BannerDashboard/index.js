@@ -14,6 +14,7 @@ const BannerDashboard = () => {
         cookies.remove('username', {path:"/"});
         cookies.remove('isAdmin', {path:"/"});
         cookies.remove('image', {path:"/"});
+        cookies.remove("token", { path: "/" });
         
         window.location.href = "./";
     };

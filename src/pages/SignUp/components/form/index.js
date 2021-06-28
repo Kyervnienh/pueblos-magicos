@@ -10,7 +10,7 @@ const baseURL = "http://localhost:8080/users";
 const SignUp = (props) => {
   const [type, setType] = useState('password');
   const [users, setUsers] = useState([]);
-  const [data, setData] = useState({ name: '', username: '', email: '', password: '', isAdmin: false, image: '' });
+  const [data, setData] = useState({ name: '', username: '', email: '', password: '', isAdmin: false, image: '', description: '' });
   useEffect(() => {
     const getData = async () => {
       try {
@@ -65,6 +65,7 @@ const SignUp = (props) => {
     formData.append('password', data.password);
     formData.append('isAdmin', data.isAdmin);
     formData.append('image', data.image);
+    formData.append('image', data.description);
 
     try {
       const response = await fetch(baseURL, {
