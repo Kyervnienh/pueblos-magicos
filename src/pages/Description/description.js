@@ -32,7 +32,7 @@ const DescriptionPage = ({ match }) => {
   const hero = {
     titleP1: town.name,
     titleP2: "",
-    subtitle: town.infoState,
+    subtitle: town.excerpt,
     img: town.img,
   };
 
