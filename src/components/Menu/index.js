@@ -83,7 +83,7 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
               <div>
                 <h1 className="font-hero-title">
                   {hero?.titleP1 || hero?.name}{" "}
-                  <span className="font-hero-title-y">{hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <img src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} /> : hero?.titleP2  }</span>
+                  <span className="font-hero-title-y">{  hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <img src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} /> : hero?.titleP2  }</span>
                 </h1>
                 <h3 className="font-hero-h3">
                   {hero?.subtitle || hero?.infoState}

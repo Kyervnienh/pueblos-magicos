@@ -5,7 +5,7 @@ import './index.scss';
 const InfoPageCard = ({subtitle, title, description, imagen, orderD, orderImg}) => {
 
     return (
-        <div className="infoPageCard" fluid>
+        <div className="infoPageCard" fluid="true">
             <div className="firtCard" style={{order : `${orderD}`}}>
                     <p className="subtitleInfo">{subtitle}</p>
                     <p className="infoText">{title}</p>
