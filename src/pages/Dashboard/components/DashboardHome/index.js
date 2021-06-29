@@ -20,7 +20,7 @@ const DashboardHome = () => {
 
     useEffect(() => {
         const getTownsAPI = async () => {
-            const url = 'http://localhost:4000/datatown';
+            const url = `${process.env.REACT_APP_BACKEND_URL}/towns`;
             const response = await fetch(url);
             const resultado = await response.json();
             setListReview(resultado.slice(-3,resultado.length));
@@ -29,7 +29,7 @@ const DashboardHome = () => {
         getTownsAPI();
 
         const getCommentsAPI = async () => {
-            const url = 'http://localhost:4000/comments';
+            const url = `${process.env.REACT_APP_BACKEND_URL}/comments`;
             const response = await fetch(url);
             const resultado = await response.json();
             setComments(resultado.length)
@@ -37,7 +37,7 @@ const DashboardHome = () => {
         getCommentsAPI();
 
         const getUsers = async () => {
-            const url = 'http://localhost:4000/users';
+            const url = `${process.env.REACT_APP_BACKEND_URL}/users`;
             const response = await fetch(url);
             const resultado = await response.json();
             setUsers(resultado.length);

@@ -4,4 +4,7 @@
 
 .dashboardHome {
     margin-right: 50px;
+    @media (max-width: 767px) {
+      margin-right: 0;
+    }
 }

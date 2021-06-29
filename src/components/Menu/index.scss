@@ -5,23 +5,65 @@
   list-style-type: none;
 }
 
-.Nav {
-  background: #ffff;
-  height: 85px;
-  display: flex;
-  justify-content: space-between !important;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
+a:hover {
+  text-decoration: none;
+  color: #ffbf69;
 }
 
-.NavbarContainer {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
+.header {
+  // background: url(../../assets/background.png) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.header .navbar {
+  background-color: transparent !important;
+}
+
+.background-overlay {
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(255, 255, 255, 0.1) 130%
+  );
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
+  height: 100%;
+}
+
+.font-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 91px;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.font-hero-title-y {
+  color: #ffbf69;
+}
+
+.font-hero-h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+.navbar-expand {
+  justify-content: space-around !important;
 }
 
 .NavLogoSignUp {
@@ -34,18 +76,30 @@
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+  @media (max-width: 767px) {
+    font-size: 2.5rem;
+  }
 }
 
 .NavLink {
-  color: #808080;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 2rem;
   height: 100%;
   cursor: pointer;
+  transition: all 0.2s;
   &.active {
     color: #000000;
+  }
+  &:hover {
+    color: #ffbf69;
   }
 }
 
@@ -70,7 +124,7 @@
   margin-left: 234px;
   @media screen and (max-width: 1300px) {
     margin-right: 34px;
-    margin-left: 64px; 
+    margin-left: 64px;
   }
   @media screen and (max-width: 1080px) {
     display: none;
@@ -92,13 +146,13 @@
 
 .NavBtnLinkLogIn {
   border-radius: 30px;
-  background: #ffff;
+  background: transparent;
   padding: 12px 22px;
   text-align: center;
-  color: #000000;
+  color: #ffbf69;
   white-space: pre;
   outline: none;
-  border: 2px solid #808080;
+  border: 2px solid #ffbf69;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
@@ -122,9 +176,9 @@
 
 .NavBtnLinkSignUp {
   border-radius: 30px;
-  background: #808080;
+  background: #ffbf69;
   padding: 12px 22px;
-  color: #000000;
+  color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
@@ -140,7 +194,7 @@
 }
 
 .UserCircle {
-  margin-right: 50px;
+  margin-right: 25px;
   @media screen and (max-width: 1080px) {
     display: none;
   }

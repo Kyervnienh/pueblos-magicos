@@ -1,0 +1,80 @@
+.infoPageCard {
+    margin: 50px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 767px){
+        margin: 130px 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+  }
+}
+
+.subtitleInfo {
+    display: inline-block;
+    position: relative;
+    color: #FBD784;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-left: 130px;
+}
+.subtitleInfo::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: #FBD784;
+    top: 0.6em;
+}
+.subtitleInfo::before {
+    left: -5px;
+}
+
+.infoText {
+    color: #7F7F7F;
+    font-size: 2rem;
+    line-height: 1;
+    padding-bottom: 20px;
+
+    @media (min-width: 767px){
+      font-size: 3rem;
+  }
+}
+
+.infoDetail {
+    color: #7F7F7F;
+    font-size: .8rem;
+
+    @media (min-width: 767px){
+      font-size: 1.2rem;
+  }
+}
+
+
+.divImage {
+    display: none;
+
+    @media (min-width: 767px){
+      display: flex;
+    justify-content:center ;
+  }
+}
+.imageInfo {
+    width: 75%;
+    border-radius: 4rem!important;
+}
+
+.firtCard{
+     margin: 0;
+     width: 90%;
+     padding-bottom: 20px;
+
+    @media (min-width: 767px){
+        margin: 0 30px;
+        width: 65%;
+         padding-bottom: 0;
+  }
+}

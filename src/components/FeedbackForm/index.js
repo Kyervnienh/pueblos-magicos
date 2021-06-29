@@ -7,16 +7,12 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const baseURL = "http://localhost:4000/comments";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/comments`;
+
 const cookies = new Cookies();
 
-function FeedbackForm({ show, setShow, handleClose, town }) {
+function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment }) {
   const [isLogged, setisLogged] = useState(false);
-  const profile_photo_url =
-    "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
-  console.log(town);
-  let idUser = cookies.get("id");
-  let userName = cookies.get("name");
 
   useEffect(() => {
     if (cookies.get("username")) {
@@ -24,16 +20,17 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
     } else {
       setisLogged(false);
     }
+    if (idComment) setData({ ...data, body: quote, pts });
+    // eslint-disable-next-line
   }, []);
 
+  const imgPath = cookies.get("image");
+
   const [data, setData] = useState({
-    id: 0,
-    name: userName,
     body: "",
     pts: 0,
     dataTownId: town,
-    userId: idUser,
-    img: profile_photo_url,
+    img: imgPath,
   });
 
   const [error, setError] = useState({});
@@ -51,47 +48,48 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
     return errors;
   };
 
-  const [comments, setComments] = useState([]);
-
   const addComment = async () => {
-    const lastComment = comments[comments.length - 1];
-    const newId = lastComment?.id + 1;
     setData({
       ...data,
-      id: newId,
       dataTownId: town,
-      userId: idUser,
-      name: userName,
-      img: profile_photo_url,
+      img: imgPath,
     });
-    console.log(data);
     try {
       const response = await fetch(baseURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authentication": cookies.get('token')
         },
         body: JSON.stringify(data),
       });
       if (!response.ok) throw new Error("Response not ok");
 
-      const newComment = await response.json();
-
-      setComments(comments.concat([newComment]));
-      setData({
-        id: 0,
-        name: "",
-        body: "",
-        pts: 0,
-        dataTownId: 0,
-        userId: 0,
-        img: "",
-      });
-      setShow(false);
     } catch (error) {
       console.error(error);
     }
+    console.log(town, data)
+    window.location = `/pueblosmagicos/${town}`
   };
+
+  const editComment = async () => {
+    console.log(`town:${town}`, `url: ${baseURL}/${idComment}`, data)
+    try {
+      const response = await fetch(`${baseURL}/${idComment}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authentication": cookies.get('token')
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Response not ok");
+
+      setShow(false);
+    } catch (error) {
+    }
+    window.location = `/pueblosmagicos/${town}`
+  }
 
   return (
     <>
@@ -108,7 +106,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
                 as="textarea"
                 rows={3}
                 name="body"
-                value={data.body}
+                defaultValue={quote ? quote : data.body}
                 onChange={handleChange}
               />
               <Form.Control.Feedback type="invalid">
@@ -135,7 +133,7 @@ function FeedbackForm({ show, setShow, handleClose, town }) {
             disabled={!isLogged}
             variant="primary"
             type="submit"
-            onClick={addComment}
+            onClick={idComment ? editComment : addComment}
           >
             Enviar
           </Button>

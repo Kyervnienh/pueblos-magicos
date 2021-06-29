@@ -1,18 +1,30 @@
-import React from "react";
-import NavSidebar from "../../components/NavSidebar";
-import Table from "react-bootstrap/Table";
-import Image from "react-bootstrap/Image";
+import React from 'react';
+import NavSidebar from '../../components/NavSidebar';
+import Table from 'react-bootstrap/Table';
+import Image from 'react-bootstrap/Image';
+import Footer from '../../components/Footer';
+import background from '../../assets/aboutUs.png';
+import BtnScrollToTop from '../../components/BtnScrollToTop';
+import './index.scss'
 
-const SupportPage = () => {
+const AboutUsPage = () => {
+  const hero = {
+    titleP1: 'CONOCE NUESTRO',
+    titleP2: 'EQUIPO',
+    subtitle: '',
+    img: [String(background)],
+  };
+
   return (
     <>
-      <NavSidebar />
-      <h1 className="title">
+      <NavSidebar hero={hero} />
+      <div className="aboutUsContainer">
+      <h1 className="titleAboutUs text-center">
         ¿Quiénes dan mantenimiento y soporte a Pueblos Mágicos?
       </h1>
-      <div className="SupportTable">
-        <Table>
-          <tbody>
+      <div className="supportTable">
+        <Table responsive className="justify-content-start">
+          <tbody className="mx-auto text-center">
             <tr>
               <th>Kevin Henry López Vázquez</th>
               <th>Paulina Valeria Quintero Mucito</th>
@@ -62,8 +74,11 @@ const SupportPage = () => {
           </tbody>
         </Table>
       </div>
+      <BtnScrollToTop />
+      <Footer />
+      </div>
     </>
   );
 };
 
-export default SupportPage;
+export default AboutUsPage;

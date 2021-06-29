@@ -1,51 +1,56 @@
 import React from 'react';
 import './index.scss';
-import { Link } from 'react-router-dom';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
+import InfoPageCard from '../../../../components/InfoPageCard';
+// import {infoHome} from '../../../../fixtures/infoHome';
+import example from '../../../../assets/sayulita.jpg';
 
-const Recommendations = () => {
-  return (
+
+const Recomendaciones = () => {
+  const infoHome = [
+    {
+        subtitle: 'UNETE',
+        title: 'Se parte de nuestra comunidad',
+        description: 'Somos una comunidad de personas interesadas en el valor cultural, histórico, arquitectónico y gastronomico de los destinos mágicos que existen dentro de México, unete para conocer a gente de diferentes estado del país que nos comparten su amor por México.',
+        imagen: 'https://i1.wp.com/agileexperience.es/wp-content/uploads/2020/01/team-spirit.jpg?resize=1080%2C874&ssl=1',
+        orderD: 1,
+        orderImg: 2
+    },
+    {
+        subtitle: 'DESCUBRE',
+        title: 'Enamórate de nuestros Pueblos Mágicos.',
+        description: 'Los Pueblos Mágicos se definen como lugares con grandes simbolismos y leyendas, son poblados cuya importancia histórica ha sido fundamental para el desarrollo de la historia y que enaltecen la identidad nacional en cada uno de sus rincones.',
+        imagen: example,
+        orderD: 2,
+        orderImg: 1
+    },
+    {
+        subtitle: 'COMPARTE',
+        title: 'Tu experiencia',
+        description: 'Aprenderás de civilizaciones milenarias, cuya esencia permanece hasta nuestros días y conocerás el trabajo de los artesanos, cuya maestría pasa de generación en generación y te deleitarás con las mezcla de sabores.',
+        imagen: 'https://casalum.com/wp-content/uploads/2020/07/CHIAPA_DE_CORSO-parachicos-1024x640.jpg',
+        orderD: 1,
+        orderImg: 2
+    }
+  ]
+
+  return ( 
     <div>
-      <h1 className="title">Conoce todas nuestras recomendaciones</h1>
-      <Container>
-        <Row xs={1} sm={1} md={1} lg={2}>
-          <Col>
-            <Image
-              src="https://cdn.pixabay.com/photo/2020/12/17/04/09/guanajuato-5838206_960_720.jpg"
-              alt="Guanajuato"
-              rounded
-              fluid
-            />
-          </Col>
-          <Col>
-            <p className="my-5 text-justify">
-              México es un país afortunado al estar rodeado de ríos, lagos,
-              mares, islas, cenotes, montañas, volcanes, desiertos, selvas y
-              ciudades llenas de historia. México es más que el mariachi,
-              tequila y el chile, es un país multicultural y diverso. Su cultura
-              es mágica, llamativa y alegre; llena de colores y su gente es
-              amable, generosa y hospitalaria. En “Turi” podrás encontrar
-              información relevante de cada pueblo mágicos del país, para que tú
-              solo disfrutes de sus paisajes exuberantes, aventuras extremas,
-              arte, música, gastronomía, tradiciones y festividades.
-            </p>
-            <div className="text-center">
-              <Link className="SidebarLink" to="/pueblosmagicos">
-                <Button type="button" className="btn">
-                  Ir al listado
-                </Button>
-              </Link>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      {
+        infoHome?.map((data) => (
+          <InfoPageCard 
+          subtitle={data.subtitle}
+          title ={data.title}
+          description = {data.description}
+          imagen={data.imagen}
+          orderD = {data.orderD}
+          orderImg = {data.orderImg}
+          key={data.subtitle}
+          />
+        ))
+      }
     </div>
-  );
-};
+   );
+}
 
-export default Recommendations;
+export default Recomendaciones;

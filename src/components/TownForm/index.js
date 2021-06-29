@@ -1,52 +1,126 @@
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { Col, Row, Button, Modal } from 'react-bootstrap/';
+import { Col, Row, Button } from 'react-bootstrap/';
+import { Link } from 'react-router-dom';
 import "./index.scss";
 
-const TownForm = (props) => {
-    const [attractions, setAttraction] = useState([1]);
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/towns`;
 
-    const action = (e) => {
+const TownForm = (props) => {
+    const [attractions, setAttractions] = useState([0]);
+    const [data, setData] = useState({ name: '', state: 'Estado de México', excerpt: '', infoState: '', img: '', attractions: [] });
+
+    const selectAttractions = (e) => {
         let attractionsNumber = [];
-        for (let i = 1; i <= e.target.value; i++) {
+        for (let i = 0; i < e.target.value; i++) {
             attractionsNumber.push(i);
         }
-        setAttraction(attractionsNumber);
+        setAttractions(attractionsNumber);
     };
 
-    return (
-        <Modal size="lg" show={props.show} onHide={props.handleClose}>
-            <Modal.Header>
-                <Modal.Title>{props.children}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <Form >
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formStateName">
+    const { town } = props;
 
-                        <Form.Label>Selecciona un Estado</Form.Label>
-                        <Form.Control as="select" custom>
+    const handleInputChange = (event) => {
+        setData({
+            ...data,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleInputAttractionchange = (event) => {
+        const attr = data.attractions;
+
+        attr[event.target.id.match(/(\d+)/g)] = {
+            ...attr[event.target.id.match(/(\d+)/g)],
+            [event.target.name]: event.target.value
+        }
+        setData({ ...data, attractions: attr })
+    }
+
+    const addTown = async (event) => {
+        event.preventDefault();
+
+        let met = town ? 'PUT' : 'POST';
+        let url = town ? `${baseURL}/${town._id}` : baseURL;
+        console.log(data)
+
+        try {
+            const response = await fetch(url, {
+                method: met,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            if (!response.ok) throw new Error("Response not ok");
+
+        } catch (error) {
+            console.error(error);
+        }
+        window.location = '/dashboard'
+    }
+
+    useEffect(() => {
+        if (town) {
+            setAttractions(Object.keys(town.attractions));
+            setData({
+                name: town.name, 
+                state: town.state,
+                excerpt: town.excerpt,
+                infoState: town.infoState, 
+                img: town.img, 
+                attractions: town.attractions
+            });
+        } 
+        // eslint-disable-next-line
+    }, [])
+
+    return (
+        <div className="townForm">
+            <div className="btnFormReturnCont">
+                <Link to="/dashboard"><Button className="btn btnFormReturn">Regresar</Button></Link>
+            </div>
+            <h1 className="townForm-h1">{town ? "Modificar Reseña" : "Agregar nueva reseña"}</h1>
+            <Form onSubmit={addTown}>
+                <Form.Row>
+                    <Form.Group as={Col} controlId="formStateName" className="townFormGroup">
+
+                        <Form.Label>Selecciona un Estado:</Form.Label>
+                        <Form.Control as="select" name="state" custom onChange={handleInputChange}
+                            defaultValue={town ? town.state : "Estado de México"}>
                             <option value="Estado de México">Estado de México</option>
                             <option value="Hidalgo">Hidalgo</option>
                         </Form.Control>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formTownName">
-                        <Form.Label>Nombre del Pueblo Mágico</Form.Label>
-                        <Form.Control type="text" name="name"></Form.Control>
+                    <Form.Group as={Col} controlId="formTownName" className="townFormGroup">
+                        <Form.Label>Nombre del Pueblo Mágico:</Form.Label>
+                        <Form.Control type="text" name="name" onChange={handleInputChange}
+                            defaultValue={town ? town.name : ""}></Form.Control>
                     </Form.Group>
                 </Form.Row>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Descripción</Form.Label>
-                    <Form.Control as="textarea" type="text" name="description" />
+                <Form.Group controlId="formTownExcerpt" className="townFormGroup">
+                    <Form.Label>Resumen:</Form.Label>
+                    <Form.Control as="textarea" rows={3} type="text" name="excerpt" onChange={handleInputChange}
+                        defaultValue={town ? town.excerpt : ""} />
                 </Form.Group>
-                <Form.Group controlId="formUrlImage">
-                    <Form.Label>URL de la imagen (imagen principal del pueblo)</Form.Label>
-                    <Form.Control type="text" name="urlImage" />
+                <Form.Group controlId="formTownDescription" className="townFormGroup">
+                    <Form.Label>Descripción:</Form.Label>
+                    <Form.Control as="textarea" rows={5} type="text" name="infoState" onChange={handleInputChange}
+                        defaultValue={town ? town.infoState : ""} />
                 </Form.Group>
-                <Form.Group as={Row} controlId="formAttractionsLabel" >
+                <Form.Group controlId="formUrlImage" className="townFormGroup">
+                    <Form.Label>URL de la imagen (imagen principal del pueblo):</Form.Label>
+                    <Form.Control type="text" name="img" onChange={handleInputChange} defaultValue={town ? town.img : ""} />
+                </Form.Group>
+                <Form.Group controlId="formPts" className="townFormGroup">
+
+
+                </Form.Group>
+                <Form.Group as={Row} controlId="formAttractionsLabel" className="townFormGroup">
                     <Form.Label column >Selecciona el número de atracciones:</Form.Label>
                     <Col>
-                        <Form.Control as="select" name="attractions" onChange={action} custom>
+                        <Form.Control as="select" name="attractions" onChange={selectAttractions} custom
+                            defaultValue={town ? Object.keys(town.attractions).length : 1}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -54,40 +128,49 @@ const TownForm = (props) => {
                     </Col>
                 </Form.Group>
                 {attractions.map(n =>
-                    <div key={n} >
-                        <p>Atracción {n}</p>
-                        <Form.Group controlId={`attractionName${n}`}>
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="text" name="nameAttraction" />
+                    <div key={parseInt(n) + 1} className="formAttraction">
+                        <p className="formAttraction-p">Atracción {parseInt(n) + 1}</p>
+                        <Form.Group controlId={`attractionName${parseInt(n)}`} className="townFormGroup">
+                            <Form.Label>Nombre:</Form.Label>
+                            <Form.Control type="text" name="name" onChange={handleInputAttractionchange}
+                                defaultValue={town ? town.attractions[n] ? town.attractions[n].name : "" : ""} />
                         </Form.Group>
-                        <Form.Group controlId={`attractionDescription${n}`}>
-                            <Form.Label>Descripción</Form.Label>
-                            <Form.Control as="textarea" type="text" name="descriptionAttraction" />
+                        <Form.Group controlId={`attractionDescription${parseInt(n)}`} className="townFormGroup">
+                            <Form.Label>Descripción:</Form.Label>
+                            <Form.Control as="textarea" rows={5} onChange={handleInputAttractionchange} type="text" name="info"
+                                defaultValue={town ? town.attractions[n] ? town.attractions[n].info : "" : ""} />
                         </Form.Group>
                         <Form.Row>
-                            <Form.Group as={Col} controlId="formAttractionCost">
-                                <Form.Label>Costo</Form.Label>
-                                <Form.Control type="text" name="name"></Form.Control>
+                            <Form.Group as={Col} controlId={`formAttractionCost${parseInt(n)}`} className="townFormGroup">
+                                <Form.Label>Costo:</Form.Label>
+                                <Form.Control type="text" name="cost" onChange={handleInputAttractionchange}
+                                    defaultValue={town ? town.attractions[n] ? town.attractions[n].cost : "" : ""}></Form.Control>
                             </Form.Group>
-                            <Form.Group as={Col} controlId="formAttractionType">
-                                <Form.Label>Tipo de atracción</Form.Label>
-                                <Form.Control type="text" name="name"></Form.Control>
+                            <Form.Group as={Col} controlId={`formAttractionType${parseInt(n)}`} className="townFormGroup">
+                                <Form.Label>Tipo de atracción:</Form.Label>
+                                <Form.Control type="text" name="type" onChange={handleInputAttractionchange}
+                                    defaultValue={town ? town.attractions[n] ? town.attractions[n].type : "" : ""}></Form.Control>
                             </Form.Group>
                         </Form.Row>
-                        <Form.Group controlId="formUrlImage">
-                    <Form.Label>URL de la imagen (imagen de la atracción)</Form.Label>
-                    <Form.Control type="text" name="urlImageAttraction" />
-                </Form.Group>
-
+                        <Form.Group as={Row} controlId={`formAttractionDist${parseInt(n)}`} className="townFormGroup">
+                            <Form.Label column >Distancia:</Form.Label>
+                            <Col>
+                                <Form.Control type="text" name="distance" onChange={handleInputAttractionchange}
+                                    defaultValue={town ? town.attractions[n] ? town.attractions[n].distance : "" : ""} />
+                            </Col>
+                        </Form.Group>
+                        <Form.Group controlId={`formUrlImage${parseInt(n)}`} className="townFormGroup">
+                            <Form.Label>URL de la imagen (imagen de la atracción):</Form.Label>
+                            <Form.Control type="text" name="img" onChange={handleInputAttractionchange}
+                                defaultValue={town ? town.attractions[n] ? town.attractions[n].img : "" : ""} />
+                        </Form.Group>
                     </div>
                 )}
                 <div className="formButton">
-                    <Button type="submit">Agregar</Button>
+                    <Button type="submit">{town ? "Modificar" : "Agregar"}</Button>
                 </div>
-            
             </Form>
-            </Modal.Body>
-        </Modal>
+        </div>
     );
 }
 

@@ -6,7 +6,6 @@ import FeedbackForm from '../FeedbackForm';
 const CommentHeader = ({ town }) => {
   const [show, setShow] = useState(false);
 
-  let dataTownId = parseInt(town);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -23,7 +22,7 @@ const CommentHeader = ({ town }) => {
           show={show}
           handleClose={handleClose}
           setShow={setShow}
-          town={dataTownId}
+          town={town}
         />
         <div>
           <p className="questions">¿Te gusto nuestra reseña?</p>

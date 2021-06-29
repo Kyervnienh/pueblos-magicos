@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -12,6 +12,17 @@ const cookies = new Cookies();
 const Sidebar = ({ isOpen, toggle, logOut }) => {
   const isAdminString = cookies.get("isAdmin");
   const isAdmin = isAdminString === "true" ? true : false;
+  const [isLogged, setisLogged] = useState(false);
+
+  useEffect(() => {
+    if (cookies.get('username')) {
+      setisLogged(true);
+    }
+    else {
+      setisLogged(false)
+    }
+  }, []);
+
   if (isOpen) {
     return (
       <>
@@ -33,25 +44,31 @@ const Sidebar = ({ isOpen, toggle, logOut }) => {
                 <Link className="SidebarLink" to="/comunidad">
                   Comunidad
                 </Link>
-                <Link className="SidebarLink" to="/soporte">
-                  Soporte
+                <Link className="SidebarLink" to="/sobreNosotros">
+                  Sobre Nosotros
                 </Link>
               </ul>
-              <div className="SideBtnWrap">
-                <Link className="SidebarRouteLogIn" to="/iniciarsesion">
-                  Iniciar Sesión
+              {!isLogged ?
+                (<><div className="SideBtnWrap">
+                  <Link className="SidebarRouteLogIn" to="/iniciarsesion">
+                    Iniciar Sesión
                 </Link>
-              </div>
-              <div className="SideBtnWrap">
-                <Link className="SidebarRouteSignUp" to="registrate">
-                  Regístrate
+                </div>
+                  <div className="SideBtnWrap">
+                    <Link className="SidebarRouteSignUp" to="registrate">
+                      Regístrate
                 </Link>
-              </div>
-              <div className="SideBtnWrap">
-                <Button className="LogOutButton" onClick={logOut}>
-                  Cerrar Sesión
+                  </div></>) :
+                (<div className="SideBtnWrap">
+                  <Link to="/perfil">
+                  <Button className="LogOutButton">
+                    Mi perfil
                 </Button>
-              </div>
+                </Link>
+                  <Button className="LogOutButton" onClick={logOut}>
+                    Cerrar Sesión
+                </Button>
+                </div>)}
             </div>
           </Container>
         </aside>

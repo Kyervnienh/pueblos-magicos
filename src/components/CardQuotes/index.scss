@@ -8,17 +8,9 @@
         max-width: -webkit-fill-available;
     }
 
-    .img{
-        width: 30%;
-        height: 10vh;
-        border-radius: 50%;
+    .imgAvatar{
         align-self: center;
         margin-top: 20px;
-
-        @media (min-width: 768px) {
-            width: 100px;
-            height: 10vh;
-        }
     }
 
     .body {
@@ -26,12 +18,21 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        .buttonComment {
+            background: none;
+            color: #ffbf69;
+            border: none;
+            margin: 0 1rem;
+            padding: 0;
+            transform: translateY(-0.5rem);
+        }
     
         .quote {
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             color: #999;
-            padding: 16px 0;
+            padding-bottom: 16px;
             margin: 0;
 
             @media (min-width: 768px) {

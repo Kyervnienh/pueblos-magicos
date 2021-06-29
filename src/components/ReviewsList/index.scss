@@ -1,16 +1,26 @@
 .table {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 1rem;
     padding-right: 50px;
+    @media (max-width: 768px){
+        padding-right: 0;
+    }
   }
 
 .EditIcon {
     color: #ffbf69;
-    cursor: pointer;
 }
 
-.DeleteIcon {
+.linkEditTown {
+    color: #ffbf69;
+
+    &:hover {
+        color: #ffbf69;
+    }
+}
+
+.DeleteIcon > svg {
     color: #ffbf69;
     cursor: pointer;
 }
@@ -23,5 +33,4 @@
 .AddReviewButton {
     display: flex;
     justify-content: flex-end;
-    padding-right: 200px;
 }

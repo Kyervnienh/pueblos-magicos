@@ -1,0 +1,50 @@
+.CardUser {
+  width: auto;
+  margin: 24px 16px;
+  padding-top: 30px;
+  @media (min-width: 768px) {
+    width: 100%;
+    margin: 0 40px;
+    max-width: -webkit-fill-available;
+  }
+
+  .userNameTitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #7F7F7F;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  .bodyCardUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .profilePhoto {
+      width: 30%;
+      height: 10vh;
+      border-radius: 50%;
+      align-self: center;
+      margin-top: 20px;
+      display: block;
+      @media (min-width: 768px) {
+        width: 100px;
+        height: 10vh;
+      }
+    }
+  }
+  .userDescription {
+    font-style: "Monserrat";
+    color: #7F7F7F;
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+}
