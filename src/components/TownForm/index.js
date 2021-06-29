@@ -8,7 +8,7 @@ const baseURL = `${process.env.REACT_APP_BACKEND_URL}/towns`;
 
 const TownForm = (props) => {
     const [attractions, setAttractions] = useState([0]);
-    const [data, setData] = useState({ name: '', state: 'Estado de México', infoState: '', img: '', attractions: [] });
+    const [data, setData] = useState({ name: '', state: 'Estado de México', excerpt: '', infoState: '', img: '', attractions: [] });
 
     const selectAttractions = (e) => {
         let attractionsNumber = [];
@@ -65,7 +65,8 @@ const TownForm = (props) => {
             setAttractions(Object.keys(town.attractions));
             setData({
                 name: town.name, 
-                state: town.state, 
+                state: town.state,
+                excerpt: town.excerpt,
                 infoState: town.infoState, 
                 img: town.img, 
                 attractions: town.attractions
@@ -97,7 +98,12 @@ const TownForm = (props) => {
                             defaultValue={town ? town.name : ""}></Form.Control>
                     </Form.Group>
                 </Form.Row>
-                <Form.Group controlId="formBasicEmail" className="townFormGroup">
+                <Form.Group controlId="formTownExcerpt" className="townFormGroup">
+                    <Form.Label>Resumen:</Form.Label>
+                    <Form.Control as="textarea" rows={3} type="text" name="excerpt" onChange={handleInputChange}
+                        defaultValue={town ? town.excerpt : ""} />
+                </Form.Group>
+                <Form.Group controlId="formTownDescription" className="townFormGroup">
                     <Form.Label>Descripción:</Form.Label>
                     <Form.Control as="textarea" rows={5} type="text" name="infoState" onChange={handleInputChange}
                         defaultValue={town ? town.infoState : ""} />

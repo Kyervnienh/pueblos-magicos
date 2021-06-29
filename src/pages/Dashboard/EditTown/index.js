@@ -15,16 +15,16 @@ const EditTown = (props) => {
                         <Col sm={2}>
                             <Nav variant="pills" className="flex-column">
                                 <Nav.Item>
-                                    <Nav.Link eventKey="dashboard" href="/dashboard"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
+                                    <Nav.Link eventKey="dashboard" href="/dashboard" className="dashboardLink"><i className="fa fa-bars icon" aria-hidden="true"></i>Dashboard</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="review" href="/dashboard"><i className="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
+                                    <Nav.Link eventKey="review" href="/dashboard" className="dashboardLink"><i className="fa fa-map-marker icon" aria-hidden="true"></i>Reseñas</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="users" href="/dashboard"><i className="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
+                                    <Nav.Link eventKey="users" href="/dashboard" className="dashboardLink"><i className="fa fa-users icon" aria-hidden="true"></i>Usuarios</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="coments" href="/dashboard"><i className="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
+                                    <Nav.Link eventKey="coments" href="/dashboard" className="dashboardLink"><i className="fa fa-comments icon" aria-hidden="true"></i>Comentarios</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
