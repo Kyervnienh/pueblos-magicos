@@ -74,7 +74,7 @@ const CommunityPage = () => {
         <div>
           {filterDropdown().map((item) => (
             <Row className="rowStyle" key={newUsers.indexOf(item)}>
-              {item.map((newSet) => (
+              {item?.map((newSet) => (
                 <Col key={newSet.id}>
                 <CardUser name={newSet.name} profilePhoto={newSet.image} description={newSet.description} key={newSet.id} />
                 </Col>
