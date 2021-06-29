@@ -7,6 +7,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./index.scss";
 import Cookies from "universal-cookie";
+import Image from 'react-bootstrap/Image'
 
 const cookies = new Cookies();
 const baseURL = "http://localhost:8080/uploads";
@@ -58,10 +59,8 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
             </div>
             <nav className="NavBtns">
               <div className="UserCircle">
-                <img
-                  src={`${baseURL}/${imgPath.substring(15, imgPath.length)}`}
-                  width="50%"
-                />
+                <Image src={`${baseURL}/${imgPath.substring(15, imgPath.length)}`} roundedCircle  className="d-inline-block align-top"  width="40"
+                  height="40" />
               </div>
               <div className="LogOutBtn">
                 <DropdownButton

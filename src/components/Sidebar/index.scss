@@ -84,8 +84,15 @@
 
 .SideBtnWrap {
     display: flex;
-    padding: 15px;
+    padding:  20px 15px;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+     @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: initial;
+    }
 }
 
 .SidebarRouteLogIn {
@@ -140,6 +147,7 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    margin-top: 30px;
 
     &:hover {
         transition: all 0.2s ease-in-out;
