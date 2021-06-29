@@ -1,20 +1,23 @@
-.titleGeneral {
-    font-family: 'Roboto', sans-serif;
-    color: #7f7f7f;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    font-size: 2rem;
-}
+// .titleGeneral {
+//     font-family: 'Roboto', sans-serif;
+//     color: #7f7f7f;
+//     padding-top: 20px;
+//     padding-bottom: 50px;
+//     font-size: 2rem;
+// }
 
-.textDescription {
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
+.infoHistory {
+    line-height: 1;
     letter-spacing: 0.2px;
     text-align: justify;
+    font-family: 'Mulish', sans-serif;
+    color: #9E9E9E;
+    font-size: 18px;
 }
 
-.imgStyle {
-    height: 350px; 
+.imgHistory {
+    padding: 90px 0;
+    height: 550px; 
     width: 95%;
     object-fit: cover;
     float: right;
@@ -25,10 +28,40 @@
 }
 
 .titleSection {
-    font-family: 'Roboto', sans-serif;
-    color: #7f7f7f;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    text-align: center;
+     font-family: 'Mulish', sans-serif;;
+     color: #ffbf69;
+    padding-top: 60px;
+     padding-bottom: 50px;
+     text-align: center;
+     font-size: 2rem;
+ }
+
+.titlep1 {
+    font-family: 'Mulish', sans-serif;
+    color: #ffbf69;
+    padding-top: 20px;
     font-size: 2rem;
+    font-weight: bold;
+     line-height: 1;
+}
+
+.rowPadding {
+    padding: 50px 0;
+}
+
+.columnP1{
+   background: linear-gradient(to right, #ffbf69 0%, #ffbf69 50%, #fff 50%, #fff 100%);
+}
+
+.columnp2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hrColor {
+  border: 3px solid #ffbf69;
+}
+
+.infoHistoryContainer{
+    margin-top: 30%;
 }
