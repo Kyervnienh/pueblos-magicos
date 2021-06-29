@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "./index.scss";
 
-const baseURL = "http://localhost:4000";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const ModalAdmin = (props) => {
 

@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 import NotFoundPage from '../NotFound/notfound';
 import BtnScrollToTop from '../../components/BtnScrollToTop';
 
-const baseURL = 'http://localhost:8080/towns';
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/towns`;
 
 const DescriptionPage = ({ match }) => {
   let query = match.params.id;

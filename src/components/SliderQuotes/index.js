@@ -14,7 +14,7 @@ const SliderQuotes = ({ town }) => {
 
     useEffect(() => {
         const getTownsAPI = async () => {
-            const url = 'http://localhost:8080/comments';
+            const url = `${process.env.REACT_APP_BACKEND_URL}/comments`;
             const response = await fetch(url);
             const resultado = await response.json();
             const filt = resultado.filter(comment => {

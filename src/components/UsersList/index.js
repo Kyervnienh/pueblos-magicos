@@ -8,7 +8,7 @@ import ModalAdmin from "../ModalAdmin";
 import NotFound from "../../components/NotFound";
 import Pagination from "../../pages/TownList/components/Pagination";
 
-const baseURL = "http://localhost:8080";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);

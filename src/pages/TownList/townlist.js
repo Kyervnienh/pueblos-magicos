@@ -25,7 +25,7 @@ const TownList = () => {
 
   useEffect(() => {
     const getTownsFilteredAPI = async () => {
-      const url = 'http://localhost:8080/towns';
+      const url = `${process.env.REACT_APP_BACKEND_URL}/towns`;
       const response = await fetch(url);
       const result = await response.json();
       setAllTowns(result);

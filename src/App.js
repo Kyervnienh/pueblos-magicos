@@ -18,6 +18,7 @@ import UserProfilePage from './pages/UserProfile';
 const cookies = new Cookies();
 
 function App() {
+
   const [isLogged, setisLogged] = useState(false);
   useEffect(() => {
     if (cookies.get('username')) {
@@ -28,6 +29,7 @@ function App() {
   }, []);
   const isAdminString = cookies.get('isAdmin');
   const isAdmin = isAdminString === 'true' ? true : false;
+
   return (
     <Router>
       <Switch>

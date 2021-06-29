@@ -10,7 +10,7 @@ import Cookies from "universal-cookie";
 import Image from 'react-bootstrap/Image'
 
 const cookies = new Cookies();
-const baseURL = "http://localhost:8080/uploads";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/uploads`;
 
 const NavbarMenu = ({ toggle, logOut, hero }) => {
   const name = cookies.get("name");

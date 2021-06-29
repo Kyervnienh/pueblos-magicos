@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col";
 import Pagination from "../TownList/components/Pagination";
 import BtnScrollToTop from "../../components/BtnScrollToTop";
 
-const baseURL = "http://localhost:8080";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const CommunityPage = () => {
   const [users, setUsers] = useState([]);

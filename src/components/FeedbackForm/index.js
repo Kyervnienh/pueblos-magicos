@@ -7,7 +7,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const baseURL = "http://localhost:8080/comments";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/comments`;
+
 const cookies = new Cookies();
 
 function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment }) {

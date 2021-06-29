@@ -4,7 +4,7 @@ import { Col, Row, Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import "./index.scss";
 
-const baseURL = "http://localhost:8080/towns";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/towns`;
 
 const TownForm = (props) => {
     const [attractions, setAttractions] = useState([0]);

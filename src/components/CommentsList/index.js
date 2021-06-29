@@ -6,7 +6,7 @@ import ModalDelete from "../ModalDelete";
 import NotFound from "../../components/NotFound";
 import Pagination from "../../pages/TownList/components/Pagination";
 
-const baseURL = "http://localhost:8080";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const CommentsList = () => {
   const [comments, setComments] = useState([]);

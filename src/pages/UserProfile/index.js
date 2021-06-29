@@ -10,7 +10,7 @@ import NotFound from "../../components/NotFound";
 
 const cookies = new Cookies();
 
-const baseURL = "http://localhost:8080";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const UserProfilePage = () => {
   const [show, setShow] = useState(false);

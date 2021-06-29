@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import "./index.scss";
 import Cookies from "universal-cookie";
 
-const baseURL = "http://localhost:8080";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 const cookies = new Cookies();
 
 const ModalDelete = (props) => {

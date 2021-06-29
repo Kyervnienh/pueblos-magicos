@@ -10,7 +10,8 @@ import ModalDelete from '../ModalDelete';
 import Image from 'react-bootstrap/Image'
 
 const cookies = new Cookies();
-const baseURL = "http://localhost:8080/uploads";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/uploads`;
+
 
 const CardQuotes = (
     {

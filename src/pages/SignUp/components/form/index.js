@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import './index.scss';
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-const baseURL = "http://localhost:8080/users";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/users`;
 
 const SignUp = (props) => {
   const [type, setType] = useState('password');

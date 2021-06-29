@@ -11,7 +11,7 @@ const SuggestionsComponent = () => {
 
   useEffect(() => {
     const getTownsAPI = async () => {
-      const url = 'http://localhost:8080/towns';
+      const url = `${process.env.REACT_APP_BACKEND_URL}/towns`;
       const response = await fetch(url);
       const resultado = await response.json();
       setSuggestions(resultado.slice(-3, resultado.length));

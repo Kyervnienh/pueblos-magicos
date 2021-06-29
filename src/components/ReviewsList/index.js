@@ -10,7 +10,7 @@ import NotFound from "../../components/NotFound";
 import Pagination from '../../pages/TownList/components/Pagination';
 import { Link } from "react-router-dom";
 
-const baseURL = "http://localhost:8080/towns";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/towns`;
 
 const ReviewsList = () => {
   const [towns, setTowns] = useState([]);

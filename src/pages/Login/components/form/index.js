@@ -8,8 +8,7 @@ import Cookies from "universal-cookie";
 import Alert from "react-bootstrap/Alert";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-const baseURL = "http://localhost:8080/users";
-
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/users`;
 const cookies = new Cookies();
 
 function PasswordIncorrect(props) {
