@@ -82,7 +82,7 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
               <div>
                 <h1 className="font-hero-title">
                   {hero?.titleP1 || hero?.name}{" "}
-                  <span className="font-hero-title-y">{  hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <Image src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} roundedCircle 
+                  <span className="font-hero-title-y">{  hero?.titleP2.substring(0,15) ?  <Image src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} roundedCircle 
                    width="130" height="130" /> : hero?.titleP2  }</span>
                 </h1>
                 <h3 className="font-hero-h3">
