@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import './index.scss';
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import "./index.scss";
 
 const BtnScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
 
-    const [visible, setVisible] = useState(false);
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
 
-    const toggleVisible = () => {
-        const scrolled = document.documentElement.scrollTop;
-
-        if (scrolled > 100) {
-            setVisible(true)
-        }
-        else {
-            setVisible(false)
-        }
-    };
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            left: 0,
-            top: 0,
-            behavior: "smooth"
-        })
+    if (scrolled > 100) {
+      setVisible(true);
+    } else {
+      setVisible(false);
     }
+  };
 
-    window.addEventListener('scroll', toggleVisible);
+  const scrollToTop = () => {
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-    return (
-        <Button className={`btnScrollToTop ${visible ? 'active' : null}`} onClick={scrollToTop}>
-            <i class="fa fa-arrow-up" aria-hidden="true"></i>
-        </Button>
-    )
-}
+  window.addEventListener("scroll", toggleVisible);
+
+  return (
+    <Button
+      className={`btnScrollToTop ${visible ? "active" : null}`}
+      onClick={scrollToTop}
+    >
+      <i className="fa fa-arrow-up" aria-hidden="true"></i>
+    </Button>
+  );
+};
 
 export default BtnScrollToTop;

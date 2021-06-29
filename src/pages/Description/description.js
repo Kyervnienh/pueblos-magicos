@@ -28,9 +28,16 @@ const DescriptionPage = ({ match }) => {
     getData();
   }, []);
 
+  const hero = {
+    titleP1: town.name,
+    titleP2: "",
+    subtitle: town.infoState,
+    img: town.img,
+  };
+
   return town ? (
     <>
-      <NavSidebar hero={town} />
+      <NavSidebar hero={hero} />
       <InfoAttractions town={town} isLoading={isLoading} />
       <SliderQuotes town={query} />
       <CommentHeader town={query} />
