@@ -63,6 +63,8 @@ const CommunityPage = () => {
     return newUsersPaginator;
   };
 
+  console.log("newUsers", newUsers);
+
   return (
     <>
       <NavSidebar hero={hero} />
@@ -87,7 +89,7 @@ const CommunityPage = () => {
       )}
       </Container>
       <Pagination
-        numberOfCards={newUsers.length * 2}
+        numberOfCards={users.length * 0.5}
         currentPage={currentPage}
         changePage={changePage}
       />
