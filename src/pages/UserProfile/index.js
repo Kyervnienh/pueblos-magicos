@@ -3,7 +3,7 @@ import NavSidebar from "../../components/NavSidebar";
 import Image from "../../assets/Profile.jpg";
 import Cookies from "universal-cookie";
 import Form from "react-bootstrap/Form";
-import { Col, Row, Button, Container } from "react-bootstrap/";
+import { Button } from "react-bootstrap/";
 import "./index.scss";
 import ModalDelete from "../../components/ModalDelete";
 import NotFound from "../../components/NotFound";

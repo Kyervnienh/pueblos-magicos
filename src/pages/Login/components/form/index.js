@@ -74,6 +74,7 @@ const Login = (props) => {
     if (cookies.get("username")) {
       props.history.push("/");
     }
+    // eslint-disable-next-line
   }, []);
 
   const showHide = (event) => {

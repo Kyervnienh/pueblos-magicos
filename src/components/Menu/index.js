@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaUserCircle } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -82,7 +82,8 @@ const NavbarMenu = ({ toggle, logOut, hero }) => {
               <div>
                 <h1 className="font-hero-title">
                   {hero?.titleP1 || hero?.name}{" "}
-                  <span className="font-hero-title-y">{  hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <img src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} /> : hero?.titleP2  }</span>
+                  <span className="font-hero-title-y">{  hero?.titleP2.substring(0,15) === "public\\uploads\\" ?  <Image src={`${baseURL}/${hero?.titleP2.substring(15,hero?.titleP2.length)}`} roundedCircle 
+                   width="130" height="130" /> : hero?.titleP2  }</span>
                 </h1>
                 <h3 className="font-hero-h3">
                   {hero?.subtitle || hero?.infoState}

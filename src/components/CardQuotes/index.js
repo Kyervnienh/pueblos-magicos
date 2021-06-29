@@ -7,8 +7,10 @@ import Cookies from "universal-cookie";
 import avatar from '../../assets/icons/avatar.png';
 import FeedbackForm from '../FeedbackForm';
 import ModalDelete from '../ModalDelete';
+import Image from 'react-bootstrap/Image'
 
 const cookies = new Cookies();
+const baseURL = "http://localhost:8080/uploads";
 
 const CardQuotes = (
     {
@@ -34,7 +36,8 @@ const CardQuotes = (
     return (
         <>
             <Card className="cardQuotes">
-                <img className="img" src={img} alt="..." />
+                <Image src={`${baseURL}/${img.substring(15, img.length)}`} roundedCircle  className="imgAvatar"  width="60"
+                  height="60"/>
                 <Card.Body className="body">
                     <div>
                         {userName === person ? (<>
@@ -87,7 +90,7 @@ const CardQuotes = (
 
 CardQuotes.propTypes = {
     img: PropTypes.string.isRequired,
-    pts: PropTypes.string.isRequired,
+    pts: PropTypes.number.isRequired,
     quote: PropTypes.string.isRequired,
     person: PropTypes.string.isRequired,
     town: PropTypes.string.isRequired,

@@ -8,17 +8,9 @@
         max-width: -webkit-fill-available;
     }
 
-    .img{
-        width: 30%;
-        height: 10vh;
-        border-radius: 50%;
+    .imgAvatar{
         align-self: center;
         margin-top: 20px;
-
-        @media (min-width: 768px) {
-            width: 100px;
-            height: 10vh;
-        }
     }
 
     .body {

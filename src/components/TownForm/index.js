@@ -71,6 +71,7 @@ const TownForm = (props) => {
                 attractions: town.attractions
             });
         } 
+        // eslint-disable-next-line
     }, [])
 
     return (

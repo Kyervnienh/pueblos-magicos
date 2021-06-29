@@ -26,6 +26,7 @@ const DescriptionPage = ({ match }) => {
     };
 
     getData();
+    // eslint-disable-next-line
   }, []);
 
   const hero = {

@@ -12,8 +12,6 @@ const cookies = new Cookies();
 
 function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment }) {
   const [isLogged, setisLogged] = useState(false);
-  const profile_photo_url =
-    "https://icongr.am/fontawesome/user-circle-o.svg?size=148&color=c2c2c2";
 
   useEffect(() => {
     if (cookies.get("username")) {
@@ -21,14 +19,17 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     } else {
       setisLogged(false);
     }
-    if (idComment) setData({ ...data, body: quote, pts })
+    if (idComment) setData({ ...data, body: quote, pts });
+    // eslint-disable-next-line
   }, []);
+
+  const imgPath = cookies.get("image");
 
   const [data, setData] = useState({
     body: "",
     pts: 0,
     dataTownId: town,
-    img: profile_photo_url,
+    img: imgPath,
   });
 
   const [error, setError] = useState({});
@@ -50,7 +51,7 @@ function FeedbackForm({ show, setShow, handleClose, town, quote, pts, idComment 
     setData({
       ...data,
       dataTownId: town,
-      img: profile_photo_url,
+      img: imgPath,
     });
     try {
       const response = await fetch(baseURL, {

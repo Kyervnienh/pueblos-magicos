@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import NavSidebar from '../../components/NavSidebar';
-import Slider from '../../components/Slider';
 import Filter from '../../components/Filter';
 import CardComponent from '../../components/Card';
 import Pagination from './components/Pagination';

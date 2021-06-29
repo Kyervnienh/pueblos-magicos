@@ -8,13 +8,13 @@ const Footer = () => (
   <Container fluid className="footer">
     <Row>
       <Col>
-        <a href="https://www.facebook.com/profile.php?id=100069481071211" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=100069481071211" target="_blank" rel="noopener noreferrer">
           <i className="fa fa-facebook icon" aria-hidden="true"></i>
         </a>
-        <a href="https://twitter.com/MagicosTuri" target="_blank">
+        <a href="https://twitter.com/MagicosTuri" target="_blank" rel="noopener noreferrer">
           <i className="fa fa-twitter icon"></i>
         </a>
-        <a href="https://www.instagram.com/turipueblosmagicos/?hl=es-la" target="_blank">
+        <a href="https://www.instagram.com/turipueblosmagicos/?hl=es-la" target="_blank" rel="noopener noreferrer">
           <i className="fa fa-instagram icon" aria-hidden="true"></i>
         </a>
       </Col>

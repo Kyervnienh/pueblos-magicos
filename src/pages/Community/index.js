@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import NavSidebar from "../../components/NavSidebar";
 import NotFound from "../../components/NotFound";
 import Footer from "../../components/Footer";
