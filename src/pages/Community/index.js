@@ -17,7 +17,7 @@ const CommunityPage = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [inferiorLimit, setInferiorLimit] = useState(0);
-  const [superiorLimit, setSuperiorLimit] = useState(2);
+  const [superiorLimit, setSuperiorLimit] = useState(1);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -34,8 +34,8 @@ const CommunityPage = () => {
 
   
   let newUsers = [];
-  for (let i = 0; i < users.length; i += 3) {
-    let piece = users.slice(i, i + 3);
+  for (let i = 0; i < users.length; i += 6) {
+    let piece = users.slice(i, i + 6);
     newUsers.push(piece);
   }
 
@@ -48,11 +48,11 @@ const CommunityPage = () => {
 
   const changePage = (e) => {
     setCurrentPage(parseInt(e.target.value));
-    setInferiorLimit((parseInt(e.target.value) - 1) * 2);
-    if (parseInt(e.target.value) * 2 >= newUsers.length) {
+    setInferiorLimit((parseInt(e.target.value) - 1));
+    if (parseInt(e.target.value) >= newUsers.length) {
       setSuperiorLimit(newUsers.length);
     } else {
-      setSuperiorLimit(parseInt(e.target.value) * 2);
+      setSuperiorLimit(parseInt(e.target.value) * 2 - 1);
     }
   };
 
@@ -63,8 +63,6 @@ const CommunityPage = () => {
     return newUsersPaginator;
   };
 
-  console.log("newUsers", newUsers);
-
   return (
     <>
       <NavSidebar hero={hero} />
@@ -74,8 +72,9 @@ const CommunityPage = () => {
         </Row>
         {users.length ? (
         <div>
+          {console.log(inferiorLimit, superiorLimit, newUsers.length, newUsers)}
           {filterDropdown().map((item) => (
-            <Row className="rowStyle" key={newUsers.indexOf(item)}>
+            <Row className="rowStyle" key={newUsers.indexOf(item)}>          
               {item?.map((newSet) => (
                 <Col key={newSet.id}>
                 <CardUser name={newSet.name} profilePhoto={newSet.image} description={newSet.description} key={newSet.id} />
