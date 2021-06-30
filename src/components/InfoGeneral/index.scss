@@ -56,6 +56,9 @@
 .columnp2 {
     display: flex;
     justify-content: space-between;
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .hrColor {
@@ -64,4 +67,7 @@
 
 .infoHistoryContainer{
     margin-top: 30%;
+    @media(max-width: 768px) {
+        margin-top: 50px;
+    }
 }
