@@ -4,6 +4,7 @@ import "./index.scss";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Image from 'react-bootstrap/Image'
 
 const InfoAttraction = ({
   attractionName = "Cascadas Velo de Novia",
@@ -15,31 +16,50 @@ const InfoAttraction = ({
 }) => {
   return (
     <>
+
       <Container>
-        <Row className="align-items-center">
-          <Col sm={12} md={6}  className="px-4">
-            <h2 className="titleAtraction">{attractionName}</h2>
-            <p className="textDescription">{info}</p>
-          </Col>
-          <Col sm={12} md={6} className="text-center px-4">
-            <img src={img} alt={attractionName} className="imgStyle"></img>
-          </Col>
-        </Row>
+              <Row>
+                <Col sm={12} md={6}>
+                  <h2 className="titleAtraction">{attractionName}</h2>
+                </Col>
+              </Row>
+              <Row>
+              <Col sm={12} md={4} >
+                </Col>
+                <Col sm={12} md={8} className="columnDetail">
+                  <div className="infoHistory">
+                      {info}
+                  </div>
+                </Col>
+              </Row>
       </Container>
-      <Container className="my-3">
+      <Container>
         <Row>
-          <Col>
-            <h5 className="textDescription">Costo: {cost}</h5>
+          <Col sm={12} md={12}>
+            <div className="infoAtraccion">
+              <Image src={img}  className='imgAtraccion' />
+            </div>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <h5 className="textDescription text-left">Distancia desde el centro del pueblo: {distance}</h5>
+        <Row className="rowAtraccion">
+        <Col sm={12} md={4} className="cardAtraccion">
+             <i className="fa fa-money iconAtraccion" aria-hidden="true"></i>
+             <hr className="hrAtraccion" />
+             <p className="caracteristica">Costo por entrada</p>
+             <p className="caracteristicaDetail">{cost}</p>
+
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h5 className="textDescription text-left">Tipo de atracción: {type}</h5>
+          <Col sm={12} md={4}  className="cardAtraccion">
+          <i className="fa fa-pagelines iconAtraccion" aria-hidden="true"></i>
+             <hr className="hrAtraccion" />
+             <p className="caracteristica">Tipo de atracción</p>
+             <p className="caracteristicaDetail">{type}</p>
+          </Col>
+          <Col sm={12} md={4}  className="cardAtraccion">
+          <i className="fa fa-car iconAtraccion" aria-hidden="true"></i>
+             <hr className="hrAtraccion" />
+             <p className="caracteristica">Distancia (centro del pueblo)</p>
+             <p className="caracteristicaDetail"> {distance}</p>
           </Col>
         </Row>
       </Container>

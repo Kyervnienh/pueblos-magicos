@@ -6,9 +6,10 @@
 }
 
 .community {
-    margin-left: 100px;
+    margin-left: 0;
+    margin: auto;
     position: relative;
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
         margin-top: 100px;
      }
     .titleCommunity{
@@ -20,6 +21,7 @@
         font-size: 42px;
         @media (max-width: 768px) {
             font-size: 25px;
+            margin-left: 15px;
           }
     }
     &:after{
@@ -29,9 +31,29 @@
         height: 2px;
         background: rgba(0, 0, 0, 0.5);
         top: 100px;
+        margin-left: -15px;
+        @media (max-width: 768px) {
+            width: calc(100% - 30px);
+            top: 80px;
+            margin-left: 0;
+        }
     }
 
     .rowStyle {
         margin-bottom: 50px;
+        justify-content: space-around;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+
+        .col {
+            flex-basis: auto;
+            @media (min-width: 768px) {
+            margin-top: 20px;
+            width: 30%;
+            min-width: 350px;
+            max-width: 45%;
+            }
+        }
     }
 }

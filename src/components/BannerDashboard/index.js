@@ -2,8 +2,10 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import './index.scss';
 import Cookies from 'universal-cookie';
+import Image from 'react-bootstrap/Image';
 
 const cookies = new Cookies();
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}/uploads`;
 
 const BannerDashboard = () => {
     const logOut = () => {
@@ -19,6 +21,8 @@ const BannerDashboard = () => {
         window.location.href = "./";
     };
     const name = cookies.get('name');
+    const imgPath = cookies.get('image');
+
     return (
         <div className="bannerDash">
             <div>
@@ -28,7 +32,8 @@ const BannerDashboard = () => {
                 <Link className="dashboard" to='/dashboard'>Dashboard</Link>
             </div>
             <div className="account" >
-                <i className="fa fa-user-circle iconAccount" aria-hidden="true"></i>
+            <Image src={`${baseURL}/${imgPath.substring(15, imgPath.length)}`} roundedCircle  className="d-inline-block align-top iconAccount"  width="60"
+                  height="50" />
                 <div>
                     <p className="name">{name}</p>
                     <Link className="" to='/' onClick={logOut}>Cerrar sesión</Link>

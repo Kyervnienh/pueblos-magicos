@@ -28,16 +28,12 @@
     text-align: center;
 
     .profilePhoto {
-      width: 30%;
-      height: 10vh;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       align-self: center;
       margin-top: 20px;
       display: block;
-      @media (min-width: 768px) {
-        width: 100px;
-        height: 10vh;
-      }
     }
   }
   .userDescription {

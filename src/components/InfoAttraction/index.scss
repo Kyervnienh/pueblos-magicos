@@ -1,17 +1,58 @@
-.titleAtraction {
-    font-family: 'Roboto', sans-serif;
-    color: #7f7f7f;
-    padding-top: 20px;
-    padding-bottom: 40px;
+.imgAtraccion {
+    padding: 60px 0;
+    height: 550px; 
+    width: 95%;
+    object-fit: cover;
+    float: right;
+    @media (max-width: 767px) {
+        height: 300px;
+        float: none;
+    }
 }
 
-.table {
-    margin-top: 100px;
+.cardAtraccion {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconAtraccion {
+    color: #ffbf69;
+    font-size: 40px;
+    
+     text-align: center;
+}
+.hrAtraccion {
+    width: 20%;
+    margin: 15px auto;
+}
+.caracteristicaDetail {
+    padding-top: 15px;
+     font-family: 'Mulish', sans-serif;;
+      color: #7f7f7f;
+     text-align: center;
+     font-size: 1rem;
+}
+
+.caracteristica{
+    font-family: 'Roboto', sans-serif;
+     color: #ffbf69;
+     text-align: center;
+     font-size: 1.5rem;
+}
+
+.rowAtraccion{
+    padding-bottom: 50px;
 }
 
 
-.textDescription {
+ .detailAtraccion {
+  font-family: 'Roboto', sans-serif;
+font-size: 1.5rem;
+}
+
+.titleAtraction{
     font-family: 'Roboto', sans-serif;
-    color: #7f7f7f;
-    font-weight: bold;
+     color: #7f7f7f;
+     font-size: 2rem;
+     padding-bottom: 40px;
 }
